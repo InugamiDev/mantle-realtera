@@ -1,0 +1,1722 @@
+// RealTera Database Schema
+// Real Estate Intelligence Platform
+// Governance Hardening: Schema Isolation for Trust Layer
+
+generator client {
+  provider        = "prisma-client-js"
+  output          = "../src/generated/prisma"
+  // NOTE: multiSchema requires @@schema on ALL models and enums
+  // Temporarily disabled for demo - full implementation requires adding
+  // @@schema("public") to all public models and @@schema("commercial") to commercial models
+  // previewFeatures = ["multiSchema"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  // schemas  = ["public", "commercial"]
+}
+
+// ============================================================================
+// USER & AUTHENTICATION
+// ============================================================================
+
+enum UserTier {
+  FREE        // Basic investor
+  PRO         // Paid investor
+  ENTERPRISE  // Enterprise organization
+  DEVELOPER   // Property developer
+  AGENCY      // Real estate agency
+  API_USER    // Platform API consumer
+  ADMIN       // Platform admin
+}
+
+// ============================================================================
+// RBAC: ROLE-BASED ACCESS CONTROL
+// ============================================================================
+
+// Role Types (atomic, BCNF-compliant)
+enum RoleType {
+  // Investor roles
+  INVESTOR
+  INVESTOR_PRO
+
+  // Agency roles
+  AGENCY_OWNER
+  AGENCY_ADMIN
+  AGENCY_AGENT
+
+  // Developer roles
+  DEVELOPER_OWNER
+  DEVELOPER_ADMIN
+  DEVELOPER_STAFF
+
+  // API roles
+  API_READONLY
+  API_FULL
+
+  // Platform roles
+  PLATFORM_ADMIN
+  PLATFORM_SUPPORT
+}
+
+// Permission codes (granular)
+enum PermissionCode {
+  // Project permissions
+  READ_PROJECTS
+  WRITE_PROJECTS
+  DELETE_PROJECTS
+
+  // Attestation permissions
+  READ_ATTESTATIONS
+  CREATE_ATTESTATIONS
+  UPDATE_ATTESTATIONS
+
+  // Collection permissions
+  READ_COLLECTIONS
+  WRITE_COLLECTIONS
+  SHARE_COLLECTIONS
+
+  // API permissions
+  API_READ
+  API_WRITE
+  API_ADMIN
+
+  // Admin permissions
+  ADMIN_USERS
+  ADMIN_PROJECTS
+  ADMIN_ATTESTATIONS
+  ADMIN_BILLING
+}
+
+// Role definition (BCNF: determinant is id)
+model Role {
+  id          String           @id @default(cuid())
+  type        RoleType         @unique
+  displayName String
+  description String?
+  tier        UserTier
+  isDefault   Boolean          @default(false)
+
+  permissions RolePermission[]
+  userRoles   UserRole[]
+
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+}
+
+// Permission definition (BCNF: determinant is id)
+model Permission {
+  id          String           @id @default(cuid())
+  code        PermissionCode   @unique
+  displayName String
+  description String?
+  category    String           // "projects", "attestations", "api", "admin"
+
+  roles       RolePermission[]
+
+  createdAt   DateTime         @default(now())
+}
+
+// Role-Permission junction (BCNF: composite key)
+model RolePermission {
+  id           String     @id @default(cuid())
+  roleId       String
+  permissionId String
+
+  role         Role       @relation(fields: [roleId], references: [id], onDelete: Cascade)
+  permission   Permission @relation(fields: [permissionId], references: [id], onDelete: Cascade)
+
+  @@unique([roleId, permissionId])
+}
+
+// User-Role assignment (BCNF: supports org-scoped roles)
+model UserRole {
+  id             String        @id @default(cuid())
+  userId         String
+  roleId         String
+  organizationId String?       // null = platform-wide role
+
+  user           User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  role           Role          @relation(fields: [roleId], references: [id], onDelete: Cascade)
+  organization   Organization? @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  assignedAt     DateTime      @default(now())
+  assignedBy     String?       // userId of assigner
+  expiresAt      DateTime?     // optional expiration
+
+  @@unique([userId, roleId, organizationId])
+  @@index([userId])
+  @@index([organizationId])
+}
+
+enum SubscriptionStatus {
+  ACTIVE
+  CANCELED
+  PAST_DUE
+  TRIALING
+  PAUSED
+}
+
+model User {
+  id                   String             @id @default(cuid())
+  stackAuthId          String?            @unique // Optional for wallet-only users
+  email                String?
+  displayName          String?
+  profileImageUrl      String?
+  tier                 UserTier           @default(FREE)
+  subscriptionStatus   SubscriptionStatus @default(ACTIVE)
+  stripeCustomerId     String?
+  stripeSubscriptionId String?
+  evmWalletAddress     String?            @unique // Mantle/EVM wallet address
+  primaryAuthMethod    String?            @default("email") // "email" | "wallet"
+  walletLinkedAt       DateTime?
+  apiCallsThisMonth    Int                @default(0)
+  apiCallsLimit        Int                @default(100)
+  createdAt            DateTime           @default(now())
+  updatedAt            DateTime           @updatedAt
+
+  // Onboarding
+  onboardedAt          DateTime?          // null = not onboarded
+  onboardingStep       String?            // "type", "profile", "organization", "verify", "complete"
+  accountType          String?            // "investor" | "agency" | "developer" | "api_user"
+
+  // Relations
+  watchlists           Watchlist[]
+  portfolios           Portfolio[]
+  alerts               Alert[]
+  alertPreferences     AlertPreference[]
+  savedCalculations    SavedCalculation[]
+  chatConversations    ChatConversation[]
+  apiKeys              ApiKey[]
+  verificationRequests VerificationRequest[]
+  reportPurchases      ReportPurchase[]
+  issuerMemberships    IssuerMember[]
+  roles                UserRole[]
+
+  // Comment relations
+  authoredComments     Comment[]          @relation("AuthoredComments")
+  authoredReplies      CommentReply[]     @relation("AuthoredReplies")
+  commentVotes         CommentVote[]      @relation("CommentVotes")
+  replyVotes           CommentReplyVote[] @relation("ReplyVotes")
+  commentReports       CommentReport[]    @relation("CommentReports")
+
+  @@index([stackAuthId])
+  @@index([stripeCustomerId])
+  @@index([evmWalletAddress])
+}
+
+// SIWE (Sign-In with Ethereum) nonce storage for replay attack prevention
+model SiweNonce {
+  id        String    @id @default(cuid())
+  nonce     String    @unique
+  address   String
+  expiresAt DateTime
+  usedAt    DateTime?
+  createdAt DateTime  @default(now())
+
+  @@index([nonce])
+  @@index([expiresAt])
+}
+
+model Organization {
+  id               String   @id @default(cuid())
+  name             String
+  slug             String   @unique
+  tier             UserTier @default(ENTERPRISE)
+  stripeCustomerId String?
+  maxSeats         Int      @default(5)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  // Relations
+  members          OrganizationMember[]
+  platformLicenses PlatformLicense[]
+  widgets          WidgetConfiguration[]
+  apiKeys          ApiKey[]
+  userRoles        UserRole[]
+}
+
+model OrganizationMember {
+  id             String       @id @default(cuid())
+  organizationId String
+  userId         String
+  role           String       @default("member") // owner, admin, member
+  createdAt      DateTime     @default(now())
+
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@unique([organizationId, userId])
+}
+
+// ============================================================================
+// CORE DATA: DEVELOPERS & PROJECTS
+// ============================================================================
+
+model Developer {
+  id                    String    @id @default(cuid())
+  slug                  String    @unique
+  name                  String
+  nameEn                String?   // English name
+  tier                  String    // SSS, S, A, B, C, D, F
+  projectCount          Int       @default(0)
+  foundedYear           Int?
+  headquarters          String?
+  website               String?
+  stockCode             String?
+  // Images (IPFS-backed)
+  logoUrl               String?   // IPFS gateway URL for logo
+  logoIpfsCid           String?   // IPFS CID for logo
+  bannerUrl             String?   // IPFS gateway URL for banner
+  bannerIpfsCid         String?   // IPFS CID for banner
+  description           String?   @db.Text
+  // Scorecard data
+  financialHealthScore  Int?
+  deliveryTrackRecord   Int?
+  legalComplianceScore  Int?
+  customerSatisfactionScore Int?
+  overallScore          Int?
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+
+  // Relations
+  projects              Project[]
+  // Commercial relations removed - now use soft references in commercial schema
+
+  @@index([tier])
+  @@index([slug])
+}
+
+model Project {
+  id                 String   @id @default(cuid())
+  slug               String   @unique
+  name               String
+  nameEn             String?  // English name
+  developerId        String
+  tier               String   // SSS, S+, S, A, B, C, D, F
+  score              Int      // 0-100
+  verificationStatus String   @default("Unverified") // Verified, Under review, Unverified, Unrated
+  sponsored          Boolean  @default(false)
+  sponsorExpiresAt   DateTime?
+  district           String
+  city               String
+  verdict            String?  @db.Text
+  roiLabel           String?  // Mạnh, Trung bình, Yếu, Fail
+  sourceCount        Int      @default(0)
+  latitude           Decimal? @db.Decimal(10, 8)
+  longitude          Decimal? @db.Decimal(11, 8)
+  // Images (IPFS-backed)
+  imageUrl           String?  // Main project image (IPFS gateway URL)
+  imageIpfsCid       String?  // Main project image CID
+  galleryUrls        String[] // Gallery image URLs
+  galleryIpfsCids    String[] // Gallery image CIDs
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  // Relations
+  developer          Developer           @relation(fields: [developerId], references: [id])
+  signals            ProjectSignal?
+  metrics            ProjectMetrics?
+  scoreCategories    ProjectScoreCategory[]
+  evidenceLinks      ProjectEvidence[]
+  history            ProjectHistory[]
+  whyBullets         ProjectWhyBullet[]
+  keyRisks           ProjectKeyRisk[]
+  bestForBullets     ProjectBestFor[]
+  watchlists         Watchlist[]
+  portfolioHoldings  PortfolioHolding[]
+  buyerIntentSignals BuyerIntentSignal[]
+  pricePredictions   PricePrediction[]
+  propertyValuations PropertyValuation[]
+  constructionProgress ConstructionProgress[]
+  attestations       Attestation[]
+  verificationRequests VerificationRequest[]
+  nftProfile         NftProjectProfile?
+  // Scoring audit trail
+  scoreRuns          ScoreRun[]
+
+  @@index([tier])
+  @@index([district])
+  @@index([city])
+  @@index([developerId])
+  @@index([sponsored])
+}
+
+model ProjectSignal {
+  id              String  @id @default(cuid())
+  projectId       String  @unique
+  legalStatus     String? // Tốt, Trung bình, Yếu
+  priceRange      String?
+  liquidityStatus String? // Tốt, Trung bình, Yếu
+  updatedAt       DateTime @updatedAt
+
+  project         Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+}
+
+model ProjectMetrics {
+  id                String   @id @default(cuid())
+  projectId         String   @unique
+  // Sales metrics
+  totalUnits        Int?
+  soldUnits         Int?
+  availableUnits    Int?
+  salesProgress     Decimal? @db.Decimal(5, 2)
+  launchDate        DateTime?
+  estimatedCompletion DateTime?
+  // Price metrics
+  minPricePerSqm    BigInt?
+  maxPricePerSqm    BigInt?
+  avgPricePerSqm    BigInt?
+  priceChange3M     Decimal? @db.Decimal(5, 2)
+  priceChange12M    Decimal? @db.Decimal(5, 2)
+  // Investment metrics
+  estimatedRoiMin   Decimal? @db.Decimal(5, 2)
+  estimatedRoiMax   Decimal? @db.Decimal(5, 2)
+  rentalYield       Decimal? @db.Decimal(5, 2)
+  avgRentPrice      BigInt?
+  capitalGrowth1Y   Decimal? @db.Decimal(5, 2)
+  capitalGrowth3Y   Decimal? @db.Decimal(5, 2)
+  paybackPeriod     Int?
+  // Area metrics
+  minArea           Int?
+  maxArea           Int?
+  avgArea           Int?
+  totalLandArea     Decimal? @db.Decimal(10, 2)
+  greenSpaceRatio   Decimal? @db.Decimal(5, 2)
+  buildingDensity   Decimal? @db.Decimal(5, 2)
+  updatedAt         DateTime @updatedAt
+
+  project           Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+}
+
+model ProjectScoreCategory {
+  id        String @id @default(cuid())
+  projectId String
+  category  String
+  score     Int
+  maxScore  Int    @default(100)
+  weight    Decimal @default(1.0) @db.Decimal(3, 2)
+
+  project   Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  @@index([projectId])
+}
+
+model ProjectEvidence {
+  id         String   @id @default(cuid())
+  projectId  String
+  domain     String
+  title      String
+  url        String   @db.Text
+  accessedAt DateTime @default(now())
+
+  project    Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  // Score run links (evidence used in scoring)
+  scoreRunLinks ScoreRunEvidenceLink[]
+
+  @@index([projectId])
+}
+
+model ProjectHistory {
+  id          String   @id @default(cuid())
+  projectId   String
+  eventDate   DateTime
+  description String   @db.Text
+  tierChange  String?
+  scoreChange String?
+  createdAt   DateTime @default(now())
+
+  project     Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  @@index([projectId])
+}
+
+model ProjectWhyBullet {
+  id        String  @id @default(cuid())
+  projectId String
+  content   String  @db.Text
+  order     Int     @default(0)
+
+  project   Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  @@index([projectId])
+}
+
+model ProjectKeyRisk {
+  id        String  @id @default(cuid())
+  projectId String
+  content   String  @db.Text
+  order     Int     @default(0)
+
+  project   Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  @@index([projectId])
+}
+
+model ProjectBestFor {
+  id        String  @id @default(cuid())
+  projectId String
+  content   String  @db.Text
+  order     Int     @default(0)
+
+  project   Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  @@index([projectId])
+}
+
+// ============================================================================
+// SCORING AUDIT SYSTEM (Governance Hardening)
+// Enables: Reproducible scores, explainable diffs, evidence-backed ratings
+// ============================================================================
+
+model ScoreComponent {
+  id                   String   @id @default(cuid())
+  name                 String   @unique // "legal", "developer", "location", "progress"
+  displayName          String   // "Pháp lý", "Chủ đầu tư", "Vị trí", "Tiến độ"
+  displayNameEn        String?  // English translation
+  weight               Float    // 0.30, 0.30, 0.25, 0.15 (NO ROI - totals 1.0)
+  maxScore             Int      @default(100)
+  calculationMethod    String   @db.Text // Description of how it's calculated
+  requiredEvidence     String[] // Evidence types needed (e.g., ["legal_doc", "permit"])
+  requiredAttestations String[] // Attestation schema names needed
+  isActive             Boolean  @default(true)
+  version              String   @default("v1.0")
+  order                Int      @default(0) // Display order
+
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+
+  @@map("score_components")
+}
+
+model ScoreRun {
+  id              String   @id @default(cuid())
+  projectId       String
+  project         Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  // Versioning for reproducibility
+  runId           String   @unique @default(cuid())
+  codeVersion     String   // Git commit hash or semver (e.g., "v1.2.3")
+  weightsVersion  String   // Methodology version (e.g., "v1.0")
+
+  // Inputs hash for verifiable reproducibility
+  inputsHash      String   // SHA-256 of all input data (evidence + attestations)
+  evidenceSetHash String   // SHA-256 of evidence IDs used (ordered)
+
+  // Full output breakdown
+  outputJson      Json     // { legal: 28, developer: 27, location: 22, progress: 13, total: 90 }
+  totalScore      Int      // Final computed score (0-100)
+  tierResult      String   // Resulting tier (SSS, S+, S, A, B, C, D, F)
+
+  // Audit trail
+  computedAt      DateTime @default(now())
+  computedBy      String?  // "system" or userId for manual overrides
+  computeMethod   String   @default("automatic") // "automatic" | "manual_override"
+
+  // Links to inputs
+  evidenceLinks      ScoreRunEvidenceLink[]
+  attestationLinks   ScoreRunAttestationLink[]
+
+  // Diff tracking (links to previous run)
+  previousRunId      String?
+  diffFromPrevious   ScoreDiff? @relation("DiffFromRun")
+
+  @@index([projectId])
+  @@index([computedAt])
+  @@index([tierResult])
+  @@map("score_runs")
+}
+
+model ScoreRunEvidenceLink {
+  id          String          @id @default(cuid())
+  runId       String
+  run         ScoreRun        @relation(fields: [runId], references: [id], onDelete: Cascade)
+  evidenceId  String
+  evidence    ProjectEvidence @relation(fields: [evidenceId], references: [id], onDelete: Cascade)
+
+  componentName String   // "legal", "developer", "location", "progress"
+  role          String   // "supports" | "refutes" | "neutral"
+  confidence    Float?   // 0.0-1.0 confidence in this evidence
+  weight        Float?   // How much this evidence contributed
+  note          String?  @db.Text
+
+  @@unique([runId, evidenceId, componentName])
+  @@index([runId])
+  @@map("score_run_evidence_links")
+}
+
+model ScoreRunAttestationLink {
+  id            String      @id @default(cuid())
+  runId         String
+  run           ScoreRun    @relation(fields: [runId], references: [id], onDelete: Cascade)
+  attestationId String
+  attestation   Attestation @relation(fields: [attestationId], references: [id], onDelete: Cascade)
+
+  componentName String   // Which score component this attestation supports
+  weight        Float?   // How much this attestation contributed
+
+  @@unique([runId, attestationId])
+  @@index([runId])
+  @@map("score_run_attestation_links")
+}
+
+model ScoreDiff {
+  id              String   @id @default(cuid())
+  fromRunId       String   @unique
+  fromRun         ScoreRun @relation("DiffFromRun", fields: [fromRunId], references: [id], onDelete: Cascade)
+  toRunId         String
+
+  // What changed - component-level deltas
+  componentDeltas Json     // { "legal": { "from": 22, "to": 18, "delta": -4, "reason": "Permit expired" } }
+  totalDelta      Int      // Change in total score
+  tierChanged     Boolean  // Did tier change?
+  oldTier         String?
+  newTier         String?
+
+  // Explanation (human-readable)
+  explanationText String   @db.Text // Generated explanation of changes
+  generatedBy     String   // "system" | "admin" | userId
+
+  // Review (for sensitive changes)
+  reviewRequired  Boolean  @default(false)
+  reviewerId      String?  // Admin who reviewed the diff
+  reviewedAt      DateTime?
+  reviewNote      String?  @db.Text
+
+  createdAt       DateTime @default(now())
+
+  @@index([toRunId])
+  @@map("score_diffs")
+}
+
+// ============================================================================
+// ISSUER REGISTRY (Attestation-First Architecture)
+// Enables: Multi-issuer attestations, credential verification, scoped authority
+// ============================================================================
+
+model Issuer {
+  id              String   @id @default(cuid())
+  slug            String   @unique // URL-friendly identifier
+  type            String   // "platform" | "organization" | "individual"
+  legalName       String   // Official legal name
+  displayName     String   // Display name
+  description     String?  @db.Text
+  jurisdiction    String?  // "VN", "US", etc.
+  status          String   @default("pending") // "pending" | "active" | "suspended" | "revoked"
+
+  // Verification by platform
+  verifiedAt      DateTime?
+  verifiedBy      String?  // Admin userId who verified
+  verificationNote String? @db.Text
+
+  // Contact info
+  website         String?
+  email           String?
+  phone           String?
+  address         String?  @db.Text
+
+  // Branding
+  logoUrl         String?
+
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  // Relations
+  credentials     IssuerCredential[]
+  keys            IssuerKey[]
+  members         IssuerMember[]
+  scopes          IssuerScope[]
+  attestations    Attestation[]
+
+  @@index([status])
+  @@index([type])
+  @@map("issuers")
+}
+
+model IssuerCredential {
+  id                 String   @id @default(cuid())
+  issuerId           String
+  issuer             Issuer   @relation(fields: [issuerId], references: [id], onDelete: Cascade)
+
+  credentialType     String   // "business_license", "notary_cert", "inspector_license", "appraiser_cert"
+  credentialNumber   String?  // License/certificate number
+  issuedBy           String   // Authority that issued the credential
+  issuedAt           DateTime
+  expiresAt          DateTime?
+
+  // Verification status
+  verificationStatus String   @default("pending") // "pending" | "verified" | "rejected" | "expired"
+  verificationMethod String?  // "manual_review" | "api_check" | "document_upload"
+  verifiedAt         DateTime?
+  verifiedBy         String?  // Admin userId
+  rejectionReason    String?  @db.Text
+
+  // Supporting documents
+  documentUrls       String[]
+
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  @@index([issuerId])
+  @@index([verificationStatus])
+  @@map("issuer_credentials")
+}
+
+model IssuerKey {
+  id               String   @id @default(cuid())
+  issuerId         String
+  issuer           Issuer   @relation(fields: [issuerId], references: [id], onDelete: Cascade)
+
+  keyName          String?  // Human-readable key name
+  publicKey        String   @db.Text // PEM or hex encoded public key
+  keyType          String   // "secp256k1" | "ed25519" | "rsa"
+  keyAlgorithm     String?  // "ECDSA" | "EdDSA" | "RSA-SHA256"
+  chainAddress     String?  // EVM address derived from key (for on-chain verification)
+
+  // Lifecycle
+  activeFrom       DateTime @default(now())
+  revokedAt        DateTime?
+  revocationReason String?  @db.Text
+
+  isActive         Boolean  @default(true)
+
+  createdAt        DateTime @default(now())
+
+  @@index([issuerId])
+  @@index([chainAddress])
+  @@index([isActive])
+  @@map("issuer_keys")
+}
+
+model IssuerMember {
+  id        String   @id @default(cuid())
+  issuerId  String
+  issuer    Issuer   @relation(fields: [issuerId], references: [id], onDelete: Cascade)
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  role      String   // "admin" | "attestor" | "reviewer"
+  canSign   Boolean  @default(false) // Can sign attestations
+  canRevoke Boolean  @default(false) // Can revoke attestations
+  canManage Boolean  @default(false) // Can manage issuer settings
+
+  addedAt   DateTime @default(now())
+  addedBy   String?  // Admin who added this member
+  removedAt DateTime?
+
+  @@unique([issuerId, userId])
+  @@index([userId])
+  @@map("issuer_members")
+}
+
+model IssuerScope {
+  id              String            @id @default(cuid())
+  issuerId        String
+  issuer          Issuer            @relation(fields: [issuerId], references: [id], onDelete: Cascade)
+  schemaId        String
+  schema          AttestationSchema @relation(fields: [schemaId], references: [id], onDelete: Cascade)
+
+  // Scope limitations
+  maxAttestationsPerMonth Int?      // Rate limit
+  requiresDualControl     Boolean   @default(false) // Override schema default
+
+  grantedAt       DateTime @default(now())
+  grantedBy       String   // Admin userId
+  revokedAt       DateTime?
+  revocationReason String? @db.Text
+
+  @@unique([issuerId, schemaId])
+  @@map("issuer_scopes")
+}
+
+model AttestationSchema {
+  id              String   @id @default(cuid())
+  name            String   @unique // "legal_status", "construction_progress", "valuation_report", "developer_certification"
+  displayName     String
+  displayNameVi   String?  // Vietnamese name
+  description     String?  @db.Text
+  version         String   @default("1.0")
+
+  // JSON Schema definition for attestation data
+  fieldsJson      Json     // JSON Schema defining required/optional fields
+
+  // Lifecycle rules
+  defaultExpiryDays   Int?     // Default expiry in days (null = no expiry)
+  requiresDualControl Boolean  @default(false) // Requires attestor + reviewer
+  requiresEvidence    Boolean  @default(true)  // Must link evidence
+
+  // Score component mapping
+  scoreComponent      String?  // Which score component this schema affects ("legal", "developer", etc.)
+
+  isActive        Boolean  @default(true)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  // Relations
+  issuerScopes    IssuerScope[]
+  attestations    Attestation[]
+
+  @@map("attestation_schemas")
+}
+
+// ============================================================================
+// AREA & NEIGHBORHOOD DATA
+// ============================================================================
+
+model AreaPricing {
+  id              String   @id @default(cuid())
+  district        String
+  city            String
+  avgPricePerSqm  BigInt
+  avgRentPerSqm   BigInt
+  priceToRentRatio Decimal @db.Decimal(5, 2)
+  trend           String   // up, stable, down
+  yoyChange       Decimal  @db.Decimal(5, 2)
+  updatedAt       DateTime @updatedAt
+
+  @@unique([district, city])
+  @@index([city])
+}
+
+model NeighborhoodData {
+  id                      String   @id @default(cuid())
+  district                String
+  city                    String
+  // Demographics
+  population              Int?
+  avgIncome               BigInt?
+  ageDistribution         Json?
+  // Infrastructure
+  schoolsCount            Int?
+  hospitalsCount          Int?
+  mallsCount              Int?
+  metroStationsCount      Int?
+  // Scores
+  livabilityScore         Int?
+  investmentPotentialScore Int?
+  infrastructureScore     Int?
+  // Geolocation
+  centerLatitude          Decimal? @db.Decimal(10, 8)
+  centerLongitude         Decimal? @db.Decimal(11, 8)
+  boundaryGeojson         Json?
+  updatedAt               DateTime @updatedAt
+
+  @@unique([district, city])
+}
+
+// ============================================================================
+// USER ENGAGEMENT: WATCHLIST, PORTFOLIO, ALERTS
+// ============================================================================
+
+model Watchlist {
+  id               String   @id @default(cuid())
+  userId           String
+  projectId        String
+  notes            String?  @db.Text
+  priceAtAdd       BigInt?
+  targetPrice      BigInt?
+  alertOnPriceChange Boolean @default(false)
+  alertThresholdPercent Decimal? @db.Decimal(5, 2)
+  createdAt        DateTime @default(now())
+
+  user             User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  project          Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, projectId])
+  @@index([userId])
+}
+
+model Portfolio {
+  id          String   @id @default(cuid())
+  userId      String
+  name        String   @default("My Portfolio")
+  totalValue  BigInt?
+  totalGainLoss BigInt?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  holdings    PortfolioHolding[]
+
+  @@index([userId])
+}
+
+model PortfolioHolding {
+  id            String   @id @default(cuid())
+  portfolioId   String
+  projectId     String
+  purchaseDate  DateTime?
+  purchasePrice BigInt?
+  unitArea      Decimal? @db.Decimal(10, 2)
+  currentValue  BigInt?
+  notes         String?  @db.Text
+  createdAt     DateTime @default(now())
+
+  portfolio     Portfolio @relation(fields: [portfolioId], references: [id], onDelete: Cascade)
+  project       Project   @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  @@index([portfolioId])
+}
+
+enum AlertType {
+  PRICE_CHANGE
+  NEW_LAUNCH
+  TIER_CHANGE
+  CONSTRUCTION_UPDATE
+  VERIFICATION_UPDATE
+  CUSTOM
+  WATCHLIST
+}
+
+model AlertPreference {
+  id        String    @id @default(cuid())
+  userId    String
+  alertType AlertType
+  enabled   Boolean   @default(true)
+  channels  Json?     // {email: true, push: true, sms: false}
+  filters   Json?     // {districts: ['Q1'], minTier: 'A'}
+  createdAt DateTime  @default(now())
+
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, alertType])
+}
+
+model Alert {
+  id          String    @id @default(cuid())
+  userId      String
+  alertType   AlertType
+  title       String
+  message     String    @db.Text
+  projectId   String?
+  developerId String?
+  data        Json?
+  readAt      DateTime?
+  sentAt      DateTime?
+  createdAt   DateTime  @default(now())
+
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([userId, readAt])
+}
+
+// ============================================================================
+// COMMENTS & REVIEWS
+// ============================================================================
+
+enum CommentTargetType {
+  PROJECT
+  DEVELOPER
+}
+
+enum CommentStatus {
+  PENDING      // Awaiting moderation
+  APPROVED     // Visible to all
+  REJECTED     // Hidden, author notified
+  FLAGGED      // Reported by users
+}
+
+model Comment {
+  id             String            @id @default(cuid())
+  content        String            @db.Text
+  targetType     CommentTargetType
+  targetId       String            // Project slug or Developer ID
+  authorId       String
+  author         User              @relation("AuthoredComments", fields: [authorId], references: [id], onDelete: Cascade)
+  status         CommentStatus     @default(PENDING)
+  rating         Int?              @db.SmallInt  // 1-5 stars optional
+  upvoteCount    Int               @default(0)
+  downvoteCount  Int               @default(0)
+  replyCount     Int               @default(0)
+  moderatedBy    String?
+  moderatedAt    DateTime?
+  moderationNote String?
+  createdAt      DateTime          @default(now())
+  updatedAt      DateTime          @updatedAt
+
+  replies        CommentReply[]
+  votes          CommentVote[]
+  reports        CommentReport[]
+
+  @@index([targetType, targetId, status])
+  @@index([authorId])
+  @@index([createdAt])
+}
+
+model CommentReply {
+  id            String        @id @default(cuid())
+  content       String        @db.Text
+  commentId     String
+  comment       Comment       @relation(fields: [commentId], references: [id], onDelete: Cascade)
+  authorId      String
+  author        User          @relation("AuthoredReplies", fields: [authorId], references: [id], onDelete: Cascade)
+  status        CommentStatus @default(PENDING)
+  upvoteCount   Int           @default(0)
+  downvoteCount Int           @default(0)
+  moderatedBy   String?
+  moderatedAt   DateTime?
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  votes         CommentReplyVote[]
+
+  @@index([commentId])
+  @@index([authorId])
+}
+
+model CommentVote {
+  id        String   @id @default(cuid())
+  commentId String
+  comment   Comment  @relation(fields: [commentId], references: [id], onDelete: Cascade)
+  userId    String
+  user      User     @relation("CommentVotes", fields: [userId], references: [id], onDelete: Cascade)
+  value     Int      @db.SmallInt // 1 = upvote, -1 = downvote
+  createdAt DateTime @default(now())
+
+  @@unique([commentId, userId])
+  @@index([commentId])
+}
+
+model CommentReplyVote {
+  id        String       @id @default(cuid())
+  replyId   String
+  reply     CommentReply @relation(fields: [replyId], references: [id], onDelete: Cascade)
+  userId    String
+  user      User         @relation("ReplyVotes", fields: [userId], references: [id], onDelete: Cascade)
+  value     Int          @db.SmallInt
+  createdAt DateTime     @default(now())
+
+  @@unique([replyId, userId])
+  @@index([replyId])
+}
+
+model CommentReport {
+  id        String   @id @default(cuid())
+  commentId String
+  comment   Comment  @relation(fields: [commentId], references: [id], onDelete: Cascade)
+  userId    String
+  user      User     @relation("CommentReports", fields: [userId], references: [id], onDelete: Cascade)
+  reason    String   // SPAM, HARASSMENT, MISINFORMATION, INAPPROPRIATE, OTHER
+  details   String?  @db.Text
+  resolved  Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  @@unique([commentId, userId])
+  @@index([resolved])
+}
+
+// ============================================================================
+// TOOLS & CALCULATORS
+// ============================================================================
+
+model SavedCalculation {
+  id             String   @id @default(cuid())
+  userId         String
+  calculatorType String   // rent_vs_buy, rental_yield, investment_sim, mortgage
+  name           String
+  inputs         Json
+  outputs        Json
+  notes          String?  @db.Text
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model PropertyValuation {
+  id                String   @id @default(cuid())
+  userId            String?
+  projectId         String?
+  // Input
+  unitArea          Decimal? @db.Decimal(10, 2)
+  floorNumber       Int?
+  bedrooms          Int?
+  bathrooms         Int?
+  viewType          String?
+  condition         String?
+  additionalFeatures Json?
+  // Output
+  estimatedValueLow BigInt?
+  estimatedValueMid BigInt?
+  estimatedValueHigh BigInt?
+  confidenceScore   Decimal? @db.Decimal(3, 2)
+  comparableSales   Json?
+  modelVersion      String?
+  createdAt         DateTime @default(now())
+
+  project           Project? @relation(fields: [projectId], references: [id])
+
+  @@index([userId])
+  @@index([projectId])
+}
+
+// ============================================================================
+// ANALYTICS & INTELLIGENCE
+// ============================================================================
+
+model BuyerIntentSignal {
+  id               String   @id @default(cuid())
+  anonymousUserHash String?
+  projectId        String?
+  developerId      String?
+  signalType       String   // view, compare, save, calculator_use, contact_click
+  signalStrength   Int?     // 1-10
+  metadata         Json?
+  createdAt        DateTime @default(now())
+
+  project          Project? @relation(fields: [projectId], references: [id])
+
+  @@index([projectId])
+  @@index([createdAt])
+}
+
+model PricePrediction {
+  id              String   @id @default(cuid())
+  projectId       String?
+  district        String?
+  city            String?
+  predictionDate  DateTime
+  price1M         BigInt?
+  price3M         BigInt?
+  price6M         BigInt?
+  price12M        BigInt?
+  confidenceLevel Decimal? @db.Decimal(3, 2)
+  modelVersion    String?
+  factors         Json?
+  createdAt       DateTime @default(now())
+
+  project         Project? @relation(fields: [projectId], references: [id])
+
+  @@index([projectId])
+  @@index([district, city])
+}
+
+model HeatmapData {
+  id              String   @id @default(cuid())
+  cellId          String
+  latitude        Decimal  @db.Decimal(10, 8)
+  longitude       Decimal  @db.Decimal(11, 8)
+  metricType      String   // price, growth, demand, supply
+  metricValue     Decimal  @db.Decimal(15, 2)
+  normalizedValue Decimal  @db.Decimal(3, 2)
+  period          String
+  updatedAt       DateTime @updatedAt
+
+  @@unique([cellId, metricType, period])
+}
+
+model InfrastructureProject {
+  id                 String   @id @default(cuid())
+  name               String
+  projectType        String   // metro, highway, airport, bridge
+  status             String   // planned, under_construction, completed
+  completionDate     DateTime?
+  impactRadiusKm     Decimal? @db.Decimal(5, 2)
+  estimatedPriceImpact Decimal? @db.Decimal(5, 2)
+  latitude           Decimal? @db.Decimal(10, 8)
+  longitude          Decimal? @db.Decimal(11, 8)
+  routeGeojson       Json?
+  description        String?  @db.Text
+  createdAt          DateTime @default(now())
+}
+
+model ConstructionProgress {
+  id              String   @id @default(cuid())
+  projectId       String
+  updateDate      DateTime
+  overallProgress Decimal  @db.Decimal(5, 2)
+  phase           String?
+  description     String?  @db.Text
+  images          Json?    // Array of image URLs
+  videoUrl        String?
+  verified        Boolean  @default(false)
+  source          String?
+  createdAt       DateTime @default(now())
+
+  project         Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  @@index([projectId])
+}
+
+// ============================================================================
+// VERIFICATION & ATTESTATION
+// ============================================================================
+
+enum VerificationRequestStatus {
+  PENDING
+  IN_PROGRESS
+  APPROVED
+  REJECTED
+  EXPIRED
+}
+
+model VerificationRequest {
+  id               String                    @id @default(cuid())
+  projectId        String?
+  developerId      String?
+  requesterId      String
+  status           VerificationRequestStatus @default(PENDING)
+  requestType      String                    // standard, expedited, comprehensive
+  pricePaid        BigInt?
+  stripePaymentId  String?
+  notes            String?                   @db.Text
+  reviewerNotes    String?                   @db.Text
+  createdAt        DateTime                  @default(now())
+  completedAt      DateTime?
+
+  project          Project?     @relation(fields: [projectId], references: [id])
+  requester        User         @relation(fields: [requesterId], references: [id])
+  attestations     Attestation[]
+
+  @@index([status])
+}
+
+model Attestation {
+  id                    String               @id @default(cuid())
+
+  // Subject (what is being attested)
+  subjectType           String               @default("project") // "project" | "developer" | "document"
+  subjectId             String?              // projectId or developerId (denormalized for queries)
+
+  // Issuer (who is attesting) - REQUIRED for new attestations
+  issuerId              String?
+  issuer                Issuer?              @relation(fields: [issuerId], references: [id])
+
+  // Schema (what type of attestation)
+  schemaId              String?
+  schema                AttestationSchema?   @relation(fields: [schemaId], references: [id])
+
+  // Attestation content
+  dataJson              Json?                // Attestation data conforming to schema
+  dataHash              String?              // SHA-256 of dataJson for integrity
+
+  // Evidence references (soft links)
+  evidenceRefs          String[]             // Array of evidence IDs
+  evidenceHash          String?              // SHA-256 of evidence set
+
+  // Legacy fields (for backwards compatibility)
+  projectId             String?
+  verificationRequestId String?
+  attestationType       String               @default("project_verified") // project_verified, developer_certified
+
+  // Snapshot at attestation time
+  tierAtAttestation     String?
+  scoreAtAttestation    Int?
+  metadataUri           String?
+
+  // Lifecycle
+  issuedAt              DateTime             @default(now())
+  expiresAt             DateTime?
+
+  // Revocation
+  revoked               Boolean              @default(false)
+  revokedAt             DateTime?
+  revokedBy             String?              // IssuerMember or admin userId
+  revocationReason      String?              @db.Text
+
+  // Dual control (if required by schema)
+  attestorId            String?              // IssuerMember who signed
+  reviewerId            String?              // IssuerMember who approved
+  reviewedAt            DateTime?
+
+  // Signature (cryptographic proof)
+  signature             String?              @db.Text // Base64 or hex encoded signature
+  signatureType         String?              // "eip712" | "eip191" | "pkcs" | "none"
+
+  // On-chain anchor (optional, for non-repudiation)
+  chainId               Int?                 // 5003 for Mantle Sepolia, 5000 for mainnet
+  txHash                String?              // Transaction hash
+  contractAddress       String?              // RealTeraAttestation contract address
+  blockNumber           Int?
+  anchoredAt            DateTime?
+
+  // Token derivation (NFT is derived from attestation, not primary)
+  tokenId               BigInt?              // Token ID in the contract
+  tokenType             String?              // BADGE, PROPERTY_NFT, SBT
+  derivedTokenId        BigInt?
+  derivedTokenType      String?
+
+  createdAt             DateTime             @default(now())
+  updatedAt             DateTime             @updatedAt
+
+  // Relations
+  project               Project?             @relation(fields: [projectId], references: [id])
+  verificationRequest   VerificationRequest? @relation(fields: [verificationRequestId], references: [id])
+  scoreRunLinks         ScoreRunAttestationLink[]
+
+  @@index([subjectType, subjectId])
+  @@index([issuerId])
+  @@index([schemaId])
+  @@index([projectId])
+  @@index([txHash])
+  @@index([tokenId])
+  @@index([issuedAt])
+}
+
+// ============================================================================
+// SUBSCRIPTIONS & PAYMENTS
+// ============================================================================
+
+model SubscriptionPlan {
+  id              String   @id @default(cuid())
+  name            String
+  tier            UserTier
+  stripePriceId   String?
+  priceMonthly    BigInt?
+  priceYearly     BigInt?
+  features        Json?
+  apiCallsLimit   Int?
+  isActive        Boolean  @default(true)
+  createdAt       DateTime @default(now())
+}
+
+model PlatformLicense {
+  id                   String       @id @default(cuid())
+  organizationId       String
+  licenseType          String       // white_label, api_enterprise, data_feed
+  stripeSubscriptionId String?
+  monthlyFee           BigInt?
+  features             Json?
+  startsAt             DateTime     @default(now())
+  expiresAt            DateTime?
+  autoRenew            Boolean      @default(true)
+  isActive             Boolean      @default(true)
+
+  organization         Organization @relation(fields: [organizationId], references: [id])
+}
+
+model WidgetConfiguration {
+  id               String        @id @default(cuid())
+  userId           String?
+  organizationId   String?
+  widgetType       String        // project_card, tier_badge, score_widget, calculator
+  apiKey           String        @unique
+  allowedDomains   String[]
+  customization    Json?
+  impressionsCount BigInt        @default(0)
+  clicksCount      BigInt        @default(0)
+  isActive         Boolean       @default(true)
+  createdAt        DateTime      @default(now())
+
+  organization     Organization? @relation(fields: [organizationId], references: [id])
+}
+
+// ============================================================================
+// REPORTS
+// ============================================================================
+
+model DueDiligenceReport {
+  id              String   @id @default(cuid())
+  projectId       String?
+  developerId     String?
+  reportType      String   // standard, comprehensive, custom
+  generatedById   String?
+  stripePaymentId String?
+  pricePaid       BigInt?
+  reportData      Json?
+  pdfUrl          String?
+  createdAt       DateTime @default(now())
+  expiresAt       DateTime?
+}
+
+model MarketReport {
+  id            String   @id @default(cuid())
+  reportPeriod  String   // Q1-2025, Q2-2025
+  reportType    String   // quarterly, annual, special
+  title         String
+  summary       String?  @db.Text
+  reportData    Json?
+  pdfUrl        String?
+  price         BigInt?
+  isFree        Boolean  @default(false)
+  requiredTier  UserTier?
+  publishedAt   DateTime?
+  createdAt     DateTime @default(now())
+
+  purchases     ReportPurchase[]
+}
+
+model ReportPurchase {
+  id              String       @id @default(cuid())
+  userId          String
+  reportId        String
+  stripePaymentId String?
+  amountPaid      BigInt?
+  purchasedAt     DateTime     @default(now())
+
+  user            User         @relation(fields: [userId], references: [id])
+  report          MarketReport @relation(fields: [reportId], references: [id])
+}
+
+// ============================================================================
+// B2B: LEADS, API, SPONSORSHIP
+// ============================================================================
+
+// NOTE: BuyerLead and LeadPurchase moved to commercial schema
+// See COMMERCIAL SCHEMA section below
+
+model ApiKey {
+  id              String        @id @default(cuid())
+  userId          String?
+  organizationId  String?
+  keyHash         String        @unique
+  keyPrefix       String
+  name            String?
+  permissions     Json?
+  rateLimitPerMinute Int        @default(60)
+  rateLimitPerDay Int           @default(10000)
+  isActive        Boolean       @default(true)
+  lastUsedAt      DateTime?
+  expiresAt       DateTime?
+  createdAt       DateTime      @default(now())
+
+  user            User?         @relation(fields: [userId], references: [id])
+  organization    Organization? @relation(fields: [organizationId], references: [id])
+  usageLogs       ApiUsageLog[]
+}
+
+model ApiUsageLog {
+  id           String   @id @default(cuid())
+  apiKeyId     String
+  endpoint     String
+  method       String
+  statusCode   Int?
+  responseTimeMs Int?
+  requestIp    String?
+  createdAt    DateTime @default(now())
+
+  apiKey       ApiKey   @relation(fields: [apiKeyId], references: [id])
+
+  @@index([apiKeyId])
+  @@index([createdAt])
+}
+
+// ============================================================================
+// SPONSORED AUCTION
+// ============================================================================
+
+// NOTE: All sponsored/auction tables moved to commercial schema
+// See COMMERCIAL SCHEMA section below
+
+enum AuctionStatus {
+  PENDING
+  ACTIVE
+  ENDED
+  FINALIZED
+  CANCELLED
+}
+
+// ============================================================================
+// CONSULTING & EVENTS
+// ============================================================================
+
+// NOTE: ConsultingEngagement and Award* tables moved to commercial schema
+// See COMMERCIAL SCHEMA section below
+
+// ============================================================================
+// AI CHATBOT
+// ============================================================================
+
+model ChatConversation {
+  id        String        @id @default(cuid())
+  userId    String?
+  sessionId String?
+  title     String?
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+
+  user      User?         @relation(fields: [userId], references: [id])
+  messages  ChatMessage[]
+
+  @@index([userId])
+}
+
+model ChatMessage {
+  id             String           @id @default(cuid())
+  conversationId String
+  role           String           // user, assistant, system
+  content        String           @db.Text
+  tokensUsed     Int?
+  modelUsed      String?
+  metadata       Json?            // Referenced projects, citations
+  createdAt      DateTime         @default(now())
+
+  conversation   ChatConversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+
+  @@index([conversationId])
+}
+
+model AiUsage {
+  id            String   @id @default(cuid())
+  userId        String
+  usageDate     DateTime @db.Date
+  messagesCount Int      @default(0)
+  tokensUsed    Int      @default(0)
+
+  @@unique([userId, usageDate])
+}
+
+// ============================================================================
+// NFT & BLOCKCHAIN (Phase 4)
+// ============================================================================
+
+model NftProjectProfile {
+  id                String   @id @default(cuid())
+  projectId         String   @unique
+  contractAddress   String?  // RealTeraAttestation contract
+  tokenId           BigInt?  // Token ID for this project
+  chainId           Int?     // 5003 for Mantle Sepolia
+  metadataUri       String?
+  tier              String?  // basic, premium, exclusive
+  mintedAt          DateTime?
+  features          Json?
+  isActive          Boolean  @default(true)
+  createdAt         DateTime @default(now())
+
+  project           Project  @relation(fields: [projectId], references: [id])
+}
+
+model NftHolding {
+  id            String   @id @default(cuid())
+  nftProfileId  String
+  walletAddress String   // EVM wallet address
+  tokenId       BigInt   // Token ID in the contract
+  txHash        String   @unique
+  acquiredAt    DateTime @default(now())
+}
+
+model VerificationSbtRecord {
+  id                  String   @id @default(cuid())
+  developerId         String   // Developer receiving the SBT
+  walletAddress       String   // EVM wallet address
+  contractAddress     String?  // RealTeraAttestation contract
+  tokenId             BigInt?  @unique
+  txHash              String?
+  chainId             Int?     // 5003 for Mantle Sepolia
+  verificationHistory Json?
+  currentTier         String?
+  currentScore        Int?
+  mintedAt            DateTime @default(now())
+  lastUpdatedAt       DateTime @updatedAt
+
+  @@index([walletAddress])
+  @@index([developerId])
+}
+
+// ============================================================================
+// COMMERCIAL SCHEMA (Isolated from Rating Tables)
+// ============================================================================
+// GOVERNANCE HARDENING: These tables are isolated in the "commercial" schema
+// to prevent any influence on rating/scoring calculations.
+//
+// KEY DESIGN DECISIONS:
+// 1. No foreign keys to public schema tables (Project, Developer)
+// 2. All references use soft string IDs (projectId, developerId as String)
+// 3. Application layer joins only - no database-level coupling
+// 4. rating_compute DB role has NO access to this schema
+// ============================================================================
+
+model BuyerLead {
+  id                 String   @id @default(cuid())
+  userId             String?  // Soft reference to User (no FK)
+  fullName           String?
+  email              String?
+  phone              String?
+  interestedProjects String[] // Soft reference - array of project IDs
+  budgetMin          BigInt?
+  budgetMax          BigInt?
+  preferredDistricts String[]
+  timeline           String?  // immediate, 3_months, 6_months, 1_year
+  notes              String?  @db.Text
+  status             String   @default("new")
+  score              Int?     // Lead quality score
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  purchases          LeadPurchase[]
+
+  // @@schema("commercial") -- disabled for demo
+  @@map("buyer_leads")
+}
+
+model LeadPurchase {
+  id              String    @id @default(cuid())
+  leadId          String
+  developerId     String    // Soft reference to Developer (no FK)
+  stripePaymentId String?
+  pricePaid       BigInt?
+  purchasedAt     DateTime  @default(now())
+
+  lead            BuyerLead @relation(fields: [leadId], references: [id], onDelete: Cascade)
+
+  @@index([developerId])
+  // @@schema("commercial") -- disabled for demo
+  @@map("lead_purchases")
+}
+
+model SponsoredSlot {
+  id           String               @id @default(cuid())
+  slotType     String               // homepage_featured, search_top, category_banner
+  slotPosition Int
+  maxProjects  Int                  @default(1)
+  description  String?              @db.Text
+  isActive     Boolean              @default(true)
+  createdAt    DateTime             @default(now())
+
+  auctions     SponsoredAuction[]
+  placements   SponsoredPlacement[]
+
+  // @@schema("commercial") -- disabled for demo
+  @@map("sponsored_slots")
+}
+
+model SponsoredAuction {
+  id               String        @id @default(cuid())
+  slotId           String
+  slotType         String        // Denormalized for easier querying
+  slotName         String        // Display name
+  description      String?       @db.Text
+  startTime        DateTime
+  endTime          DateTime
+  minBid           BigInt
+  currentBid       BigInt?
+  currentBidderId  String?       // Soft reference to Developer (no FK)
+  winningProjectId String?       // Soft reference to Project (no FK)
+  winningBidId     String?
+  status           AuctionStatus @default(PENDING)
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+
+  slot             SponsoredSlot  @relation(fields: [slotId], references: [id], onDelete: Cascade)
+  bids             SponsoredBid[]
+
+  @@index([status])
+  @@index([slotType])
+  @@index([winningProjectId])
+  // @@schema("commercial") -- disabled for demo
+  @@map("sponsored_auctions")
+}
+
+model SponsoredBid {
+  id              String           @id @default(cuid())
+  auctionId       String
+  developerId     String?          // Soft reference to Developer (no FK)
+  projectId       String           // Soft reference to Project (no FK)
+  bidAmount       BigInt
+  status          String           @default("PENDING") // PENDING, CONFIRMED, EXPIRED, FAILED
+  isWinning       Boolean          @default(false)
+  stripeSessionId String?
+  stripePaymentId String?
+  createdAt       DateTime         @default(now())
+
+  auction         SponsoredAuction @relation(fields: [auctionId], references: [id], onDelete: Cascade)
+
+  @@index([auctionId])
+  @@index([stripeSessionId])
+  @@index([projectId])
+  @@index([developerId])
+  // @@schema("commercial") -- disabled for demo
+  @@map("sponsored_bids")
+}
+
+model SponsoredPlacement {
+  id          String        @id @default(cuid())
+  slotId      String
+  projectId   String        // Soft reference to Project (no FK)
+  bidId       String?
+  startsAt    DateTime
+  endsAt      DateTime
+  impressions BigInt        @default(0)
+  clicks      BigInt        @default(0)
+  isActive    Boolean       @default(true)
+  createdAt   DateTime      @default(now())
+
+  slot        SponsoredSlot @relation(fields: [slotId], references: [id], onDelete: Cascade)
+
+  @@index([isActive])
+  @@index([projectId])
+  // @@schema("commercial") -- disabled for demo
+  @@map("sponsored_placements")
+}
+
+model ConsultingEngagement {
+  id              String    @id @default(cuid())
+  developerId     String    // Soft reference to Developer (no FK)
+  engagementType  String    // score_improvement, marketing, verification_prep
+  status          String    @default("pending")
+  contractValue   BigInt?
+  stripePaymentId String?
+  startDate       DateTime?
+  endDate         DateTime?
+  deliverables    Json?
+  notes           String?   @db.Text
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  @@index([developerId])
+  @@index([status])
+  // @@schema("commercial") -- disabled for demo
+  @@map("consulting_engagements")
+}
+
+model AwardCategory {
+  id               String            @id @default(cuid())
+  year             Int
+  name             String
+  description      String?           @db.Text
+  criteria         Json?
+  prizeDescription String?           @db.Text
+  nominationFee    BigInt?
+  isActive         Boolean           @default(true)
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+
+  nominations      AwardNomination[]
+  winners          AwardWinner[]
+
+  @@unique([year, name])
+  // @@schema("commercial") -- disabled for demo
+  @@map("award_categories")
+}
+
+model AwardNomination {
+  id              String        @id @default(cuid())
+  categoryId      String
+  developerId     String?       // Soft reference to Developer (no FK)
+  projectId       String?       // Soft reference to Project (no FK)
+  nominatedById   String?       // Soft reference to User (no FK)
+  stripePaymentId String?
+  status          String        @default("pending") // pending, approved, rejected
+  score           Int?
+  notes           String?       @db.Text
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  category        AwardCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  winners         AwardWinner[]
+
+  @@index([developerId])
+  @@index([projectId])
+  @@index([status])
+  // @@schema("commercial") -- disabled for demo
+  @@map("award_nominations")
+}
+
+model AwardWinner {
+  id           String          @id @default(cuid())
+  categoryId   String
+  nominationId String
+  rank         Int             // 1 = Gold, 2 = Silver, 3 = Bronze
+  announcedAt  DateTime?
+  badgeIssued  Boolean         @default(false)
+  createdAt    DateTime        @default(now())
+
+  category     AwardCategory   @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  nomination   AwardNomination @relation(fields: [nominationId], references: [id], onDelete: Cascade)
+
+  // @@schema("commercial") -- disabled for demo
+  @@map("award_winners")
+}
