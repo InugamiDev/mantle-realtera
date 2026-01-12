@@ -1,0 +1,1755 @@
+{
+  "metadata": {
+    "title": "RealTera - Xếp hạng Bất động sản Minh bạch",
+    "description": "Xếp hạng trước. Minh bạch luôn hiển thị. Không quảng cáo trá hình."
+  },
+  "developers": {
+    "title": "Xếp hạng Chủ đầu tư",
+    "subtitle": "Đánh giá và xếp hạng các chủ đầu tư bất động sản dựa trên uy tín, chất lượng dự án và lịch sử hoạt động.",
+    "stats": {
+      "developers": "Chủ đầu tư",
+      "highTier": "Hạng cao (SSS-A)",
+      "totalProjects": "Tổng dự án",
+      "listed": "Niêm yết"
+    },
+    "developersCount": "{count} chủ đầu tư",
+    "methodology": {
+      "title": "Phương pháp xếp hạng",
+      "description": "Chủ đầu tư được xếp hạng dựa trên nhiều tiêu chí: số lượng dự án đã hoàn thành, chất lượng bàn giao, uy tín thương hiệu, tình hình tài chính, và phản hồi từ khách hàng. Xếp hạng được cập nhật định kỳ khi có thông tin mới.",
+      "link": "Xem chi tiết phương pháp →"
+    }
+  },
+  "developerDetail": {
+    "backToList": "Quay lại Chủ đầu tư",
+    "overview": "Tổng quan",
+    "projects": "Dự án",
+    "ratedProjects": "{count} dự án đã đánh giá",
+    "allProjects": "Tất cả Dự án",
+    "noProjects": "Chưa có dự án được đánh giá",
+    "founded": "Thành lập",
+    "headquarters": "Trụ sở",
+    "stockCode": "Mã CK",
+    "website": "Website",
+    "totalProjects": "Tổng dự án",
+    "completedProjects": "Dự án hoàn thành",
+    "ongoingProjects": "Dự án đang triển khai"
+  },
+  "projectDetail": {
+    "backToRanking": "Quay lại Bảng Xếp Hạng",
+    "overview": "Tổng quan",
+    "location": "Vị trí",
+    "developer": "Chủ đầu tư",
+    "priceRange": "Khoảng giá",
+    "units": "Căn hộ",
+    "status": "Trạng thái",
+    "completionDate": "Ngày hoàn thành",
+    "lastUpdated": "Cập nhật lần cuối",
+    "sources": "nguồn",
+    "viewDetails": "Xem chi tiết",
+    "scoreBreakdown": "Phân tích điểm số",
+    "investmentMetrics": "Chỉ số đầu tư",
+    "estimatedRoi": "ROI ước tính",
+    "rentalYield": "Tỷ suất cho thuê",
+    "priceGrowth": "Tăng giá",
+    "nearbyAmenities": "Tiện ích lân cận",
+    "similarProjects": "Dự án tương tự",
+    "priceHistory": "Lịch sử giá",
+    "noData": "Không có dữ liệu"
+  },
+  "compare": {
+    "title": "So sánh dự án",
+    "subtitle": "So sánh 2 dự án bất động sản theo các tiêu chí quan trọng",
+    "backToRanking": "Quay lại Bảng Xếp Hạng",
+    "project1": "Dự án 1",
+    "project2": "Dự án 2",
+    "selectFirst": "Chọn dự án đầu tiên...",
+    "selectSecond": "Chọn dự án thứ hai...",
+    "searchPlaceholder": "Tìm theo tên, quận, chủ đầu tư...",
+    "noProjectFound": "Không tìm thấy dự án nào",
+    "sameProjectWarning": "Bạn đã chọn cùng một dự án. Vui lòng chọn dự án khác để so sánh.",
+    "selectToCompare": "Chọn 2 dự án để so sánh",
+    "selectToCompareHint": "Sử dụng thanh tìm kiếm ở trên để tìm và chọn các dự án bạn muốn so sánh",
+    "loading": "Đang tải dữ liệu...",
+    "points": "điểm",
+    "comparison": "So sánh",
+    "criteria": "Tiêu chí",
+    "winner": "Thắng",
+    "tie": "Hòa"
+  },
+  "saved": {
+    "badge": "Dự án đã lưu",
+    "title": "Danh sách đã lưu",
+    "subtitle": "Bạn đã lưu {count} dự án để xem lại sau",
+    "subtitleEmpty": "Lưu các dự án yêu thích để so sánh và theo dõi",
+    "backToRanking": "Quay lại Bảng Xếp Hạng",
+    "noSavedProjects": "Chưa có dự án nào được lưu",
+    "noSavedProjectsHint": "Nhấn vào biểu tượng bookmark trên card dự án để lưu",
+    "exploreProjects": "Khám phá dự án",
+    "projectsSaved": "{count} dự án đã lưu",
+    "clearAll": "Xóa tất cả",
+    "enableAlert": "Bật thông báo",
+    "disableAlert": "Tắt thông báo",
+    "loading": "Đang tải dữ liệu..."
+  },
+  "account": {
+    "title": "Tài khoản của bạn",
+    "subtitle": "Quản lý thông tin cá nhân và cài đặt tài khoản",
+    "backToHome": "Quay lại Trang chủ",
+    "notLoggedIn": "Chưa đăng nhập",
+    "pleaseLogin": "Vui lòng đăng nhập để xem và chỉnh sửa thông tin tài khoản.",
+    "signIn": "Đăng nhập",
+    "signOut": "Đăng xuất",
+    "joinDate": "Ngày tham gia",
+    "accountType": "Loại tài khoản",
+    "free": "Miễn phí",
+    "personalInfo": {
+      "title": "Thông tin cá nhân",
+      "displayName": "Tên hiển thị",
+      "displayNamePlaceholder": "Nhập tên của bạn",
+      "email": "Email",
+      "emailCannotChange": "Email không thể thay đổi",
+      "phone": "Số điện thoại",
+      "phonePlaceholder": "0912 345 678",
+      "company": "Công ty / Tổ chức",
+      "companyPlaceholder": "Tên công ty (nếu có)"
+    },
+    "whoAreYou": {
+      "title": "Bạn là ai?",
+      "subtitle": "Giúp chúng tôi cá nhân hóa trải nghiệm cho bạn",
+      "investor": "Nhà đầu tư",
+      "investorDesc": "Đầu tư bất động sản",
+      "developer": "Chủ đầu tư",
+      "developerDesc": "Phát triển dự án",
+      "agent": "Môi giới",
+      "agentDesc": "Tư vấn & môi giới",
+      "buyer": "Người mua",
+      "buyerDesc": "Tìm kiếm nhà ở",
+      "other": "Khác",
+      "otherDesc": "Mục đích khác"
+    },
+    "notifications": {
+      "title": "Thông báo",
+      "email": "Thông báo qua email",
+      "emailDesc": "Nhận thông báo quan trọng qua email",
+      "priceAlerts": "Cảnh báo giá",
+      "priceAlertsDesc": "Thông báo khi giá dự án bạn theo dõi thay đổi",
+      "newProjects": "Dự án mới",
+      "newProjectsDesc": "Thông báo khi có dự án mới phù hợp với bạn",
+      "weeklyDigest": "Bản tin tuần",
+      "weeklyDigestDesc": "Tổng hợp tin tức thị trường hàng tuần"
+    },
+    "security": {
+      "title": "Bảo mật",
+      "changePassword": "Đổi mật khẩu",
+      "changePasswordDesc": "Cập nhật mật khẩu đăng nhập",
+      "twoFactor": "Xác thực hai yếu tố",
+      "twoFactorDesc": "Bảo vệ tài khoản với 2FA"
+    },
+    "emailVerified": "Email đã xác minh",
+    "saveChanges": "Lưu thay đổi",
+    "saving": "Đang lưu...",
+    "saved": "Đã lưu!"
+  },
+  "portfolio": {
+    "title": "Portfolio của tôi",
+    "subtitle": "Theo dõi bất động sản và tính ROI tự động",
+    "loginTitle": "Portfolio Tracker",
+    "loginSubtitle": "Theo dõi bất động sản bạn sở hữu và tính ROI tự động",
+    "loginButton": "Đăng nhập để bắt đầu",
+    "totalValue": "Tổng giá trị",
+    "totalCost": "Tổng chi phí",
+    "gainLoss": "Lời/Lỗ",
+    "roi": "ROI",
+    "holdings": "Tài sản",
+    "holdingsList": "Danh sách BĐS",
+    "updateProjectInfo": "Cập nhật thông tin dự án",
+    "noHoldings": "Chưa có bất động sản nào trong portfolio.",
+    "addFirstHolding": "Thêm BĐS đầu tiên",
+    "addProperty": "Thêm BĐS",
+    "purchasePrice": "Giá mua",
+    "currentValue": "Giá hiện tại",
+    "deleteConfirm": "Bạn có chắc muốn xóa bất động sản này khỏi portfolio?",
+    "tip": "Mẹo:",
+    "tipText": "Nhập project slug từ URL của dự án (VD: từ /project/{slug}). Giá hiện tại được tính dựa trên dữ liệu thị trường của RealTera.",
+    "form": {
+      "title": "Thêm BĐS mới",
+      "editTitle": "Cập nhật BĐS",
+      "projectSlug": "Project Slug",
+      "projectSlugPlaceholder": "vinhomes-grand-park",
+      "projectSlugHint": "Lấy từ URL: /project/[slug]",
+      "purchaseDate": "Ngày mua",
+      "area": "Diện tích (m²)",
+      "purchasePrice": "Giá mua (VND)",
+      "currentValue": "Giá hiện tại (VND)",
+      "notes": "Ghi chú",
+      "notesPlaceholder": "Ghi chú về căn hộ...",
+      "cancel": "Hủy",
+      "saving": "Đang lưu...",
+      "save": "Lưu",
+      "add": "Thêm",
+      "update": "Cập nhật"
+    }
+  },
+  "alerts": {
+    "title": "Cảnh báo & Thông báo",
+    "badge": "Thông báo",
+    "subtitle": "Theo dõi dự án mới, biến động giá, và thay đổi xếp hạng",
+    "backToRanking": "Quay lại Bảng Xếp Hạng",
+    "loginTitle": "Đăng nhập để xem thông báo",
+    "loginSubtitle": "Nhận cảnh báo về dự án mới, biến động giá, và thay đổi xếp hạng",
+    "signIn": "Đăng nhập",
+    "filter": {
+      "all": "Tất cả",
+      "newLaunch": "Ra mắt mới",
+      "priceChange": "Biến động giá",
+      "tierChange": "Thay đổi tier",
+      "verification": "Xác minh",
+      "developerNews": "Tin CĐT"
+    },
+    "markAllRead": "Đánh dấu tất cả đã đọc",
+    "loading": "Đang tải...",
+    "noAlerts": "Chưa có thông báo nào",
+    "markAsRead": "Đánh dấu đã đọc",
+    "viewProject": "Xem dự án",
+    "settings": {
+      "title": "Cài đặt thông báo",
+      "description": "Thông báo sẽ được gửi qua email và hiển thị trong ứng dụng"
+    },
+    "timeAgo": {
+      "minutesAgo": "{count} phút trước",
+      "hoursAgo": "{count} giờ trước",
+      "daysAgo": "{count} ngày trước"
+    },
+    "createAlert": "Tạo cảnh báo",
+    "activeAlerts": "Cảnh báo đang hoạt động",
+    "noAlertsHint": "Tạo cảnh báo để theo dõi biến động giá",
+    "priceAbove": "Giá trên",
+    "priceBelow": "Giá dưới",
+    "anyChange": "Bất kỳ thay đổi",
+    "deleteAlert": "Xóa cảnh báo",
+    "alertCreated": "Đã tạo cảnh báo",
+    "alertDeleted": "Đã xóa cảnh báo"
+  },
+  "verification": {
+    "pageTitle": "Quy trình xác minh",
+    "pageSubtitle": "Tìm hiểu cách RealTera xác minh và đảm bảo chất lượng thông tin dự án",
+    "backToRanking": "Quay lại Bảng Xếp Hạng",
+    "fiveSteps": {
+      "title": "Quy trình 5 bước",
+      "step1": {
+        "title": "Thu thập dữ liệu",
+        "description": "Tổng hợp thông tin từ các nguồn chính thức và uy tín"
+      },
+      "step2": {
+        "title": "Xác minh pháp lý",
+        "description": "Kiểm tra giấy phép xây dựng, quy hoạch 1/500, chủ quyền đất"
+      },
+      "step3": {
+        "title": "Đánh giá chủ đầu tư",
+        "description": "Phân tích tài chính, lịch sử dự án, uy tín thương hiệu"
+      },
+      "step4": {
+        "title": "Khảo sát thực địa",
+        "description": "Kiểm tra tiến độ xây dựng, chất lượng công trình"
+      },
+      "step5": {
+        "title": "Tổng hợp & Xếp hạng",
+        "description": "Chấm điểm và phân loại xếp hạng dựa trên tiêu chí đánh giá"
+      }
+    },
+    "statusMeaning": {
+      "title": "Ý nghĩa trạng thái xác minh",
+      "verified": {
+        "label": "Đã xác minh",
+        "description": "Dự án đã được RealTera xác minh đầy đủ thông tin từ các nguồn đáng tin cậy. Xếp hạng và điểm số phản ánh chính xác tình trạng hiện tại."
+      },
+      "pending": {
+        "label": "Đang duyệt",
+        "description": "Dự án đang trong quá trình xác minh. Một số thông tin có thể chưa được kiểm chứng hoàn toàn. Xếp hạng có thể thay đổi sau khi hoàn tất xác minh."
+      },
+      "notVerified": {
+        "label": "Chưa xác minh",
+        "description": "Dự án chưa được RealTera xác minh. Thông tin hiển thị dựa trên dữ liệu công khai, cần thận trọng khi tham khảo."
+      },
+      "notRated": {
+        "label": "Chưa chấm",
+        "description": "Dự án chưa có đủ thông tin để đánh giá. Có thể là dự án mới hoặc có dấu hiệu bất thường cần điều tra thêm."
+      }
+    },
+    "checklist": {
+      "title": "Checklist xác minh",
+      "intro": "Mỗi dự án \"Đã xác minh\" phải đáp ứng các tiêu chí sau:",
+      "items": [
+        "Giấy phép xây dựng hợp lệ và còn hiệu lực",
+        "Quy hoạch 1/500 đã được phê duyệt",
+        "Chủ đầu tư có năng lực tài chính rõ ràng",
+        "Tiến độ xây dựng phù hợp với cam kết",
+        "Không có tranh chấp pháp lý nghiêm trọng",
+        "Thông tin giá bán và chính sách rõ ràng"
+      ]
+    },
+    "appeal": {
+      "title": "Cập nhật & Khiếu nại",
+      "description": "Nếu bạn là chủ đầu tư hoặc người có liên quan và muốn cập nhật thông tin hoặc khiếu nại đánh giá, vui lòng sử dụng form bên dưới. Chúng tôi cam kết xem xét và phản hồi trong vòng 3-5 ngày làm việc.",
+      "submitButton": "Gửi thông tin cập nhật",
+      "email": "Email"
+    },
+    "title": "Xác minh Dự án",
+    "subtitle": "Yêu cầu xác minh chính thức cho dự án của bạn",
+    "requestVerification": "Yêu cầu Xác minh",
+    "verificationStatus": "Trạng thái Xác minh",
+    "verified": "Đã xác minh",
+    "pending": "Đang duyệt",
+    "notVerified": "Chưa xác minh",
+    "rejected": "Bị từ chối",
+    "benefits": {
+      "title": "Lợi ích Xác minh",
+      "trust": "Tăng độ tin cậy với người mua",
+      "visibility": "Ưu tiên hiển thị trong xếp hạng",
+      "badge": "Huy hiệu xác minh chính thức",
+      "support": "Hỗ trợ riêng"
+    },
+    "requirements": {
+      "title": "Yêu cầu",
+      "legalDocs": "Hồ sơ pháp lý",
+      "projectInfo": "Thông tin dự án",
+      "developerInfo": "Thông tin chủ đầu tư",
+      "photos": "Hình ảnh dự án"
+    }
+  },
+  "sponsorship": {
+    "title": "Vị trí Sponsor",
+    "subtitle": "Tăng khả năng hiển thị cho dự án của bạn",
+    "benefits": "Lợi ích",
+    "pricing": "Bảng giá",
+    "contact": "Liên hệ",
+    "features": {
+      "priority": "Ưu tiên hiển thị trong xếp hạng",
+      "badge": "Huy hiệu Sponsor",
+      "analytics": "Phân tích chi tiết",
+      "support": "Hỗ trợ riêng"
+    }
+  },
+  "submitData": {
+    "title": "Gửi Dữ liệu",
+    "subtitle": "Giúp cải thiện thông tin dự án",
+    "projectName": "Tên Dự án",
+    "dataType": "Loại Dữ liệu",
+    "description": "Mô tả",
+    "source": "Nguồn",
+    "submit": "Gửi",
+    "submitting": "Đang gửi...",
+    "success": "Gửi dữ liệu thành công",
+    "error": "Gửi dữ liệu thất bại"
+  },
+  "admin": {
+    "title": "Bảng điều khiển Admin",
+    "overview": "Tổng quan",
+    "projects": "Dự án",
+    "developers": "Chủ đầu tư",
+    "users": "Người dùng",
+    "auctions": "Đấu giá",
+    "settings": "Cài đặt",
+    "totalProjects": "Tổng Dự án",
+    "totalDevelopers": "Tổng Chủ đầu tư",
+    "totalUsers": "Tổng Người dùng",
+    "pendingVerifications": "Chờ Xác minh"
+  },
+  "projectCard": {
+    "viewDetails": "Xem chi tiết",
+    "sources": "nguồn",
+    "roi": "ROI",
+    "strong": "Mạnh",
+    "medium": "Trung bình",
+    "weak": "Yếu"
+  },
+  "developerCard": {
+    "projects": "dự án",
+    "rated": "đã đánh giá",
+    "founded": "Thành lập",
+    "website": "Website",
+    "viewDetails": "Xem chi tiết"
+  },
+  "tier": {
+    "ranked": "Xếp hạng",
+    "sss": "Xuất sắc",
+    "ss": "Nổi bật",
+    "s+": "Rất tốt",
+    "s": "Tốt",
+    "a": "Khá",
+    "b": "Trung bình",
+    "c": "Dưới trung bình",
+    "d": "Kém",
+    "f": "Rất kém",
+    "desc": {
+      "sss": "Dự án hàng đầu, đáng tin cậy tuyệt đối",
+      "ss": "Dự án xuất sắc, uy tín cao, tiềm năng lớn",
+      "s+": "Cân bằng rủi ro/tăng giá tốt",
+      "s": "Dự án tốt, đáng cân nhắc đầu tư",
+      "a": "Dự án khá, cần xem xét kỹ một số yếu tố",
+      "b": "Có tiềm năng nhưng cần cân nhắc rủi ro",
+      "c": "Dự án trung bình, rủi ro đáng kể",
+      "d": "Rủi ro cao, cần thận trọng",
+      "f": "Rủi ro rất cao, không nên đầu tư"
+    }
+  },
+  "scoreBreakdown": {
+    "title": "Phân tích điểm số",
+    "totalScore": "Tổng điểm",
+    "of": "trên"
+  },
+  "dataQuality": {
+    "high": "Dữ liệu chất lượng cao",
+    "medium": "Dữ liệu chất lượng trung bình",
+    "low": "Dữ liệu chất lượng thấp",
+    "verified": "Đã xác minh",
+    "unverified": "Chưa xác minh"
+  },
+  "dataQualityBadge": {
+    "title": "Chất lượng dữ liệu: {quality}%",
+    "high": "Cao",
+    "medium": "TB",
+    "low": "Thấp",
+    "highDesc": "Dữ liệu đã xác minh từ nguồn tin cậy",
+    "mediumDesc": "Dữ liệu cơ bản, cần bổ sung",
+    "lowDesc": "Dữ liệu hạn chế, đang thu thập thêm"
+  },
+  "evidence": {
+    "title": "Bằng chứng & Nguồn",
+    "source": "Nguồn",
+    "date": "Ngày",
+    "noEvidence": "Không có bằng chứng"
+  },
+  "evidenceList": {
+    "title": "Nguồn",
+    "count": "{count} nguồn"
+  },
+  "signalChip": {
+    "legal": "Pháp lý",
+    "price": "Giá",
+    "liquidity": "Thanh khoản"
+  },
+  "developerScorecard": {
+    "title": "Điểm Chủ đầu tư",
+    "totalScore": "Tổng điểm",
+    "completedProjects": "Hoàn thành",
+    "ongoingProjects": "Đang triển khai",
+    "employees": "Nhân viên",
+    "marketCap": "Vốn hóa",
+    "certifications": "Chứng chỉ"
+  },
+  "history": {
+    "title": "Lịch sử Cập nhật",
+    "noHistory": "Không có lịch sử",
+    "priceChange": "Thay đổi giá",
+    "statusChange": "Thay đổi trạng thái",
+    "infoUpdate": "Cập nhật thông tin"
+  },
+  "signals": {
+    "legal": "Pháp lý",
+    "price": "Giá",
+    "liquidity": "Thanh khoản",
+    "high": "Cao",
+    "medium": "Trung bình",
+    "low": "Thấp"
+  },
+  "legal": {
+    "completed": "Hoàn thành",
+    "inProgress": "Đang tiến hành",
+    "planning": "Đang quy hoạch",
+    "unknown": "Chưa rõ",
+    "pinkBook": "Sổ hồng",
+    "constructionPermit": "Giấy phép xây dựng",
+    "landUseRight": "Quyền sử dụng đất",
+    "projectApproval": "Phê duyệt dự án"
+  },
+  "legalRisk": {
+    "safe": "An toàn",
+    "moderate": "Trung bình",
+    "risky": "Rủi ro",
+    "danger": "Nguy hiểm",
+    "unknown": "Chưa rõ"
+  },
+  "compareTable": {
+    "verdict": "Nhận định",
+    "score": "Điểm",
+    "attestation": "Chứng nhận",
+    "unverified": "Chưa xác minh",
+    "legal": "Pháp lý",
+    "price": "Giá",
+    "liquidity": "Thanh khoản",
+    "roi": "ROI",
+    "sources": "Nguồn",
+    "sourceCount": "{count} nguồn",
+    "bestFor": "Phù hợp với",
+    "viewDetails": "Xem chi tiết"
+  },
+  "historyTimeline": {
+    "title": "Lịch sử thay đổi",
+    "eventCount": "{count} sự kiện",
+    "score": "Điểm"
+  },
+  "sponsoredDisclosure": {
+    "badge": "Sponsored",
+    "ariaLabel": "Thông tin về Sponsored",
+    "tooltipTitle": "Sponsor chỉ ảnh hưởng vị trí.",
+    "tooltipDescription": "Xếp hạng và điểm số không thay đổi bởi trạng thái sponsor."
+  },
+  "saveButton": {
+    "save": "Lưu",
+    "saved": "Đã lưu"
+  },
+  "dataQuality": {
+    "high": "Cao",
+    "good": "Khá",
+    "medium": "Trung bình",
+    "low": "Thấp"
+  },
+  "qualityOfLife": {
+    "title": "Chất lượng cuộc sống",
+    "walkability": "Đi bộ",
+    "greenSpace": "Cây xanh",
+    "noiseLevel": "Độ ồn",
+    "publicTransport": "Giao thông",
+    "trafficLevel": "Kẹt xe",
+    "nearbyAmenities": "Tiện ích lân cận",
+    "schools": "Trường học",
+    "hospitals": "Bệnh viện",
+    "parks": "Công viên",
+    "malls": "TTTM",
+    "markets": "Chợ",
+    "aqi": {
+      "good": "Tốt",
+      "moderate": "Trung bình",
+      "poor": "Kém",
+      "bad": "Xấu",
+      "hazardous": "Nguy hiểm"
+    },
+    "aqiTooltip": "Chỉ số chất lượng không khí (AQI): {aqi} - {label}. ≤50: Tốt, 51-100: Trung bình, 101-150: Kém, 151-200: Xấu, >200: Nguy hiểm",
+    "walkabilityTooltip": "Điểm khả năng đi bộ: {score}/100. Đo lường mức độ thuận tiện cho việc đi bộ đến các tiện ích, cửa hàng, và dịch vụ trong khu vực",
+    "greenSpaceTooltip": "Tỷ lệ cây xanh: {ratio}% diện tích khu vực là công viên, vườn hoa và cây xanh. Cao hơn = môi trường sống tốt hơn"
+  },
+  "trustBar": {
+    "transparency": "Minh bạch",
+    "verification": "Xác minh",
+    "sources": "Nguồn",
+    "updates": "Cập nhật",
+    "verificationProcess": "Quy trình Xác minh",
+    "sponsorPolicy": "Chính sách Sponsor"
+  },
+  "disclosure": {
+    "sponsored": "Được tài trợ",
+    "sponsoredTooltip": "Dự án này đã trả phí để tăng khả năng hiển thị. Đánh giá của chúng tôi vẫn độc lập và không bị ảnh hưởng."
+  },
+  "nav": {
+    "ranking": "Bảng Xếp Hạng",
+    "developers": "Chủ đầu tư",
+    "calculator": "Thuê hay Mua?",
+    "compare": "So sánh",
+    "methodology": "Phương pháp",
+    "more": "Thêm",
+    "market": "Thị trường",
+    "advisor": "AI Tư vấn",
+    "awards": "Giải thưởng",
+    "valuation": "Định giá",
+    "pro": "Pro",
+    "agency": "Đại lý",
+    "developerConsole": "Console CĐT",
+    "api": "API",
+    "governance": "Quản trị",
+    "verify": "Xác minh",
+    "comingSoon": "Sắp ra mắt",
+    "openMenu": "Mở menu",
+    "closeMenu": "Đóng menu"
+  },
+  "mobileNav": {
+    "ranking": "Xếp hạng",
+    "developers": "CĐT",
+    "calculator": "Tính toán",
+    "compare": "So sánh",
+    "saved": "Đã lưu"
+  },
+  "auth": {
+    "login": "Đăng nhập",
+    "logout": "Đăng xuất",
+    "saved": "Đã lưu"
+  },
+  "authModal": {
+    "title": "Đăng nhập RealTera",
+    "subtitle": "Chọn phương thức đăng nhập",
+    "emailOption": "Email hoặc Google",
+    "emailDescription": "Đăng nhập bằng địa chỉ email",
+    "walletOption": "Ví điện tử",
+    "walletDescription": "Đăng nhập bằng ví Ethereum",
+    "or": "hoặc",
+    "terms": "Bằng cách đăng nhập, bạn đồng ý với Điều khoản dịch vụ",
+    "back": "Quay lại",
+    "connectWallet": "Kết nối ví",
+    "selectWallet": "Chọn ví để kết nối",
+    "signMessage": "Ký tin nhắn",
+    "signMessageDesc": "Vui lòng ký tin nhắn trong ví để xác minh quyền sở hữu",
+    "verifying": "Đang xác minh...",
+    "verifyingDesc": "Đang xác nhận chữ ký của bạn",
+    "success": "Chào mừng!",
+    "successDesc": "Bạn đã đăng nhập thành công",
+    "error": "Đăng nhập thất bại",
+    "tryAgain": "Thử lại"
+  },
+  "linkedAccounts": {
+    "title": "Tài khoản liên kết",
+    "email": "Email",
+    "wallet": "Ví điện tử",
+    "notLinked": "Chưa liên kết",
+    "linkEmail": "Liên kết Email",
+    "linkWallet": "Liên kết Ví",
+    "walletLinkedSuccess": "Liên kết ví thành công",
+    "signing": "Đang ký tin nhắn...",
+    "linking": "Đang liên kết ví..."
+  },
+  "userMenu": {
+    "user": "Người dùng",
+    "account": "Tài khoản",
+    "portfolio": "Danh mục",
+    "settings": "Cài đặt",
+    "signOut": "Đăng xuất"
+  },
+  "common": {
+    "save": "Lưu",
+    "saved": "Đã lưu",
+    "unsave": "Bỏ lưu",
+    "saveProject": "Lưu dự án",
+    "comingSoon": "Sắp ra mắt",
+    "backToRanking": "Quay lại Bảng Xếp Hạng",
+    "viewRanking": "Xem Bảng Xếp Hạng",
+    "loading": "Đang tải...",
+    "error": "Đã xảy ra lỗi",
+    "noResults": "Không tìm thấy kết quả"
+  },
+  "footer": {
+    "tagline": "Xếp hạng bất động sản minh bạch",
+    "verification": "Xác minh",
+    "sponsor": "Sponsor",
+    "methodology": "Phương pháp",
+    "about": "Giới thiệu",
+    "contact": "Liên hệ",
+    "copyright": "Mọi quyền được bảo lưu.",
+    "disclaimer": "Thông tin chỉ mang tính chất tham khảo, không phải tư vấn đầu tư."
+  },
+  "home": {
+    "badge": "Real Estate Intelligence",
+    "title": "Bất động sản, xếp hạng.",
+    "subtitle": "Xếp hạng trước. Minh bạch luôn hiển thị. Không quảng cáo trá hình.",
+    "searchPlaceholder": "Tìm dự án, quận, thành phố…",
+    "searchLabel": "Tìm kiếm dự án",
+    "allDistricts": "Tất cả quận",
+    "allDevelopers": "Tất cả CĐT",
+    "allPrices": "Tất cả giá",
+    "allStatus": "Tất cả trạng thái",
+    "priceUnder30": "Dưới 30tr/m²",
+    "price30to50": "30-50tr/m²",
+    "price50to80": "50-80tr/m²",
+    "price80to120": "80-120tr/m²",
+    "priceAbove120": "Trên 120tr/m²",
+    "filterByDistrict": "Lọc theo quận",
+    "filterByDeveloper": "Lọc theo chủ đầu tư",
+    "filterByPrice": "Lọc theo khoảng giá",
+    "filterByStatus": "Lọc theo trạng thái xác minh",
+    "clearFilters": "Xóa bộ lọc",
+    "hideLowTier": "Ẩn tier thấp",
+    "viewMore": "Xem thêm xếp hạng",
+    "showing": "Hiển thị:",
+    "projects": "dự án",
+    "sortBy": "Sắp xếp:",
+    "sortTierScore": "Xếp hạng → Điểm",
+    "sortUpdated": "Mới cập nhật",
+    "sortSources": "Nhiều nguồn",
+    "noProjects": "Không tìm thấy dự án nào",
+    "noProjectsHint": "Thử thay đổi bộ lọc hoặc từ khóa tìm kiếm",
+    "verified": "Đã xác minh",
+    "pending": "Đang duyệt",
+    "notVerified": "Chưa xác minh",
+    "notRated": "Chưa chấm"
+  },
+  "about": {
+    "title": "Về RealTera",
+    "subtitle": "Nền tảng xếp hạng bất động sản minh bạch đầu tiên tại Việt Nam",
+    "mission": "Sứ mệnh",
+    "missionText": "Giúp người mua nhà đưa ra quyết định sáng suốt dựa trên thông tin minh bạch, khách quan và dễ hiểu.",
+    "transparent": "Minh bạch",
+    "objective": "Khách quan",
+    "easyToUnderstand": "Dễ hiểu",
+    "whyExist": "Tại sao RealTera tồn tại?",
+    "whyExistIntro": "Thị trường bất động sản Việt Nam thiếu một nguồn thông tin đáng tin cậy. Người mua nhà thường phải đối mặt với:",
+    "problem1": "Quảng cáo trá hình dưới dạng \"đánh giá\"",
+    "problem2": "Thông tin thiếu nhất quán và khó so sánh",
+    "problem3": "Rủi ro pháp lý bị che giấu",
+    "problem4": "Thiếu tiêu chuẩn đánh giá rõ ràng",
+    "whyExistConclusion": "RealTera ra đời để giải quyết những vấn đề này, mang đến một góc nhìn độc lập và khách quan về các dự án bất động sản.",
+    "coreValues": "Giá trị cốt lõi",
+    "transparentDesc": "Mọi tiêu chí đánh giá và nguồn thông tin đều được công khai",
+    "objectiveDesc": "Đánh giá dựa trên dữ liệu, không bị chi phối bởi lợi ích thương mại",
+    "easyToUnderstandDesc": "Hệ thống xếp hạng đơn giản giúp so sánh nhanh và chính xác",
+    "disclaimer": "Lưu ý quan trọng",
+    "disclaimerText": "Thông tin trên RealTera chỉ mang tính chất tham khảo, không phải tư vấn đầu tư chuyên nghiệp. Người dùng nên tự nghiên cứu kỹ và tham khảo ý kiến chuyên gia trước khi đưa ra quyết định mua nhà.",
+    "registerProject": "Đăng ký dự án"
+  },
+  "methodology": {
+    "title": "Phương pháp xếp hạng",
+    "subtitle": "Hiểu cách RealTera đánh giá và xếp hạng các dự án bất động sản",
+    "philosophy": "Triết lý đánh giá",
+    "philosophyText": "RealTera tin rằng thông tin minh bạch là quyền của mỗi người mua nhà. Chúng tôi xây dựng hệ thống xếp hạng dựa trên dữ liệu khách quan, không bị chi phối bởi quảng cáo hay lợi ích thương mại.",
+    "quote": "Uy tín được tạo ra, không mua được.",
+    "criteria": "Tiêu chí đánh giá",
+    "criteriaIntro": "Mỗi dự án được đánh giá dựa trên 5 tiêu chí chính, với tổng điểm 100:",
+    "legal": "Pháp lý",
+    "legalDesc": "Tình trạng pháp lý, giấy phép, sổ hồng",
+    "developer": "Chủ đầu tư",
+    "developerDesc": "Uy tín, năng lực tài chính, lịch sử dự án",
+    "location": "Vị trí",
+    "locationDesc": "Kết nối giao thông, tiện ích xung quanh",
+    "progress": "Tiến độ",
+    "progressDesc": "Tiến độ xây dựng, cam kết bàn giao",
+    "value": "Giá trị",
+    "valueDesc": "Giá bán so với giá trị thực, tiềm năng tăng giá",
+    "tierTable": "Bảng Xếp Hạng",
+    "tierTableIntro": "Dựa trên tổng điểm, mỗi dự án được xếp vào một trong 8 tier:",
+    "tierColumn": "Xếp hạng",
+    "scoreColumn": "Điểm",
+    "meaningColumn": "Ý nghĩa",
+    "dataSources": "Nguồn dữ liệu",
+    "dataSourcesIntro": "Thông tin đánh giá được tổng hợp từ nhiều nguồn đáng tin cậy:",
+    "source1": "Cơ quan quản lý nhà nước (Sở Xây dựng, Sở TNMT)",
+    "source2": "Báo cáo tài chính công ty (doanh nghiệp niêm yết)",
+    "source3": "Dữ liệu giao dịch thực tế từ các sàn BĐS",
+    "source4": "Phản hồi từ cư dân và khách hàng đã mua",
+    "source5": "Khảo sát thực địa của đội ngũ RealTera",
+    "updateFrequency": "Tần suất cập nhật",
+    "updateFrequencyText": "Thông tin dự án được cập nhật định kỳ hàng tuần và ngay lập tức khi có thay đổi quan trọng (pháp lý, tiến độ, sự cố). Mỗi cập nhật đều được ghi nhận trong lịch sử thay đổi của dự án."
+  },
+  "calculator": {
+    "badge": "Công cụ tài chính",
+    "title": "Nên Thuê hay Mua?",
+    "subtitle": "Phân tích chi phí thực tế, cơ hội đầu tư, và điểm hòa vốn để đưa ra quyết định tài chính thông minh",
+    "buyInfo": "Thông tin mua nhà",
+    "rentInfo": "Thông tin thuê nhà",
+    "altInvestment": "Đầu tư thay thế",
+    "incomeTime": "Thu nhập & Thời gian",
+    "propertyPrice": "Giá nhà",
+    "propertyPriceHelp": "Giá mua nhà bao gồm VAT",
+    "downPayment": "Tiền trả trước",
+    "downPaymentHelp": "Ngân hàng thường yêu cầu tối thiểu 20-30%",
+    "loanTerm": "Thời hạn vay",
+    "loanTermHelp": "Thời hạn vay tối đa thường là 25-35 năm",
+    "interestRate": "Lãi suất",
+    "interestRateHelp": "Lãi suất trung bình tại VN: 8-12%/năm",
+    "appreciation": "Tăng giá BĐS",
+    "appreciationHelp": "Tăng giá lịch sử tại VN: 5-10%/năm",
+    "monthlyRent": "Tiền thuê/tháng",
+    "monthlyRentHelp": "Tiền thuê tương đương với nhà muốn mua",
+    "rentInflation": "Tăng tiền thuê",
+    "rentInflationHelp": "Thuê thường tăng 3-8%/năm",
+    "investmentReturn": "Lợi nhuận đầu tư",
+    "investmentReturnHelp": "Nếu không mua nhà, bạn có thể đầu tư tiền vào cổ phiếu, quỹ,... Lợi nhuận trung bình S&P 500: 10%/năm",
+    "monthlyIncome": "Thu nhập/tháng",
+    "monthlyIncomeHelp": "Tổng thu nhập trước thuế",
+    "analysisPeriod": "Thời gian phân tích",
+    "analysisPeriodHelp": "Bạn dự định ở bao lâu?",
+    "recommendation": "Khuyến nghị sau {years} năm",
+    "shouldBuy": "NÊN MUA",
+    "shouldRent": "NÊN THUÊ",
+    "consider": "CÂN NHẮC",
+    "monthlyPayment": "Trả góp/tháng",
+    "priceToRent": "Giá/Thuê",
+    "breakEven": "Hoà vốn",
+    "after": "Sau {years}n",
+    "buyBetter": "Mua lợi hơn",
+    "rentBetter": "Thuê lợi hơn",
+    "shouldBuyLabel": "Nên mua",
+    "shouldConsider": "Cân nhắc",
+    "shouldRentLabel": "Nên thuê",
+    "buyHouse": "MUA NHÀ",
+    "rentInvest": "THUÊ + ĐẦU TƯ",
+    "netPosition": "VỊ THẾ RÒNG",
+    "comparison": "So sánh chi tiết sau {years} năm",
+    "comparisonChart": "Biểu đồ so sánh vị thế",
+    "formulaDetails": "Chi tiết công thức tính toán",
+    "yearlyComparison": "Bảng so sánh theo năm ({years} năm)",
+    "disclaimer": "Lưu ý:",
+    "disclaimerText": "Đây là công cụ ước tính dựa trên các giả định đơn giản hoá. Hãy tham khảo chuyên gia tài chính trước khi đưa ra quyết định lớn.",
+    "incomeRatio": "TN",
+    "exceedsAffordability": "Vượt khả năng chi trả",
+    "exceedsAffordabilityDesc": "Trả góp chiếm {ratio} thu nhập (tối đa khuyến nghị: 40%). Giá nhà phù hợp với thu nhập của bạn:",
+    "costOut": "Chi phí ra",
+    "downPaymentLabel": "Tiền trả trước",
+    "transactionFee": "Phí giao dịch (3.5%)",
+    "totalMortgage": "Tổng trả góp ({years} năm)",
+    "ofWhichInterest": "Trong đó tiền lãi",
+    "maintenance": "Bảo trì (1%/năm)",
+    "totalCost": "Tổng chi phí",
+    "valueReceived": "Giá trị nhận được",
+    "propertyValueAfter": "Giá trị nhà sau {years} năm",
+    "appreciation2": "Tăng giá",
+    "remainingDebt": "Nợ còn lại",
+    "firstMonthRent": "Thuê tháng đầu",
+    "lastYearRent": "Thuê năm cuối",
+    "totalRent": "Tổng thuê {years} năm",
+    "investmentAlternative": "Đầu tư thay thế ({rate}%/năm)",
+    "investmentCapital": "Vốn đầu tư (trả trước)",
+    "valueAfterYears": "Giá trị sau {years} năm",
+    "additionalSavings": "Tiết kiệm thêm/tháng",
+    "additionalAccumulated": "Tích luỹ thêm",
+    "netPositionDiff": "Chênh lệch vị thế ròng sau {years} năm",
+    "buyAdvantage": "Mua có lợi hơn",
+    "rentAdvantage": "Thuê có lợi hơn",
+    "pmtFormula": "Công thức trả góp (PMT)",
+    "pmtDesc": "Trả góp hàng tháng được tính bằng công thức PMT (Payment):",
+    "where": "Trong đó:",
+    "loanPrincipal": "vốn vay",
+    "monthlyRateLabel": "lãi suất/tháng",
+    "paymentPeriods": "số kỳ trả góp",
+    "result": "Kết quả:",
+    "priceToRentRatio": "Tỷ lệ Giá/Thuê (Price-to-Rent Ratio)",
+    "priceToRentDesc": "Số năm thuê để bằng giá mua nhà. Tỷ lệ thấp = nên mua, cao = nên thuê.",
+    "atVN": "Tại VN thường từ 20-35x",
+    "futureValue": "Giá trị tương lai (Future Value)",
+    "futureValueDesc": "Giá trị tài sản sau N năm với tỷ lệ tăng trưởng G%:",
+    "realEstate": "Bất động sản:",
+    "investmentAlt": "Đầu tư thay thế:",
+    "breakEvenPoint": "Điểm hoà vốn (Break-even Point)",
+    "breakEvenDesc": "Năm mà mua nhà bắt đầu có lợi hơn thuê + đầu tư:",
+    "breakEvenWhen": "Điểm hoà vốn xảy ra khi: Vị thế mua > Vị thế thuê",
+    "noBreakEven": "Không hoà vốn trong 30 năm",
+    "ifStayLess": "Nếu bạn dự định ở dưới {years} năm, thuê sẽ có lợi hơn.",
+    "dtiRatio": "Tỷ lệ Nợ/Thu nhập (DTI)",
+    "dtiDesc": "Phần trăm thu nhập dùng để trả nợ. Càng thấp càng an toàn.",
+    "safe": "An toàn (khuyến nghị)",
+    "acceptable": "Chấp nhận được",
+    "highRisk": "Rủi ro cao",
+    "year": "Năm",
+    "propertyValue": "Giá trị nhà",
+    "buyPosition": "Vị thế mua",
+    "investmentValue": "Giá trị ĐT",
+    "rentPosition": "Vị thế thuê",
+    "difference": "Chênh lệch",
+    "buyPlus": "Mua +",
+    "rentPlus": "Thuê +",
+    "reasons": {
+      "dtiExceeds": "Tỷ lệ nợ/thu nhập ({ratio}) vượt quá ngưỡng an toàn 40%. Cần phải tăng thu nhập hoặc giảm giá nhà mục tiêu.",
+      "priceToRentHigh": "Tỷ lệ giá/thuê ({ratio}x) quá cao. Giá nhà bất hợp lý so với giá thuê thị trường.",
+      "buyBetterShort": "Mua nhà có lợi hơn {amount} sau {years} năm, với điểm hòa vốn chỉ {breakEven} năm.",
+      "buyBetterLong": "Mua nhà có lợi hơn, nhưng cần {breakEven} năm để hòa vốn. Phù hợp nếu bạn kế hoạch ở lâu dài.",
+      "rentBetterBy": "Thuê + đầu tư sẽ có lợi hơn {amount} sau {years} năm."
+    }
+  },
+  "units": {
+    "million": "triệu",
+    "billion": "tỷ",
+    "dong": "đ",
+    "sqm": "m²",
+    "perSqm": "/m²",
+    "perMonth": "/tháng",
+    "perYear": "/năm",
+    "years": "năm",
+    "months": "tháng"
+  },
+  "market": {
+    "badge": "Market Intelligence",
+    "title": "Phân tích Thị trường",
+    "subtitle": "Dữ liệu thị trường BĐS theo thời gian thực",
+    "totalProjects": "Dự án",
+    "totalDevelopers": "Chủ đầu tư",
+    "avgScore": "Điểm TB",
+    "verifiedRate": "Đã xác minh",
+    "mapType": "Loại bản đồ",
+    "projectDensity": "Mật độ dự án",
+    "avgPrices": "Giá trung bình",
+    "quality": "Chất lượng",
+    "demand": "Nhu cầu",
+    "growth": "Tăng trưởng",
+    "refresh": "Làm mới",
+    "byDistrict": "theo Quận",
+    "tierDistribution": "Phân bổ theo Tier",
+    "topDistricts": "Top Quận theo số dự án",
+    "needMoreAnalysis": "Cần phân tích chi tiết hơn?",
+    "upgradeProDesc": "Đăng ký Pro để truy cập báo cáo thị trường đầy đủ và dữ liệu real-time",
+    "viewSampleReport": "Xem báo cáo mẫu",
+    "upgradePro": "Nâng cấp Pro"
+  },
+  "advisor": {
+    "badge": "AI Advisor",
+    "title": "Tư vấn BĐS AI",
+    "subtitle": "Hỏi bất kỳ câu hỏi nào về thị trường BĐS",
+    "greeting": "Xin chào! Tôi là RealTera AI",
+    "greetingDesc": "Tôi có thể giúp bạn tìm hiểu về dự án BĐS, so sánh các dự án, hoặc tư vấn đầu tư.",
+    "inputPlaceholder": "Nhập câu hỏi của bạn...",
+    "suggestedQuestions": "Câu hỏi gợi ý",
+    "capabilities": "Tôi có thể giúp bạn",
+    "suggestProjects": "Gợi ý dự án phù hợp",
+    "analyzeInvestment": "Phân tích tiềm năng đầu tư",
+    "compareAreas": "So sánh các khu vực",
+    "disclaimer": "* AI Advisor cung cấp thông tin tham khảo. Vui lòng tự nghiên cứu trước khi đưa ra quyết định đầu tư.",
+    "developer": "Chủ đầu tư",
+    "project": "Dự án",
+    "questions": {
+      "q1": "Dự án nào tốt nhất ở Quận 2 dưới 5 tỷ?",
+      "q2": "So sánh Vinhomes Grand Park và Masteri",
+      "q3": "Vingroup có bao nhiêu dự án?",
+      "q4": "Thị trường BĐS hiện tại như thế nào?",
+      "q5": "Đầu tư căn hộ Quận 7 có tốt không?",
+      "q6": "Giá căn hộ 2PN ở Thủ Đức?"
+    }
+  },
+  "awards": {
+    "badge": "Annual Awards",
+    "title": "RealTera Awards 2024",
+    "subtitle": "Vinh danh chủ đầu tư và dự án xuất sắc",
+    "categories": "Hạng mục giải thưởng",
+    "voting": "Đang bình chọn",
+    "upcoming": "Sắp diễn ra",
+    "completed": "Đã hoàn thành",
+    "categoriesCount": "Hạng mục",
+    "nomineesCount": "Đề cử",
+    "votesCount": "Lượt vote",
+    "winner": "Winner",
+    "nominees": "Đề cử",
+    "voteNow": "Bình chọn ngay",
+    "hallOfFame": "Hall of Fame",
+    "hallOfFameDesc": "Xem danh sách người chiến thắng qua các năm",
+    "viewHallOfFame": "Xem Hall of Fame"
+  },
+  "valuation": {
+    "badge": "Property Valuation",
+    "title": "Định giá Bất động sản",
+    "subtitle": "Ước tính giá trị căn hộ dựa trên dữ liệu thị trường",
+    "propertyInfo": "Thông tin căn hộ",
+    "district": "Quận/Huyện",
+    "selectDistrict": "Chọn quận",
+    "area": "Diện tích",
+    "bedrooms": "Số phòng ngủ",
+    "floor": "Tầng",
+    "direction": "Hướng",
+    "selectDirection": "Chọn hướng",
+    "east": "Đông",
+    "west": "Tây",
+    "south": "Nam",
+    "north": "Bắc",
+    "southeast": "Đông Nam",
+    "southwest": "Tây Nam",
+    "northeast": "Đông Bắc",
+    "northwest": "Tây Bắc",
+    "projectInfo": "Thông tin dự án",
+    "projectTier": "Tier dự án",
+    "buildYear": "Tuổi toà nhà",
+    "hasPool": "Hồ bơi",
+    "hasGym": "Phòng gym",
+    "calculate": "Định giá ngay",
+    "estimatedValue": "Giá trị ước tính",
+    "priceRange": "Khoảng giá",
+    "pricePerSqm": "Giá/m²",
+    "pricePerSqmUnit": "tr/m²",
+    "confidence": "Độ tin cậy",
+    "marketComparison": "So sánh thị trường",
+    "avgDistrict": "TB Quận",
+    "avgCity": "TB TP",
+    "yourProperty": "Căn hộ của bạn",
+    "belowAvg": "dưới TB",
+    "aboveAvg": "trên TB",
+    "factors": "Các yếu tố ảnh hưởng",
+    "similarProjects": "Dự án tương đương",
+    "disclaimer": "* Đây là giá ước tính dựa trên dữ liệu thị trường. Giá thực tế có thể khác biệt tùy theo điều kiện cụ thể.",
+    "select": "Chọn",
+    "amenities": "Tiện ích",
+    "balcony": "Ban công",
+    "parking": "Chỗ đỗ xe",
+    "low": "Thấp",
+    "mid": "TB",
+    "high": "Cao",
+    "trend": "Xu hướng",
+    "yoy": "So năm trước",
+    "trendUp": "↑ Tăng",
+    "trendStable": "→ Ổn định",
+    "bedroomOptions": {
+      "1": "1 PN",
+      "2": "2 PN",
+      "3": "3 PN",
+      "4": "4+ PN"
+    },
+    "districts": {
+      "quan1": "Quận 1",
+      "quan2": "Quận 2",
+      "quan3": "Quận 3",
+      "quan7": "Quận 7",
+      "quan9": "Quận 9",
+      "binhThanh": "Bình Thạnh",
+      "thuDuc": "Thủ Đức",
+      "phuNhuan": "Phú Nhuận",
+      "tanBinh": "Tân Bình",
+      "goVap": "Gò Vấp"
+    }
+  },
+  "saved": {
+    "badge": "Dự án đã lưu",
+    "title": "Danh sách đã lưu",
+    "subtitleWithCount": "Bạn đã lưu {count} dự án để xem lại sau",
+    "subtitleEmpty": "Lưu các dự án yêu thích để so sánh và theo dõi",
+    "projectsSaved": "dự án đã lưu",
+    "clearAll": "Xóa tất cả",
+    "noProjects": "Chưa có dự án nào được lưu",
+    "noProjectsHint": "Nhấn vào biểu tượng bookmark trên card dự án để lưu",
+    "explore": "Khám phá dự án",
+    "enableAlert": "Bật thông báo",
+    "disableAlert": "Tắt thông báo"
+  },
+  "project": {
+    "backToRanking": "Quay lại Bảng Xếp Hạng",
+    "updated": "Cập nhật",
+    "sources": "Nguồn",
+    "score": "Điểm",
+    "roiPotential": "ROI tiềm năng",
+    "ranking": "Xếp hạng",
+    "whyThisTier": "Vì sao tier này",
+    "keyRisks": "Rủi ro chính",
+    "bestFor": "Phù hợp với ai",
+    "actions": "Hành động",
+    "compare": "So sánh",
+    "certificate": "Chứng nhận RealTera",
+    "certificateVerified": "Đã xác minh",
+    "certificateCode": "Mã",
+    "certificateIssued": "Cấp ngày",
+    "noCertificate": "Chưa có chứng nhận (chỉ dự án đã xác minh).",
+    "quickInfo": "Thông tin nhanh",
+    "district": "Quận/Huyện",
+    "city": "Thành phố",
+    "price": "Giá",
+    "legal": "Pháp lý",
+    "liquidity": "Thanh khoản",
+    "dataQuality": "Chất lượng dữ liệu"
+  },
+  "account": {
+    "title": "Cài đặt tài khoản",
+    "subtitle": "Quản lý thông tin cá nhân và tùy chọn của bạn",
+    "profile": "Thông tin cá nhân",
+    "displayName": "Tên hiển thị",
+    "email": "Email",
+    "phone": "Số điện thoại",
+    "phonePlaceholder": "Nhập số điện thoại",
+    "accountType": "Loại tài khoản",
+    "buyer": "Người mua nhà",
+    "buyerDesc": "Đang tìm kiếm bất động sản để mua/đầu tư",
+    "investor": "Nhà đầu tư",
+    "investorDesc": "Đầu tư BĐS chuyên nghiệp",
+    "agent": "Môi giới",
+    "agentDesc": "Môi giới bất động sản",
+    "developer": "Chủ đầu tư",
+    "developerDesc": "Đại diện công ty bất động sản",
+    "notifications": "Thông báo",
+    "priceAlerts": "Cảnh báo giá",
+    "priceAlertsDesc": "Nhận thông báo khi giá dự án thay đổi",
+    "newProjects": "Dự án mới",
+    "newProjectsDesc": "Thông báo về dự án mới phù hợp",
+    "weeklyDigest": "Bản tin tuần",
+    "weeklyDigestDesc": "Tổng hợp tin tức BĐS hàng tuần",
+    "saveChanges": "Lưu thay đổi",
+    "saving": "Đang lưu..."
+  },
+  "blockchain": {
+    "title": "RealTera Blockchain Demo",
+    "subtitle": "Mantle Global Hackathon 2025 - RWA/RealFi Track",
+    "connectWallet": "Kết nối Ví",
+    "connecting": "Đang kết nối...",
+    "disconnect": "Ngắt kết nối",
+    "switchNetwork": "Đổi mạng",
+    "connectToLocalhost": "Kết nối với Localhost",
+    "connectToMantle": "Kết nối với Mantle",
+    "connectedTo": "Đã kết nối với",
+    "localhost": "Localhost",
+    "mantleSepolia": "Mantle Sepolia",
+    "mantleMainnet": "Mantle Mainnet",
+    "verificationBadge": {
+      "title": "1. Mint Huy hiệu Xác minh",
+      "description": "Huy hiệu ERC-1155 chứng minh dự án đã được RealTera xác minh",
+      "mintTitle": "Mint Xác minh On-Chain",
+      "badge": "Huy hiệu",
+      "basic": "Cơ bản",
+      "standard": "Tiêu chuẩn",
+      "premium": "Cao cấp",
+      "connectPrompt": "Kết nối ví để mint huy hiệu xác minh on-chain",
+      "mintedSuccess": "Mint Huy hiệu Thành công!"
+    },
+    "propertyNFT": {
+      "title": "2. Mint NFT Dự án",
+      "description": "NFT duy nhất đại diện cho một dự án bất động sản đã xác minh",
+      "mintTitle": "Mint NFT Dự án",
+      "connectPrompt": "Kết nối ví để mint NFT dự án",
+      "mintedSuccess": "Mint NFT Dự án Thành công!",
+      "uniqueToken": "Token Duy nhất",
+      "propertyDetails": "Chi tiết Dự án"
+    },
+    "developerSBT": {
+      "title": "3. Mint SBT Chủ đầu tư",
+      "description": "Soul-Bound Token (không thể chuyển nhượng) cho uy tín chủ đầu tư",
+      "mintTitle": "Mint SBT Chủ đầu tư",
+      "soulBound": "Soul-Bound (Không thể chuyển nhượng)",
+      "connectPrompt": "Kết nối ví để mint SBT uy tín chủ đầu tư",
+      "mintedSuccess": "Mint SBT Chủ đầu tư Thành công!",
+      "nonTransferable": "Soul-Bound Token (Không thể chuyển nhượng)",
+      "reputationScore": "Điểm Uy tín"
+    },
+    "onChain": {
+      "verified": "Đã Xác minh On-Chain",
+      "onChain": "On-Chain",
+      "loading": "Đang tải...",
+      "expired": "Đã hết hạn",
+      "revoked": "Đã thu hồi",
+      "active": "Đang hoạt động",
+      "expires": "Hết hạn",
+      "verifiedAt": "Xác minh lúc",
+      "tokenId": "Mã Token",
+      "viewOnExplorer": "Xem trên Explorer"
+    },
+    "mintButton": "Mint",
+    "mintBadge": "Mint Huy hiệu",
+    "mintNFT": "Mint NFT",
+    "mintSBT": "Mint SBT",
+    "minting": "Đang mint...",
+    "confirmInWallet": "Xác nhận trong Ví...",
+    "confirming": "Đang xác nhận...",
+    "mintSuccess": "Mint thành công!",
+    "mintError": "Lỗi khi mint",
+    "mintFailed": "Mint thất bại",
+    "transactionFailed": "Giao dịch thất bại",
+    "transactionPending": "Giao dịch đang chờ",
+    "transactionConfirmed": "Giao dịch đã xác nhận",
+    "mintedTransactions": "Giao dịch đã Mint",
+    "viewOnExplorer": "Xem trên Mantle Explorer",
+    "viewTransaction": "Xem Giao dịch",
+    "copyAddress": "Sao chép Địa chỉ",
+    "addressCopied": "Đã sao chép địa chỉ!",
+    "setupInstructions": "Hướng dẫn cài đặt:",
+    "instruction1": "Thêm mạng Localhost vào MetaMask (Chain ID: 31337, RPC: http://127.0.0.1:8545)",
+    "instruction2": "Import ví test:",
+    "instruction3": "Kết nối ví và bắt đầu mint!",
+    "testnetInstructions": "Hướng dẫn Testnet:",
+    "testnetInstruction1": "Nhận MNT testnet từ Mantle Sepolia faucet",
+    "testnetInstruction2": "Thêm mạng Mantle Sepolia vào MetaMask",
+    "testnetInstruction3": "Kết nối và mint trên testnet",
+    "contractAddress": "Contract",
+    "contractInfo": "Thông tin Contract",
+    "network": "Mạng",
+    "chainId": "Chain ID",
+    "blockExplorer": "Block Explorer",
+    "tier": "Hạng",
+    "score": "Điểm",
+    "district": "Quận",
+    "pricePerSqm": "Giá/m²",
+    "currency": "VND",
+    "walletNotConnected": "Ví chưa kết nối hoặc contract chưa được cấu hình",
+    "walletRequired": "Cần kết nối ví",
+    "unsupportedNetwork": "Mạng không được hỗ trợ",
+    "pleaseSwitch": "Vui lòng chuyển sang mạng được hỗ trợ",
+    "gasEstimate": "Gas ước tính",
+    "gasPrice": "Giá gas",
+    "totalCost": "Tổng chi phí",
+    "free": "Miễn phí (testnet)",
+    "noTransactionHistory": "Chưa có giao dịch",
+    "recentTransactions": "Giao dịch Gần đây",
+    "allTransactions": "Tất cả Giao dịch",
+    "pendingTransactions": "Giao dịch Đang chờ",
+    "completedTransactions": "Giao dịch Hoàn thành",
+    "failedTransactions": "Giao dịch Thất bại"
+  },
+  "agency": {
+    "title": "Đại lý BĐS",
+    "subtitle": "Quản lý khách hàng, bộ sưu tập và chia sẻ chứng nhận",
+    "dashboard": "Bảng điều khiển",
+    "clients": "Khách hàng",
+    "collections": "Bộ sưu tập",
+    "transactions": "Giao dịch",
+    "createCollection": "Tạo bộ sưu tập",
+    "shareProof": "Chia sẻ chứng nhận",
+    "recentCollections": "Bộ sưu tập gần đây",
+    "activity": "Hoạt động",
+    "subscription": "Gói đăng ký",
+    "upgradeNow": "Nâng cấp ngay",
+    "viewAll": "Xem tất cả",
+    "noCollections": "Chưa có bộ sưu tập",
+    "createFirst": "Tạo bộ sưu tập đầu tiên",
+    "copyLink": "Sao chép liên kết",
+    "linkCopied": "Đã sao chép!",
+    "shareExpires": "Hết hạn chia sẻ",
+    "projectsInCollection": "dự án",
+    "collectionShared": "Đã chia sẻ bộ sưu tập",
+    "clientAdded": "Đã thêm khách hàng",
+    "verificationUpdated": "Đã cập nhật xác minh",
+    "expiresIn": "hết hạn trong",
+    "days": "ngày"
+  },
+  "developerPortal": {
+    "title": "Console Chủ đầu tư",
+    "subtitle": "Quản lý dự án và trạng thái xác minh",
+    "dashboard": "Bảng điều khiển",
+    "projects": "Dự án",
+    "documents": "Hồ sơ",
+    "verification": "Xác minh",
+    "apiKeys": "API Keys",
+    "webhooks": "Webhooks",
+    "expiringDocuments": "Hồ sơ sắp hết hạn",
+    "verificationRequests": "Yêu cầu xác minh",
+    "projectDossier": "Hồ sơ dự án",
+    "uploadDocument": "Tải lên hồ sơ",
+    "requestVerification": "Yêu cầu xác minh",
+    "viewEvidence": "Xem Evidence Pack",
+    "documentStatus": {
+      "pending": "Chờ duyệt",
+      "verified": "Đã xác minh",
+      "rejected": "Bị từ chối",
+      "expired": "Hết hạn"
+    },
+    "verificationTiers": {
+      "tier0": "Chưa xác minh",
+      "tier1": "Cơ bản",
+      "tier2": "Tiêu chuẩn",
+      "tier3": "Cao cấp",
+      "tier4": "Được giám sát"
+    },
+    "subscription": "Gói đăng ký",
+    "upgradeNow": "Nâng cấp ngay"
+  },
+  "apiPortal": {
+    "title": "Quản lý API",
+    "subtitle": "Quản lý API keys và tích hợp",
+    "keys": "API Keys",
+    "webhooks": "Webhooks",
+    "docs": "Tài liệu",
+    "createKey": "Tạo Key mới",
+    "keyName": "Tên Key",
+    "permissions": "Quyền hạn",
+    "rateLimit": "Giới hạn",
+    "requestsPerHour": "requests/giờ",
+    "usage": "Sử dụng",
+    "usageThisMonth": "Tháng này",
+    "copyKey": "Sao chép Key",
+    "keyCopied": "Đã sao chép API key!",
+    "revokeKey": "Thu hồi Key",
+    "showKey": "Hiện Key",
+    "hideKey": "Ẩn Key",
+    "activeKeys": "Keys hoạt động",
+    "revokedKeys": "Keys đã thu hồi",
+    "webhookUrl": "URL Webhook",
+    "events": "Sự kiện",
+    "testWebhook": "Test Webhook",
+    "deliveryLogs": "Nhật ký gửi",
+    "quickStart": "Bắt đầu nhanh",
+    "endpoints": "Endpoints"
+  },
+  "evidence": {
+    "title": "Evidence Pack",
+    "subtitle": "Hồ sơ pháp lý và chứng nhận xác minh",
+    "totalDocuments": "Tổng hồ sơ",
+    "verifiedDocuments": "Đã xác minh",
+    "completionRate": "Hoàn thành",
+    "verificationTier": "Tier xác minh",
+    "categories": {
+      "legal": "Hồ sơ Pháp lý",
+      "developer": "Hồ sơ Chủ đầu tư",
+      "construction": "Tiến độ Xây dựng",
+      "financial": "Hồ sơ Tài chính"
+    },
+    "status": {
+      "verified": "Đã xác minh",
+      "pending": "Chờ duyệt",
+      "rejected": "Bị từ chối",
+      "expired": "Hết hạn"
+    },
+    "noEvidence": "Chưa có hồ sơ",
+    "viewOnBlockchain": "Xem trên Blockchain",
+    "documentNumber": "Số văn bản",
+    "issuingAuthority": "Cơ quan cấp",
+    "uploadedAt": "Tải lên",
+    "verifiedAt": "Xác minh",
+    "expiresAt": "Hết hạn"
+  },
+  "onboarding": {
+    "title": "Chào mừng đến RealTera",
+    "subtitle": "Thiết lập tài khoản để bắt đầu",
+    "secureOnboarding": "Đăng ký Bảo mật",
+    "selectType": "Bạn là ai?",
+    "selectTypeSubtitle": "Chọn loại tài khoản để cá nhân hóa trải nghiệm",
+    "types": {
+      "investor": {
+        "title": "Nhà đầu tư",
+        "description": "Theo dõi dự án, quản lý danh mục, nhận thông tin thị trường",
+        "benefits": ["Theo dõi & phân tích danh mục", "Watchlist với cảnh báo giá", "Báo cáo & phân tích thị trường", "Công cụ tính toán đầu tư"]
+      },
+      "agency": {
+        "title": "Đại lý BĐS",
+        "description": "Chia sẻ dự án đã xác minh với khách hàng, xây dựng uy tín",
+        "benefits": ["Quản lý bộ sưu tập khách hàng", "Chia sẻ chứng nhận xác minh", "Bảng điều khiển đại lý", "Công cụ cộng tác nhóm"]
+      },
+      "developer": {
+        "title": "Chủ đầu tư",
+        "description": "Được xác minh, giới thiệu dự án, thu hút người mua",
+        "benefits": ["Huy hiệu xác minh on-chain", "Quản lý hồ sơ dự án", "Theo dõi vòng đời tài liệu", "Nâng cấp tier xác minh"]
+      },
+      "api": {
+        "title": "API User",
+        "description": "Tích hợp dữ liệu RealTera vào nền tảng của bạn",
+        "benefits": ["Truy cập API RESTful", "Webhooks thời gian thực", "Phân tích sử dụng", "Tài liệu nhà phát triển"]
+      }
+    },
+    "steps": {
+      "type": "Loại tài khoản",
+      "profile": "Hồ sơ",
+      "organization": "Tổ chức",
+      "verify": "Xác minh",
+      "complete": "Hoàn thành"
+    },
+    "back": "Quay lại",
+    "continue": "Tiếp tục",
+    "skip": "Bỏ qua",
+    "completeSetup": "Hoàn thành đăng ký",
+    "completing": "Đang xử lý...",
+    "welcomeAboard": "Chào mừng!",
+    "accountReady": "Tài khoản của bạn đã được thiết lập thành công.",
+    "goToDashboard": "Đến Bảng điều khiển",
+    "updateInSettings": "Bạn có thể cập nhật hồ sơ trong Cài đặt",
+    "investor": {
+      "profileTitle": "Hồ sơ Nhà đầu tư",
+      "profileSubtitle": "Cho chúng tôi biết sở thích của bạn",
+      "optional": "Giúp chúng tôi cá nhân hóa trải nghiệm (tùy chọn)",
+      "budget": "Ngân sách đầu tư",
+      "interests": "Loại BĐS quan tâm",
+      "locations": "Khu vực ưa thích",
+      "budgetRanges": {
+        "under_1b": "Dưới 1 tỷ VNĐ",
+        "1b_3b": "1 - 3 tỷ VNĐ",
+        "3b_5b": "3 - 5 tỷ VNĐ",
+        "5b_10b": "5 - 10 tỷ VNĐ",
+        "over_10b": "Trên 10 tỷ VNĐ"
+      },
+      "propertyTypes": {
+        "apartment": "Căn hộ",
+        "villa": "Biệt thự",
+        "townhouse": "Nhà phố",
+        "land": "Đất nền",
+        "commercial": "Thương mại"
+      },
+      "cities": {
+        "hcm": "TP. Hồ Chí Minh",
+        "hanoi": "Hà Nội",
+        "danang": "Đà Nẵng",
+        "other": "Khác"
+      }
+    },
+    "agency": {
+      "profileTitle": "Hồ sơ Đại lý",
+      "profileSubtitle": "Cho chúng tôi biết về đại lý của bạn",
+      "optional": "Giúp chúng tôi cá nhân hóa không gian làm việc",
+      "companyName": "Tên công ty",
+      "companyNamePlaceholder": "Tên đại lý của bạn",
+      "companyNameRequired": "bắt buộc",
+      "licenseNumber": "Số giấy phép kinh doanh",
+      "licenseNumberPlaceholder": "Để xác minh",
+      "licenseOptional": "tùy chọn",
+      "teamSize": "Quy mô nhân sự",
+      "specialization": "Chuyên môn",
+      "teamSizes": {
+        "solo": "Chỉ tôi",
+        "small": "2-5 người",
+        "medium": "6-20 người",
+        "large": "20+ người"
+      },
+      "specializations": {
+        "residential": "Nhà ở",
+        "commercial": "Thương mại",
+        "luxury": "Cao cấp",
+        "industrial": "Công nghiệp",
+        "land": "Đất nền"
+      }
+    },
+    "developer": {
+      "profileTitle": "Hồ sơ Chủ đầu tư",
+      "profileSubtitle": "Cho chúng tôi biết về công ty của bạn",
+      "optional": "Được xác minh và giới thiệu dự án",
+      "companyName": "Tên công ty",
+      "companyNamePlaceholder": "Tên công ty của bạn",
+      "companyNameRequired": "bắt buộc",
+      "stockCode": "Mã chứng khoán",
+      "stockCodePlaceholder": "VD: VHM, NVL",
+      "stockCodeIfListed": "nếu niêm yết",
+      "established": "Năm thành lập",
+      "establishedPlaceholder": "VD: 2005",
+      "website": "Website",
+      "websitePlaceholder": "https://cong-ty.com",
+      "portfolio": "Tổng số dự án đã bàn giao",
+      "developmentTypes": "Loại hình phát triển",
+      "projectCounts": {
+        "1_5": "1-5 dự án",
+        "6_20": "6-20 dự án",
+        "21_50": "21-50 dự án",
+        "over_50": "50+ dự án"
+      },
+      "types": {
+        "residential": "Nhà ở",
+        "commercial": "Thương mại",
+        "mixed": "Phức hợp",
+        "hospitality": "Nghỉ dưỡng",
+        "industrial": "Công nghiệp"
+      }
+    },
+    "api": {
+      "profileTitle": "Hồ sơ API User",
+      "profileSubtitle": "Cho chúng tôi biết về tích hợp của bạn",
+      "optional": "Giúp chúng tôi hiểu nhu cầu để hỗ trợ tốt hơn",
+      "companyName": "Tên công ty",
+      "companyNamePlaceholder": "Tên công ty của bạn",
+      "companyNameRequired": "bắt buộc",
+      "website": "Website",
+      "websitePlaceholder": "https://cong-ty.com",
+      "useCase": "Mục đích sử dụng chính",
+      "useCaseRequired": "bắt buộc",
+      "useCaseDescription": "Mô tả tích hợp",
+      "useCaseDescriptionPlaceholder": "Cho chúng tôi biết bạn định sử dụng RealTera API như thế nào...",
+      "useCaseOptional": "tùy chọn",
+      "expectedVolume": "Số lượng API call dự kiến",
+      "useCases": {
+        "property_portal": {
+          "label": "Cổng BĐS",
+          "description": "Website đăng tin BĐS"
+        },
+        "fintech": {
+          "label": "Fintech/Vay mua nhà",
+          "description": "Tích hợp dịch vụ tài chính"
+        },
+        "market_research": {
+          "label": "Nghiên cứu thị trường",
+          "description": "Phân tích và báo cáo"
+        },
+        "crm": {
+          "label": "CRM",
+          "description": "Quản lý quan hệ khách hàng"
+        },
+        "mobile_app": {
+          "label": "Ứng dụng di động",
+          "description": "iOS/Android app"
+        },
+        "other": {
+          "label": "Khác",
+          "description": "Tích hợp tùy chỉnh"
+        }
+      },
+      "volumes": {
+        "low": {
+          "label": "< 1,000/tháng",
+          "description": "Phát triển/Test"
+        },
+        "medium": {
+          "label": "1K - 10K/tháng",
+          "description": "Vừa và nhỏ"
+        },
+        "high": {
+          "label": "10K - 100K/tháng",
+          "description": "Doanh nghiệp"
+        },
+        "very_high": {
+          "label": "> 100K/tháng",
+          "description": "Lượng lớn"
+        }
+      }
+    },
+    "complete": {
+      "title": "Chào mừng!",
+      "subtitle": "Xin chào {name}, tài khoản của bạn đã sẵn sàng.",
+      "subtitleDefault": "Tài khoản của bạn đã được thiết lập thành công.",
+      "goToDashboard": "Đến Bảng điều khiển",
+      "updateInSettings": "Bạn có thể cập nhật hồ sơ trong Cài đặt",
+      "accountTypes": {
+        "investor": {
+          "title": "Tài khoản Nhà đầu tư",
+          "features": ["Theo dõi hiệu suất danh mục", "Tạo watchlist với cảnh báo", "Truy cập phân tích thị trường", "Sử dụng công cụ tính toán"]
+        },
+        "agency": {
+          "title": "Tài khoản Đại lý",
+          "features": ["Tạo bộ sưu tập khách hàng", "Chia sẻ chứng nhận xác minh", "Quản lý nhân sự", "Truy cập phân tích đại lý"]
+        },
+        "developer": {
+          "title": "Tài khoản Chủ đầu tư",
+          "features": ["Quản lý danh mục dự án", "Tải lên tài liệu xác minh", "Nhận chứng nhận on-chain", "Theo dõi trạng thái xác minh"]
+        },
+        "api_user": {
+          "title": "Tài khoản API",
+          "features": ["Tạo API key", "Truy cập tài liệu đầy đủ", "Cấu hình webhooks", "Theo dõi sử dụng API"]
+        }
+      }
+    },
+    "terms": "Bằng cách tiếp tục, bạn đồng ý với Điều khoản dịch vụ và Chính sách bảo mật"
+  },
+  "roles": {
+    "investor": "Nhà đầu tư",
+    "investor_pro": "Nhà đầu tư Pro",
+    "agency": "Đại lý",
+    "developer": "Chủ đầu tư",
+    "api_user": "API User",
+    "admin": "Quản trị viên"
+  },
+  "projectPage": {
+    "backToRankings": "Quay lại Bảng Xếp Hạng",
+    "updated": "Cập nhật",
+    "sources": "Nguồn",
+    "score": "Điểm",
+    "potentialRoi": "ROI tiềm năng",
+    "ranking": "Xếp hạng",
+    "whyThisTier": "Vì sao tier này",
+    "keyRisks": "Rủi ro chính",
+    "suitableFor": "Phù hợp với ai",
+    "qualityOfLife": "Chất lượng cuộc sống",
+    "actions": "Hành động",
+    "compare": "So sánh",
+    "quickInfo": "Thông tin nhanh",
+    "district": "Quận/Huyện",
+    "city": "Thành phố",
+    "price": "Giá",
+    "legal": "Pháp lý",
+    "liquidity": "Thanh khoản",
+    "dataQuality": "Chất lượng dữ liệu",
+    "reviewsAndComments": "Đánh giá & Bình luận",
+    "projectDetails": "Thông tin dự án",
+    "totalUnits": "Tổng căn hộ",
+    "towers": "Số tòa",
+    "floors": "Số tầng",
+    "completionYear": "Năm hoàn thành",
+    "unitTypes": "Loại căn hộ",
+    "area": "Diện tích",
+    "bedrooms": "Phòng ngủ",
+    "amenities": "Tiện ích",
+    "highlights": "Điểm nổi bật"
+  },
+  "governance": {
+    "title": "Quản trị Xếp hạng",
+    "subtitle": "Cam kết của chúng tôi về xếp hạng bất động sản minh bạch, có thể kiểm toán và không xung đột lợi ích",
+    "backToRankings": "Quay lại Bảng Xếp Hạng",
+    "methodologyVersion": "Phiên bản Phương pháp",
+    "corePrinciples": {
+      "title": "Nguyên tắc Cốt lõi",
+      "ratingsFirst": {
+        "title": "Xếp hạng Trên hết. Minh bạch Luôn luôn.",
+        "description": "Xếp hạng của chúng tôi dựa trên bằng chứng và chứng nhận, không phải quan hệ thương mại. Mọi điểm số đều có thể tái tạo, kiểm toán và giải thích được."
+      },
+      "noInvestmentPromises": {
+        "title": "Không Hứa hẹn Đầu tư",
+        "description": "Chúng tôi không đưa ROI hoặc giá trị đầu tư vào điểm số. Công cụ phân tích đầu tư được cung cấp riêng với các cảnh báo rõ ràng và giả định do người dùng nhập."
+      },
+      "commercialIsolation": {
+        "title": "Cách ly Thương mại",
+        "description": "Vị trí tài trợ, giải thưởng và dịch vụ lead được cách ly về kỹ thuật và vận hành khỏi hệ thống xếp hạng. Chúng không thể ảnh hưởng đến điểm số theo thiết kế."
+      }
+    },
+    "scoringMethodology": {
+      "title": "Phương pháp Chấm điểm",
+      "description": "Các dự án được đánh giá theo 4 tiêu chí khách quan. Mỗi tiêu chí được tính trọng số dựa trên tầm quan trọng đối với an toàn người mua và chất lượng dự án.",
+      "roiRemoved": {
+        "title": "Đã loại bỏ ROI/Giá trị Đầu tư",
+        "description": "Điểm giá trị đầu tư đã được loại bỏ để tuân thủ Luật Quảng cáo Việt Nam (có hiệu lực từ 1/1/2026) và tránh trách nhiệm về lời hứa đầu tư. Phân tích đầu tư có sẵn trong công cụ tính toán với các cảnh báo rõ ràng."
+      }
+    },
+    "conflictOfInterest": {
+      "title": "Chính sách Xung đột Lợi ích",
+      "dataIsolation": {
+        "title": "Cách ly Dữ liệu",
+        "description": "Dữ liệu thương mại (vị trí tài trợ, giải thưởng, leads) được lưu trữ trong schema riêng biệt không có quan hệ khóa ngoại với dữ liệu xếp hạng. Hệ thống tính điểm không có quyền truy cập cấp database vào các bảng thương mại."
+      },
+      "noRankingInfluence": {
+        "title": "Không Ảnh hưởng Xếp hạng",
+        "description": "Trạng thái tài trợ không ảnh hưởng thứ tự sắp xếp. Dự án được xếp hạng thuần túy theo tier và điểm số. Huy hiệu tài trợ hiển thị để minh bạch, không phải ưu tiên."
+      },
+      "disclosureRequirements": {
+        "title": "Yêu cầu Công khai",
+        "description": "Tất cả nội dung tài trợ được gắn nhãn rõ ràng với tooltip giải thích bản chất của quan hệ thương mại."
+      },
+      "awardsTransparency": {
+        "title": "Minh bạch Giải thưởng",
+        "description": "Đề cử giải thưởng có phí và được gắn nhãn rõ ràng là chương trình marketing trả phí. Giải thưởng không ảnh hưởng xếp hạng dự án."
+      }
+    },
+    "auditTrail": {
+      "title": "Dấu vết Kiểm toán",
+      "description": "Mọi thay đổi xếp hạng được ghi lại với khả năng truy xuất đầy đủ.",
+      "scoreRunRecords": {
+        "title": "Bản ghi Chạy điểm",
+        "description": "Mỗi lần tính điểm tạo ra bản ghi bất biến với hash đầu vào, liên kết bằng chứng và phiên bản phương pháp."
+      },
+      "evidenceMapping": {
+        "title": "Ánh xạ Bằng chứng",
+        "description": "Mỗi điểm thành phần được liên kết với các mục bằng chứng và chứng nhận cụ thể hỗ trợ hoặc bác bỏ xếp hạng."
+      },
+      "scoreDiffs": {
+        "title": "Khác biệt Điểm số",
+        "description": "Khi xếp hạng thay đổi, bản ghi diff giải thích thay đổi gì và tại sao, với các delta cấp thành phần."
+      },
+      "onChainAnchoring": {
+        "title": "Neo On-Chain",
+        "description": "Hash chạy điểm có thể được neo vào blockchain Mantle để chứng minh lịch sử xếp hạng chống giả mạo."
+      }
+    },
+    "issuerVerification": {
+      "title": "Xác minh Người phát hành",
+      "description": "Các chứng nhận đóng góp vào xếp hạng được phát hành bởi các thực thể đã xác minh với thẩm quyền giới hạn.",
+      "issuerRegistry": {
+        "title": "Sổ đăng ký Người phát hành",
+        "description": "Tất cả người phát hành phải được đăng ký với thông tin xác thực đã xác minh trước khi có thể ký chứng nhận. Thông tin xác thực bao gồm giấy phép kinh doanh, chứng chỉ chuyên môn và phê duyệt pháp quy."
+      },
+      "scopedAuthority": {
+        "title": "Thẩm quyền Giới hạn",
+        "description": "Mỗi người phát hành được ủy quyền cho các loại chứng nhận cụ thể (ví dụ: tình trạng pháp lý, tiến độ xây dựng). Họ không thể ký chứng nhận ngoài phạm vi."
+      },
+      "dualControl": {
+        "title": "Kiểm soát Kép",
+        "description": "Các chứng nhận có tác động cao yêu cầu kiểm soát kép: một thành viên ký, một thành viên khác xem xét và công bố."
+      }
+    },
+    "disputeProcess": {
+      "title": "Quy trình Khiếu nại",
+      "description": "Nếu bạn cho rằng xếp hạng không chính xác, bạn có thể gửi khiếu nại với bằng chứng hỗ trợ.",
+      "steps": [
+        "Gửi khiếu nại qua trang dự án hoặc form liên hệ",
+        "Cung cấp bằng chứng hỗ trợ (tài liệu, hình ảnh, hồ sơ chính thức)",
+        "Đội ngũ của chúng tôi xem xét trong 5 ngày làm việc",
+        "Nếu hợp lệ, xếp hạng được cập nhật với giải thích diff công khai",
+        "Nếu bị từ chối, bạn nhận được giải thích chi tiết"
+      ],
+      "submitLink": "Gửi Dữ liệu hoặc Điều chỉnh"
+    },
+    "updateCadence": {
+      "title": "Chu kỳ Cập nhật",
+      "daily": {
+        "label": "Hàng ngày",
+        "description": "Bằng chứng và chứng nhận mới được xử lý và phản ánh trong điểm số."
+      },
+      "weekly": {
+        "label": "Hàng tuần",
+        "description": "Chấm điểm lại toàn bộ các dự án có bằng chứng cũ (hơn 30 ngày)."
+      },
+      "quarterly": {
+        "label": "Hàng quý",
+        "description": "Đánh giá phương pháp và điều chỉnh trọng số tiềm năng (với thông báo công khai)."
+      }
+    }
+  },
+  "verify": {
+    "title": "Xác minh Attestation",
+    "subtitle": "Kiểm tra trạng thái xác minh của dự án bất động sản trên Mantle blockchain",
+    "backToHome": "Về trang chủ",
+    "stats": {
+      "attestations": "attestations",
+      "active": "đang hoạt động"
+    },
+    "demoMode": "Chế độ demo",
+    "searchPlaceholder": "Nhập project slug hoặc asset ID (0x...)",
+    "verifyButton": "Xác minh",
+    "searching": "Đang tìm kiếm...",
+    "notFound": "Không tìm thấy",
+    "notFoundError": "Không tìm thấy xác minh cho ID này",
+    "assetIdLabel": "Asset ID",
+    "copyAssetId": "Sao chép asset ID đầy đủ",
+    "viewOnExplorer": "Xem trên Explorer",
+    "shareLink": "Link xác minh",
+    "tryWithSamples": "Thử với các dự án mẫu:",
+    "tiers": {
+      "tier1_2": {
+        "title": "Tier 1-2: Cơ bản",
+        "description": "Kiểm tra tài liệu pháp lý cơ bản và tính nhất quán của hồ sơ dự án."
+      },
+      "tier3": {
+        "title": "Tier 3: Xác nhận",
+        "description": "Đối chiếu với sổ đỏ, có đối tác độc lập đồng ký xác nhận."
+      },
+      "tier4": {
+        "title": "Tier 4: Giám sát",
+        "description": "Theo dõi liên tục, cập nhật định kỳ và cảnh báo khi có thay đổi."
+      }
+    },
+    "sampleAttestations": "Attestations mẫu (Demo)",
+    "checksPassed": "checks passed",
+    "disputed": "Đang tranh chấp"
+  },
+  "errors": {
+    "forbidden": "Bạn không có quyền truy cập trang này",
+    "requiresOnboarding": "Vui lòng hoàn thành thiết lập hồ sơ trước",
+    "requiresUpgrade": "Tính năng này yêu cầu gói Pro",
+    "authRequired": "Vui lòng đăng nhập để tiếp tục"
+  },
+  "comments": {
+    "title": "Bình luận",
+    "titleDeveloper": "Đánh giá Chủ đầu tư",
+    "writeComment": "Viết bình luận",
+    "placeholder": "Chia sẻ ý kiến của bạn về {name}...",
+    "defaultPlaceholder": "Chia sẻ ý kiến của bạn...",
+    "submit": "Đăng bình luận",
+    "submitting": "Đang gửi...",
+    "reply": "Phản hồi",
+    "replies": "phản hồi",
+    "edit": "Sửa",
+    "delete": "Xóa",
+    "report": "Báo cáo",
+    "upvote": "Hữu ích",
+    "downvote": "Không hữu ích",
+    "rating": "Đánh giá",
+    "clear": "Xóa",
+    "signIn": "Đăng nhập",
+    "toComment": "để viết bình luận",
+    "loginToComment": "Đăng nhập để viết bình luận",
+    "noComments": "Chưa có bình luận",
+    "beFirst": "Hãy là người đầu tiên chia sẻ ý kiến!",
+    "loadMore": "Xem thêm bình luận",
+    "loading": "Đang tải...",
+    "retry": "Thử lại",
+    "minChars": "Tối thiểu 10 ký tự",
+    "anonymousUser": "Người dùng",
+    "confirmDelete": "Bạn có chắc muốn xóa bình luận này?",
+    "confirmDeleteReply": "Bạn có chắc muốn xóa phản hồi này?",
+    "reportReason": "Lý do báo cáo:",
+    "reportSent": "Đã gửi báo cáo",
+    "showMoreReplies": "Xem thêm {count} phản hồi...",
+    "replyPlaceholder": "Viết phản hồi...",
+    "cancel": "Hủy",
+    "send": "Gửi",
+    "sort": {
+      "newest": "Mới nhất",
+      "mostHelpful": "Hữu ích nhất",
+      "highestRated": "Đánh giá cao"
+    },
+    "time": {
+      "justNow": "Vừa xong",
+      "minutesAgo": "{count} phút trước",
+      "hoursAgo": "{count} giờ trước",
+      "daysAgo": "{count} ngày trước"
+    },
+    "form": {
+      "ratingLabel": "Đánh giá (tùy chọn)",
+      "contentLabel": "Bình luận của bạn",
+      "cancel": "Hủy",
+      "update": "Cập nhật",
+      "charCount": "{count}/2000"
+    },
+    "replyForm": {
+      "placeholder": "Viết phản hồi...",
+      "submit": "Trả lời",
+      "cancel": "Hủy"
+    },
+    "vote": {
+      "helpful": "Hữu ích",
+      "notHelpful": "Không hữu ích"
+    },
+    "errors": {
+      "loadFailed": "Không thể tải bình luận",
+      "submitFailed": "Không thể đăng bình luận",
+      "postFailed": "Không thể đăng bình luận",
+      "deleteFailed": "Không thể xóa bình luận",
+      "voteFailed": "Không thể ghi nhận bình chọn",
+      "minLength": "Bình luận phải có ít nhất 10 ký tự",
+      "replyMinLength": "Phản hồi phải có ít nhất 5 ký tự",
+      "replyFailed": "Không thể gửi phản hồi",
+      "retry": "Thử lại"
+    }
+  }
+}

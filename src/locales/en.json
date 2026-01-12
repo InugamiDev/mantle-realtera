@@ -1,0 +1,1690 @@
+{
+  "metadata": {
+    "title": "RealTera - Transparent Real Estate Ratings",
+    "description": "Ratings first. Transparency always shown. No hidden advertisements."
+  },
+  "developers": {
+    "title": "Developer Rankings",
+    "subtitle": "Evaluating and ranking real estate developers based on reputation, project quality, and track record.",
+    "stats": {
+      "developers": "Developers",
+      "highTier": "High Tier (SSS-A)",
+      "totalProjects": "Total Projects",
+      "listed": "Listed"
+    },
+    "developersCount": "{count} developers",
+    "methodology": {
+      "title": "Ranking Methodology",
+      "description": "Developers are ranked based on multiple criteria: number of completed projects, delivery quality, brand reputation, financial health, and customer feedback. Rankings are updated periodically as new information becomes available.",
+      "link": "View detailed methodology →"
+    }
+  },
+  "developerDetail": {
+    "backToList": "Back to Developers",
+    "overview": "Overview",
+    "projects": "Projects",
+    "ratedProjects": "{count} rated projects",
+    "allProjects": "All Projects",
+    "noProjects": "No rated projects yet",
+    "founded": "Founded",
+    "headquarters": "Headquarters",
+    "stockCode": "Stock Code",
+    "website": "Website",
+    "totalProjects": "Total Projects",
+    "completedProjects": "Completed Projects",
+    "ongoingProjects": "Ongoing Projects"
+  },
+  "projectDetail": {
+    "backToRanking": "Back to Rankings",
+    "overview": "Overview",
+    "location": "Location",
+    "developer": "Developer",
+    "priceRange": "Price Range",
+    "units": "Units",
+    "status": "Status",
+    "completionDate": "Completion Date",
+    "lastUpdated": "Last Updated",
+    "sources": "sources",
+    "viewDetails": "View Details",
+    "scoreBreakdown": "Score Breakdown",
+    "investmentMetrics": "Investment Metrics",
+    "estimatedRoi": "Estimated ROI",
+    "rentalYield": "Rental Yield",
+    "priceGrowth": "Price Growth",
+    "nearbyAmenities": "Nearby Amenities",
+    "similarProjects": "Similar Projects",
+    "priceHistory": "Price History",
+    "noData": "No data available"
+  },
+  "compare": {
+    "title": "Compare Projects",
+    "subtitle": "Compare 2 real estate projects by key criteria",
+    "backToRanking": "Back to Rankings",
+    "project1": "Project 1",
+    "project2": "Project 2",
+    "selectFirst": "Select first project...",
+    "selectSecond": "Select second project...",
+    "searchPlaceholder": "Search by name, district, developer...",
+    "noProjectFound": "No project found",
+    "sameProjectWarning": "You've selected the same project. Please select a different project to compare.",
+    "selectToCompare": "Select 2 projects to compare",
+    "selectToCompareHint": "Use the search bar above to find and select the projects you want to compare",
+    "loading": "Loading data...",
+    "points": "points",
+    "comparison": "Comparison",
+    "criteria": "Criteria",
+    "winner": "Winner",
+    "tie": "Tie"
+  },
+  "saved": {
+    "badge": "Saved Projects",
+    "title": "Saved List",
+    "subtitle": "You've saved {count} projects for later",
+    "subtitleEmpty": "Save your favorite projects to compare and track",
+    "backToRanking": "Back to Rankings",
+    "noSavedProjects": "No saved projects yet",
+    "noSavedProjectsHint": "Click the bookmark icon on project cards to save",
+    "exploreProjects": "Explore Projects",
+    "projectsSaved": "{count} projects saved",
+    "clearAll": "Clear all",
+    "enableAlert": "Enable notifications",
+    "disableAlert": "Disable notifications",
+    "loading": "Loading data..."
+  },
+  "account": {
+    "title": "Your Account",
+    "subtitle": "Manage personal information and account settings",
+    "backToHome": "Back to Home",
+    "notLoggedIn": "Not logged in",
+    "pleaseLogin": "Please sign in to view and edit your account information.",
+    "signIn": "Sign in",
+    "signOut": "Sign out",
+    "joinDate": "Join date",
+    "accountType": "Account type",
+    "free": "Free",
+    "personalInfo": {
+      "title": "Personal Information",
+      "displayName": "Display name",
+      "displayNamePlaceholder": "Enter your name",
+      "email": "Email",
+      "emailCannotChange": "Email cannot be changed",
+      "phone": "Phone number",
+      "phonePlaceholder": "0912 345 678",
+      "company": "Company / Organization",
+      "companyPlaceholder": "Company name (if any)"
+    },
+    "whoAreYou": {
+      "title": "Who are you?",
+      "subtitle": "Help us personalize your experience",
+      "investor": "Investor",
+      "investorDesc": "Real estate investing",
+      "developer": "Developer",
+      "developerDesc": "Project development",
+      "agent": "Agent",
+      "agentDesc": "Consulting & brokerage",
+      "buyer": "Buyer",
+      "buyerDesc": "Looking for a home",
+      "other": "Other",
+      "otherDesc": "Other purposes"
+    },
+    "notifications": {
+      "title": "Notifications",
+      "email": "Email notifications",
+      "emailDesc": "Receive important notifications via email",
+      "priceAlerts": "Price alerts",
+      "priceAlertsDesc": "Notify when prices of tracked projects change",
+      "newProjects": "New projects",
+      "newProjectsDesc": "Notify when new projects match your interests",
+      "weeklyDigest": "Weekly digest",
+      "weeklyDigestDesc": "Weekly market news summary"
+    },
+    "security": {
+      "title": "Security",
+      "changePassword": "Change password",
+      "changePasswordDesc": "Update your login password",
+      "twoFactor": "Two-factor authentication",
+      "twoFactorDesc": "Protect your account with 2FA"
+    },
+    "emailVerified": "Email verified",
+    "saveChanges": "Save changes",
+    "saving": "Saving...",
+    "saved": "Saved!"
+  },
+  "portfolio": {
+    "title": "My Portfolio",
+    "subtitle": "Track your properties and calculate ROI automatically",
+    "loginTitle": "Portfolio Tracker",
+    "loginSubtitle": "Track the properties you own and calculate ROI automatically",
+    "loginButton": "Sign in to start",
+    "totalValue": "Total Value",
+    "totalCost": "Total Cost",
+    "gainLoss": "Gain/Loss",
+    "roi": "ROI",
+    "holdings": "Holdings",
+    "holdingsList": "Properties List",
+    "updateProjectInfo": "Update project info",
+    "noHoldings": "No properties in your portfolio yet.",
+    "addFirstHolding": "Add first property",
+    "addProperty": "Add Property",
+    "purchasePrice": "Purchase Price",
+    "currentValue": "Current Value",
+    "deleteConfirm": "Are you sure you want to remove this property from your portfolio?",
+    "tip": "Tip:",
+    "tipText": "Enter the project slug from the URL (e.g., from /project/{slug}). Current price is calculated based on RealTera market data.",
+    "form": {
+      "title": "Add New Property",
+      "editTitle": "Update Property",
+      "projectSlug": "Project Slug",
+      "projectSlugPlaceholder": "vinhomes-grand-park",
+      "projectSlugHint": "Get from URL: /project/[slug]",
+      "purchaseDate": "Purchase Date",
+      "area": "Area (m²)",
+      "purchasePrice": "Purchase Price (VND)",
+      "currentValue": "Current Value (VND)",
+      "notes": "Notes",
+      "notesPlaceholder": "Notes about the property...",
+      "cancel": "Cancel",
+      "saving": "Saving...",
+      "save": "Save",
+      "add": "Add",
+      "update": "Update"
+    }
+  },
+  "alerts": {
+    "title": "Alerts & Notifications",
+    "badge": "Notifications",
+    "subtitle": "Track new projects, price changes, and ranking updates",
+    "backToRanking": "Back to Rankings",
+    "loginTitle": "Sign in to view notifications",
+    "loginSubtitle": "Receive alerts about new projects, price changes, and ranking updates",
+    "signIn": "Sign in",
+    "filter": {
+      "all": "All",
+      "newLaunch": "New Launch",
+      "priceChange": "Price Change",
+      "tierChange": "Tier Change",
+      "verification": "Verification",
+      "developerNews": "Developer News"
+    },
+    "markAllRead": "Mark all as read",
+    "loading": "Loading...",
+    "noAlerts": "No notifications yet",
+    "markAsRead": "Mark as read",
+    "viewProject": "View project",
+    "settings": {
+      "title": "Notification Settings",
+      "description": "Notifications will be sent via email and shown in the app"
+    },
+    "timeAgo": {
+      "minutesAgo": "{count} minutes ago",
+      "hoursAgo": "{count} hours ago",
+      "daysAgo": "{count} days ago"
+    },
+    "createAlert": "Create Alert",
+    "activeAlerts": "Active Alerts",
+    "noAlertsHint": "Create alerts to track price changes",
+    "priceAbove": "Price above",
+    "priceBelow": "Price below",
+    "anyChange": "Any change",
+    "deleteAlert": "Delete alert",
+    "alertCreated": "Alert created",
+    "alertDeleted": "Alert deleted"
+  },
+  "verification": {
+    "pageTitle": "Verification Process",
+    "pageSubtitle": "Learn how RealTera verifies and ensures project information quality",
+    "backToRanking": "Back to Rankings",
+    "fiveSteps": {
+      "title": "5-Step Process",
+      "step1": {
+        "title": "Data Collection",
+        "description": "Aggregating information from official and reputable sources"
+      },
+      "step2": {
+        "title": "Legal Verification",
+        "description": "Checking construction permits, 1/500 planning, land ownership"
+      },
+      "step3": {
+        "title": "Developer Evaluation",
+        "description": "Financial analysis, project history, brand reputation"
+      },
+      "step4": {
+        "title": "On-site Survey",
+        "description": "Inspecting construction progress, project quality"
+      },
+      "step5": {
+        "title": "Summary & Ranking",
+        "description": "Scoring and ranking based on evaluation criteria"
+      }
+    },
+    "statusMeaning": {
+      "title": "Verification Status Meaning",
+      "verified": {
+        "label": "Verified",
+        "description": "Project has been fully verified by RealTera from reliable sources. Rating and scores accurately reflect current status."
+      },
+      "pending": {
+        "label": "Under Review",
+        "description": "Project is being verified. Some information may not be fully confirmed. Rating may change after verification."
+      },
+      "notVerified": {
+        "label": "Not Verified",
+        "description": "Project has not been verified by RealTera. Information shown is based on public data, please use with caution."
+      },
+      "notRated": {
+        "label": "Not Rated",
+        "description": "Project does not have enough information for evaluation. May be new or have anomalies requiring investigation."
+      }
+    },
+    "checklist": {
+      "title": "Verification Checklist",
+      "intro": "Each \"Verified\" project must meet the following criteria:",
+      "items": [
+        "Valid and current construction permit",
+        "Approved 1/500 planning",
+        "Developer with clear financial capacity",
+        "Construction progress matches commitments",
+        "No serious legal disputes",
+        "Clear pricing and policy information"
+      ]
+    },
+    "appeal": {
+      "title": "Updates & Appeals",
+      "description": "If you are a developer or stakeholder and want to update information or appeal an evaluation, please use the form below. We commit to review and respond within 3-5 business days.",
+      "submitButton": "Submit update information",
+      "email": "Email"
+    },
+    "title": "Project Verification",
+    "subtitle": "Request official verification for your project",
+    "requestVerification": "Request Verification",
+    "verificationStatus": "Verification Status",
+    "verified": "Verified",
+    "pending": "Pending",
+    "notVerified": "Not Verified",
+    "rejected": "Rejected",
+    "benefits": {
+      "title": "Verification Benefits",
+      "trust": "Increased buyer trust",
+      "visibility": "Priority visibility in rankings",
+      "badge": "Official verification badge",
+      "support": "Dedicated support"
+    },
+    "requirements": {
+      "title": "Requirements",
+      "legalDocs": "Legal documents",
+      "projectInfo": "Project information",
+      "developerInfo": "Developer information",
+      "photos": "Project photos"
+    }
+  },
+  "sponsorship": {
+    "title": "Sponsored Placement",
+    "subtitle": "Increase your project's visibility",
+    "benefits": "Benefits",
+    "pricing": "Pricing",
+    "contact": "Contact Us",
+    "features": {
+      "priority": "Priority placement in rankings",
+      "badge": "Sponsored badge",
+      "analytics": "Detailed analytics",
+      "support": "Dedicated support"
+    }
+  },
+  "submitData": {
+    "title": "Submit Data",
+    "subtitle": "Help improve project information",
+    "projectName": "Project Name",
+    "dataType": "Data Type",
+    "description": "Description",
+    "source": "Source",
+    "submit": "Submit",
+    "submitting": "Submitting...",
+    "success": "Data submitted successfully",
+    "error": "Failed to submit data"
+  },
+  "admin": {
+    "title": "Admin Dashboard",
+    "overview": "Overview",
+    "projects": "Projects",
+    "developers": "Developers",
+    "users": "Users",
+    "auctions": "Auctions",
+    "settings": "Settings",
+    "totalProjects": "Total Projects",
+    "totalDevelopers": "Total Developers",
+    "totalUsers": "Total Users",
+    "pendingVerifications": "Pending Verifications"
+  },
+  "projectCard": {
+    "viewDetails": "View Details",
+    "sources": "sources",
+    "roi": "ROI",
+    "strong": "Strong",
+    "medium": "Medium",
+    "weak": "Weak"
+  },
+  "developerCard": {
+    "projects": "projects",
+    "rated": "rated",
+    "founded": "Founded",
+    "website": "Website",
+    "viewDetails": "View Details"
+  },
+  "tier": {
+    "ranked": "Ranked",
+    "sss": "Exceptional",
+    "ss": "Outstanding",
+    "s+": "Excellent",
+    "s": "Very Good",
+    "a": "Good",
+    "b": "Average",
+    "c": "Below Average",
+    "d": "Poor",
+    "f": "Very Poor",
+    "desc": {
+      "sss": "Top-tier project, absolutely trustworthy",
+      "ss": "Excellent project, high reputation, great potential",
+      "s+": "Excellent risk/appreciation balance",
+      "s": "Good project, worthy investment consideration",
+      "a": "Fairly good, some factors need review",
+      "b": "Has potential but consider risks",
+      "c": "Average project, significant risk",
+      "d": "High risk, proceed with caution",
+      "f": "Very high risk, not recommended"
+    }
+  },
+  "scoreBreakdown": {
+    "title": "Score Breakdown",
+    "totalScore": "Total Score",
+    "of": "of"
+  },
+  "dataQuality": {
+    "high": "High quality data",
+    "medium": "Medium quality data",
+    "low": "Low quality data",
+    "verified": "Verified",
+    "unverified": "Unverified"
+  },
+  "dataQualityBadge": {
+    "title": "Data quality: {quality}%",
+    "high": "High",
+    "medium": "Med",
+    "low": "Low",
+    "highDesc": "Verified data from reliable sources",
+    "mediumDesc": "Basic data, needs supplementation",
+    "lowDesc": "Limited data, still collecting"
+  },
+  "evidence": {
+    "title": "Evidence & Sources",
+    "source": "Source",
+    "date": "Date",
+    "noEvidence": "No evidence available"
+  },
+  "evidenceList": {
+    "title": "Sources",
+    "count": "{count} sources"
+  },
+  "signalChip": {
+    "legal": "Legal",
+    "price": "Price",
+    "liquidity": "Liquidity"
+  },
+  "developerScorecard": {
+    "title": "Developer Score",
+    "totalScore": "Total Score",
+    "completedProjects": "Completed",
+    "ongoingProjects": "Ongoing",
+    "employees": "Employees",
+    "marketCap": "Market Cap",
+    "certifications": "Certifications"
+  },
+  "history": {
+    "title": "Update History",
+    "noHistory": "No history available",
+    "priceChange": "Price change",
+    "statusChange": "Status change",
+    "infoUpdate": "Information update"
+  },
+  "signals": {
+    "legal": "Legal",
+    "price": "Price",
+    "liquidity": "Liquidity",
+    "high": "High",
+    "medium": "Medium",
+    "low": "Low"
+  },
+  "legal": {
+    "completed": "Completed",
+    "inProgress": "In Progress",
+    "planning": "Planning",
+    "unknown": "Unknown",
+    "pinkBook": "Pink Book",
+    "constructionPermit": "Construction Permit",
+    "landUseRight": "Land Use Right",
+    "projectApproval": "Project Approval"
+  },
+  "legalRisk": {
+    "safe": "Safe",
+    "moderate": "Moderate",
+    "risky": "Risky",
+    "danger": "Danger",
+    "unknown": "Unknown"
+  },
+  "compareTable": {
+    "verdict": "Verdict",
+    "score": "Score",
+    "attestation": "Attestation",
+    "unverified": "Unverified",
+    "legal": "Legal",
+    "price": "Price",
+    "liquidity": "Liquidity",
+    "roi": "ROI",
+    "sources": "Sources",
+    "sourceCount": "{count} sources",
+    "bestFor": "Best For",
+    "viewDetails": "View Details"
+  },
+  "historyTimeline": {
+    "title": "Change History",
+    "eventCount": "{count} events",
+    "score": "Score"
+  },
+  "sponsoredDisclosure": {
+    "badge": "Sponsored",
+    "ariaLabel": "About Sponsored",
+    "tooltipTitle": "Sponsorship only affects position.",
+    "tooltipDescription": "Rankings and scores are not affected by sponsor status."
+  },
+  "saveButton": {
+    "save": "Save",
+    "saved": "Saved"
+  },
+  "dataQuality": {
+    "high": "High",
+    "good": "Good",
+    "medium": "Medium",
+    "low": "Low"
+  },
+  "qualityOfLife": {
+    "title": "Quality of Life",
+    "walkability": "Walkability",
+    "greenSpace": "Green Space",
+    "noiseLevel": "Noise Level",
+    "publicTransport": "Transport",
+    "trafficLevel": "Traffic",
+    "nearbyAmenities": "Nearby Amenities",
+    "schools": "Schools",
+    "hospitals": "Hospitals",
+    "parks": "Parks",
+    "malls": "Shopping",
+    "markets": "Markets",
+    "aqi": {
+      "good": "Good",
+      "moderate": "Moderate",
+      "poor": "Poor",
+      "bad": "Bad",
+      "hazardous": "Hazardous"
+    },
+    "aqiTooltip": "Air Quality Index (AQI): {aqi} - {label}. ≤50: Good, 51-100: Moderate, 101-150: Poor, 151-200: Bad, >200: Hazardous",
+    "walkabilityTooltip": "Walkability Score: {score}/100. Measures how easy it is to walk to amenities, shops, and services in the area",
+    "greenSpaceTooltip": "Green Space Ratio: {ratio}% of the area is parks, gardens, and greenery. Higher = better living environment"
+  },
+  "trustBar": {
+    "transparency": "Transparency",
+    "verification": "Verification",
+    "sources": "Sources",
+    "updates": "Updates",
+    "verificationProcess": "Verification Process",
+    "sponsorPolicy": "Sponsor Policy"
+  },
+  "disclosure": {
+    "sponsored": "Sponsored",
+    "sponsoredTooltip": "This project has paid for increased visibility. Our ratings remain independent and unaffected."
+  },
+  "nav": {
+    "ranking": "Rankings",
+    "developers": "Developers",
+    "calculator": "Rent or Buy?",
+    "compare": "Compare",
+    "methodology": "Methodology",
+    "more": "More",
+    "market": "Market",
+    "advisor": "AI Advisor",
+    "awards": "Awards",
+    "valuation": "Valuation",
+    "pro": "Pro",
+    "agency": "Agency Workspace",
+    "developerConsole": "Developer Console",
+    "api": "API",
+    "governance": "Governance",
+    "verify": "Verify",
+    "comingSoon": "Coming soon",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "mobileNav": {
+    "ranking": "Rankings",
+    "developers": "Devs",
+    "calculator": "Calc",
+    "compare": "Compare",
+    "saved": "Saved"
+  },
+  "auth": {
+    "login": "Sign in",
+    "logout": "Sign out",
+    "saved": "Saved"
+  },
+  "authModal": {
+    "title": "Sign in to RealTera",
+    "subtitle": "Choose your preferred sign-in method",
+    "emailOption": "Email or Google",
+    "emailDescription": "Sign in with your email address",
+    "walletOption": "Wallet",
+    "walletDescription": "Sign in with Ethereum wallet",
+    "or": "or",
+    "terms": "By signing in, you agree to our Terms of Service",
+    "back": "Back",
+    "connectWallet": "Connect Wallet",
+    "selectWallet": "Select a wallet to connect",
+    "signMessage": "Sign Message",
+    "signMessageDesc": "Please sign the message in your wallet to verify ownership",
+    "verifying": "Verifying...",
+    "verifyingDesc": "Confirming your signature",
+    "success": "Welcome!",
+    "successDesc": "You have successfully signed in",
+    "error": "Sign-in Failed",
+    "tryAgain": "Try Again"
+  },
+  "linkedAccounts": {
+    "title": "Linked Accounts",
+    "email": "Email",
+    "wallet": "Wallet",
+    "notLinked": "Not linked",
+    "linkEmail": "Link Email",
+    "linkWallet": "Link Wallet",
+    "walletLinkedSuccess": "Wallet linked successfully",
+    "signing": "Signing message...",
+    "linking": "Linking wallet..."
+  },
+  "userMenu": {
+    "user": "User",
+    "account": "Account",
+    "portfolio": "Portfolio",
+    "settings": "Settings",
+    "signOut": "Sign out"
+  },
+  "common": {
+    "save": "Save",
+    "saved": "Saved",
+    "unsave": "Unsave",
+    "saveProject": "Save project",
+    "comingSoon": "Coming soon",
+    "backToRanking": "Back to Rankings",
+    "viewRanking": "View Rankings",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "noResults": "No results found"
+  },
+  "footer": {
+    "tagline": "Transparent real estate ratings",
+    "verification": "Verification",
+    "sponsor": "Sponsor",
+    "methodology": "Methodology",
+    "about": "About",
+    "contact": "Contact",
+    "copyright": "All rights reserved.",
+    "disclaimer": "Information is for reference only, not investment advice."
+  },
+  "home": {
+    "badge": "Real Estate Intelligence",
+    "title": "Real estate, ranked.",
+    "subtitle": "Ratings first. Transparency always shown. No hidden ads.",
+    "searchPlaceholder": "Search projects, districts, cities...",
+    "searchLabel": "Search projects",
+    "allDistricts": "All districts",
+    "allDevelopers": "All developers",
+    "allPrices": "All prices",
+    "allStatus": "All status",
+    "priceUnder30": "Under 30M/m²",
+    "price30to50": "30-50M/m²",
+    "price50to80": "50-80M/m²",
+    "price80to120": "80-120M/m²",
+    "priceAbove120": "Above 120M/m²",
+    "filterByDistrict": "Filter by district",
+    "filterByDeveloper": "Filter by developer",
+    "filterByPrice": "Filter by price range",
+    "filterByStatus": "Filter by verification status",
+    "clearFilters": "Clear filters",
+    "hideLowTier": "Hide low tier",
+    "viewMore": "View more rankings",
+    "showing": "Showing:",
+    "projects": "projects",
+    "sortBy": "Sort by:",
+    "sortTierScore": "Tier → Score",
+    "sortUpdated": "Recently updated",
+    "sortSources": "Most sources",
+    "noProjects": "No projects found",
+    "noProjectsHint": "Try changing filters or search keywords",
+    "verified": "Verified",
+    "pending": "Pending",
+    "notVerified": "Not verified",
+    "notRated": "Not rated"
+  },
+  "about": {
+    "title": "About RealTera",
+    "subtitle": "Vietnam's first transparent real estate rating platform",
+    "mission": "Mission",
+    "missionText": "Help home buyers make informed decisions based on transparent, objective, and easy-to-understand information.",
+    "transparent": "Transparent",
+    "objective": "Objective",
+    "easyToUnderstand": "Easy to understand",
+    "whyExist": "Why does RealTera exist?",
+    "whyExistIntro": "Vietnam's real estate market lacks a reliable source of information. Home buyers often face:",
+    "problem1": "Disguised advertising as \"reviews\"",
+    "problem2": "Inconsistent and hard-to-compare information",
+    "problem3": "Hidden legal risks",
+    "problem4": "Lack of clear evaluation standards",
+    "whyExistConclusion": "RealTera was created to solve these problems, providing an independent and objective perspective on real estate projects.",
+    "coreValues": "Core Values",
+    "transparentDesc": "All evaluation criteria and information sources are publicly disclosed",
+    "objectiveDesc": "Evaluations based on data, not influenced by commercial interests",
+    "easyToUnderstandDesc": "Simple rating system for quick and accurate comparisons",
+    "disclaimer": "Important Notice",
+    "disclaimerText": "Information on RealTera is for reference only, not professional investment advice. Users should do their own research and consult experts before making home purchase decisions.",
+    "registerProject": "Register project"
+  },
+  "methodology": {
+    "title": "Rating Methodology",
+    "subtitle": "Understand how RealTera evaluates and ranks real estate projects",
+    "philosophy": "Evaluation Philosophy",
+    "philosophyText": "RealTera believes that transparent information is every home buyer's right. We build our rating system based on objective data, not influenced by advertising or commercial interests.",
+    "quote": "Trust is earned, not bought.",
+    "criteria": "Evaluation Criteria",
+    "criteriaIntro": "Each project is evaluated based on 5 main criteria, with a total score of 100:",
+    "legal": "Legal",
+    "legalDesc": "Legal status, permits, property certificates",
+    "developer": "Developer",
+    "developerDesc": "Reputation, financial capacity, project history",
+    "location": "Location",
+    "locationDesc": "Transportation connectivity, surrounding amenities",
+    "progress": "Progress",
+    "progressDesc": "Construction progress, delivery commitments",
+    "value": "Value",
+    "valueDesc": "Selling price vs actual value, appreciation potential",
+    "tierTable": "Tier Rankings",
+    "tierTableIntro": "Based on total score, each project is placed in one of 8 tiers:",
+    "tierColumn": "Tier",
+    "scoreColumn": "Score",
+    "meaningColumn": "Meaning",
+    "dataSources": "Data Sources",
+    "dataSourcesIntro": "Evaluation information is compiled from multiple reliable sources:",
+    "source1": "Government agencies (Department of Construction, TNMT)",
+    "source2": "Company financial reports (listed enterprises)",
+    "source3": "Actual transaction data from real estate platforms",
+    "source4": "Feedback from residents and existing buyers",
+    "source5": "On-site surveys by RealTera team",
+    "updateFrequency": "Update Frequency",
+    "updateFrequencyText": "Project information is updated weekly and immediately when significant changes occur (legal, progress, incidents). Each update is recorded in the project's change history."
+  },
+  "calculator": {
+    "badge": "Financial Tools",
+    "title": "Rent or Buy?",
+    "subtitle": "Analyze real costs, investment opportunities, and break-even point to make smart financial decisions",
+    "buyInfo": "Purchase Information",
+    "rentInfo": "Rental Information",
+    "altInvestment": "Alternative Investment",
+    "incomeTime": "Income & Timeline",
+    "propertyPrice": "Property Price",
+    "propertyPriceHelp": "Purchase price including VAT",
+    "downPayment": "Down Payment",
+    "downPaymentHelp": "Banks typically require minimum 20-30%",
+    "loanTerm": "Loan Term",
+    "loanTermHelp": "Maximum loan term is usually 25-35 years",
+    "interestRate": "Interest Rate",
+    "interestRateHelp": "Average rate in VN: 8-12%/year",
+    "appreciation": "Property Appreciation",
+    "appreciationHelp": "Historical appreciation in VN: 5-10%/year",
+    "monthlyRent": "Monthly Rent",
+    "monthlyRentHelp": "Rent for equivalent property",
+    "rentInflation": "Rent Inflation",
+    "rentInflationHelp": "Rent typically increases 3-8%/year",
+    "investmentReturn": "Investment Return",
+    "investmentReturnHelp": "If not buying, you could invest in stocks, funds, etc. Average S&P 500 return: 10%/year",
+    "monthlyIncome": "Monthly Income",
+    "monthlyIncomeHelp": "Total income before tax",
+    "analysisPeriod": "Analysis Period",
+    "analysisPeriodHelp": "How long do you plan to stay?",
+    "recommendation": "Recommendation after {years} years",
+    "shouldBuy": "SHOULD BUY",
+    "shouldRent": "SHOULD RENT",
+    "consider": "CONSIDER",
+    "monthlyPayment": "Monthly Payment",
+    "priceToRent": "Price/Rent",
+    "breakEven": "Break-even",
+    "after": "After {years}y",
+    "buyBetter": "Buying better",
+    "rentBetter": "Renting better",
+    "shouldBuyLabel": "Should buy",
+    "shouldConsider": "Consider",
+    "shouldRentLabel": "Should rent",
+    "buyHouse": "BUY HOUSE",
+    "rentInvest": "RENT + INVEST",
+    "netPosition": "NET POSITION",
+    "comparison": "Detailed comparison after {years} years",
+    "comparisonChart": "Position Comparison Chart",
+    "formulaDetails": "Calculation Formula Details",
+    "yearlyComparison": "Year-by-year comparison ({years} years)",
+    "disclaimer": "Note:",
+    "disclaimerText": "This is an estimation tool based on simplified assumptions. Please consult a financial expert before making major decisions.",
+    "incomeRatio": "of income",
+    "exceedsAffordability": "Exceeds affordability",
+    "exceedsAffordabilityDesc": "Mortgage takes {ratio} of income (max recommended: 40%). Affordable price for your income:",
+    "costOut": "Costs",
+    "downPaymentLabel": "Down payment",
+    "transactionFee": "Transaction fee (3.5%)",
+    "totalMortgage": "Total mortgage ({years} years)",
+    "ofWhichInterest": "Of which interest",
+    "maintenance": "Maintenance (1%/year)",
+    "totalCost": "Total cost",
+    "valueReceived": "Value received",
+    "propertyValueAfter": "Property value after {years} years",
+    "appreciation2": "Appreciation",
+    "remainingDebt": "Remaining debt",
+    "firstMonthRent": "First month rent",
+    "lastYearRent": "Last year rent",
+    "totalRent": "Total rent {years} years",
+    "investmentAlternative": "Alternative investment ({rate}%/year)",
+    "investmentCapital": "Investment capital (down payment)",
+    "valueAfterYears": "Value after {years} years",
+    "additionalSavings": "Additional savings/month",
+    "additionalAccumulated": "Additional accumulated",
+    "netPositionDiff": "Net position difference after {years} years",
+    "buyAdvantage": "Buying is better by",
+    "rentAdvantage": "Renting is better by",
+    "pmtFormula": "Mortgage Formula (PMT)",
+    "pmtDesc": "Monthly payment is calculated using the PMT formula:",
+    "where": "Where:",
+    "loanPrincipal": "loan principal",
+    "monthlyRateLabel": "monthly rate",
+    "paymentPeriods": "payment periods",
+    "result": "Result:",
+    "priceToRentRatio": "Price-to-Rent Ratio",
+    "priceToRentDesc": "Years of rent to equal purchase price. Lower ratio = buy, higher = rent.",
+    "atVN": "In VN typically 20-35x",
+    "futureValue": "Future Value",
+    "futureValueDesc": "Asset value after N years with growth rate G%:",
+    "realEstate": "Real estate:",
+    "investmentAlt": "Alternative investment:",
+    "breakEvenPoint": "Break-even Point",
+    "breakEvenDesc": "Year when buying becomes more profitable than renting + investing:",
+    "breakEvenWhen": "Break-even occurs when: Buy position > Rent position",
+    "noBreakEven": "No break-even within 30 years",
+    "ifStayLess": "If you plan to stay less than {years} years, renting is better.",
+    "dtiRatio": "Debt-to-Income Ratio (DTI)",
+    "dtiDesc": "Percentage of income used for debt. Lower is safer.",
+    "safe": "Safe (recommended)",
+    "acceptable": "Acceptable",
+    "highRisk": "High risk",
+    "year": "Year",
+    "propertyValue": "Property Value",
+    "buyPosition": "Buy Position",
+    "investmentValue": "Investment Value",
+    "rentPosition": "Rent Position",
+    "difference": "Difference",
+    "buyPlus": "Buy +",
+    "rentPlus": "Rent +",
+    "reasons": {
+      "dtiExceeds": "DTI ratio ({ratio}) exceeds safe threshold of 40%. Need to increase income or reduce target price.",
+      "priceToRentHigh": "Price/rent ratio ({ratio}x) is too high. Property price is unreasonable compared to market rent.",
+      "buyBetterShort": "Buying is better by {amount} after {years} years, with break-even at only {breakEven} years.",
+      "buyBetterLong": "Buying is better, but takes {breakEven} years to break even. Suitable if you plan to stay long-term.",
+      "rentBetterBy": "Renting + investing will be better by {amount} after {years} years."
+    }
+  },
+  "units": {
+    "million": "M",
+    "billion": "B",
+    "dong": "VND",
+    "sqm": "m²",
+    "perSqm": "/m²",
+    "perMonth": "/month",
+    "perYear": "/year",
+    "years": "years",
+    "months": "months"
+  },
+  "market": {
+    "badge": "Market Intelligence",
+    "title": "Market Analysis",
+    "subtitle": "Real-time real estate market data",
+    "totalProjects": "Projects",
+    "totalDevelopers": "Developers",
+    "avgScore": "Avg Score",
+    "verifiedRate": "Verified",
+    "mapType": "Map type",
+    "projectDensity": "Project density",
+    "avgPrices": "Average prices",
+    "quality": "Quality",
+    "demand": "Demand",
+    "growth": "Growth",
+    "refresh": "Refresh",
+    "byDistrict": "by District",
+    "tierDistribution": "Tier Distribution",
+    "topDistricts": "Top Districts by Projects",
+    "needMoreAnalysis": "Need more detailed analysis?",
+    "upgradeProDesc": "Subscribe to Pro for full market reports and real-time data",
+    "viewSampleReport": "View sample report",
+    "upgradePro": "Upgrade to Pro"
+  },
+  "advisor": {
+    "badge": "AI Advisor",
+    "title": "AI Real Estate Advisor",
+    "subtitle": "Ask any question about the real estate market",
+    "greeting": "Hello! I'm RealTera AI",
+    "greetingDesc": "I can help you learn about real estate projects, compare projects, or provide investment advice.",
+    "inputPlaceholder": "Enter your question...",
+    "suggestedQuestions": "Suggested questions",
+    "capabilities": "I can help you with",
+    "suggestProjects": "Suggest suitable projects",
+    "analyzeInvestment": "Analyze investment potential",
+    "compareAreas": "Compare different areas",
+    "disclaimer": "* AI Advisor provides reference information. Please do your own research before making investment decisions.",
+    "developer": "Developer",
+    "project": "Project",
+    "questions": {
+      "q1": "Best project in District 2 under 5B?",
+      "q2": "Compare Vinhomes Grand Park and Masteri",
+      "q3": "How many projects does Vingroup have?",
+      "q4": "How is the current real estate market?",
+      "q5": "Is investing in District 7 apartments good?",
+      "q6": "Price of 2BR apartment in Thu Duc?"
+    }
+  },
+  "awards": {
+    "badge": "Annual Awards",
+    "title": "RealTera Awards 2024",
+    "subtitle": "Honoring outstanding developers and projects",
+    "categories": "Award Categories",
+    "voting": "Voting in progress",
+    "upcoming": "Coming soon",
+    "completed": "Completed",
+    "categoriesCount": "Categories",
+    "nomineesCount": "Nominees",
+    "votesCount": "Votes",
+    "winner": "Winner",
+    "nominees": "Nominees",
+    "voteNow": "Vote now",
+    "hallOfFame": "Hall of Fame",
+    "hallOfFameDesc": "View winners from previous years",
+    "viewHallOfFame": "View Hall of Fame"
+  },
+  "valuation": {
+    "badge": "Property Valuation",
+    "title": "Property Valuation",
+    "subtitle": "Estimate apartment value based on market data",
+    "propertyInfo": "Property Information",
+    "district": "District",
+    "selectDistrict": "Select district",
+    "area": "Area",
+    "bedrooms": "Bedrooms",
+    "floor": "Floor",
+    "direction": "Direction",
+    "selectDirection": "Select direction",
+    "east": "East",
+    "west": "West",
+    "south": "South",
+    "north": "North",
+    "southeast": "Southeast",
+    "southwest": "Southwest",
+    "northeast": "Northeast",
+    "northwest": "Northwest",
+    "projectInfo": "Project Information",
+    "projectTier": "Project Tier",
+    "buildYear": "Building Age",
+    "hasPool": "Swimming Pool",
+    "hasGym": "Gym",
+    "calculate": "Calculate Now",
+    "estimatedValue": "Estimated Value",
+    "priceRange": "Price Range",
+    "pricePerSqm": "Price/m²",
+    "pricePerSqmUnit": "M/m²",
+    "confidence": "Confidence",
+    "marketComparison": "Market Comparison",
+    "avgDistrict": "District Avg",
+    "avgCity": "City Avg",
+    "yourProperty": "Your Property",
+    "belowAvg": "below avg",
+    "aboveAvg": "above avg",
+    "factors": "Influencing Factors",
+    "similarProjects": "Similar Projects",
+    "disclaimer": "* This is an estimated value based on market data. Actual prices may vary depending on specific conditions.",
+    "select": "Select",
+    "amenities": "Amenities",
+    "balcony": "Balcony",
+    "parking": "Parking",
+    "low": "Low",
+    "mid": "Mid",
+    "high": "High",
+    "trend": "Trend",
+    "yoy": "YoY",
+    "trendUp": "↑ Up",
+    "trendStable": "→ Stable",
+    "bedroomOptions": {
+      "1": "1 BR",
+      "2": "2 BR",
+      "3": "3 BR",
+      "4": "4+ BR"
+    },
+    "districts": {
+      "quan1": "District 1",
+      "quan2": "District 2",
+      "quan3": "District 3",
+      "quan7": "District 7",
+      "quan9": "District 9",
+      "binhThanh": "Binh Thanh",
+      "thuDuc": "Thu Duc",
+      "phuNhuan": "Phu Nhuan",
+      "tanBinh": "Tan Binh",
+      "goVap": "Go Vap"
+    }
+  },
+  "blockchain": {
+    "title": "RealTera Blockchain Demo",
+    "subtitle": "Mantle Global Hackathon 2025 - RWA/RealFi Track",
+    "connectWallet": "Connect Wallet",
+    "connecting": "Connecting...",
+    "disconnect": "Disconnect",
+    "switchNetwork": "Switch Network",
+    "connectToLocalhost": "Connect to Localhost",
+    "connectToMantle": "Connect to Mantle",
+    "connectedTo": "Connected to",
+    "localhost": "Localhost",
+    "mantleSepolia": "Mantle Sepolia",
+    "mantleMainnet": "Mantle Mainnet",
+    "verificationBadge": {
+      "title": "1. Mint Verification Badge",
+      "description": "ERC-1155 badge proving a project has been verified by RealTera",
+      "mintTitle": "Mint On-Chain Verification",
+      "badge": "Badge",
+      "basic": "Basic",
+      "standard": "Standard",
+      "premium": "Premium",
+      "connectPrompt": "Connect wallet to mint verification badge on-chain",
+      "mintedSuccess": "Badge Minted Successfully!"
+    },
+    "propertyNFT": {
+      "title": "2. Mint Property NFT",
+      "description": "Unique NFT representing a verified real estate project",
+      "mintTitle": "Mint Property NFT",
+      "connectPrompt": "Connect wallet to mint property NFT",
+      "mintedSuccess": "Property NFT Minted!",
+      "uniqueToken": "Unique Token",
+      "propertyDetails": "Property Details"
+    },
+    "developerSBT": {
+      "title": "3. Mint Developer SBT",
+      "description": "Soul-Bound Token (non-transferable) for developer reputation",
+      "mintTitle": "Mint Developer SBT",
+      "soulBound": "Soul-Bound (Non-transferable)",
+      "connectPrompt": "Connect wallet to mint developer reputation SBT",
+      "mintedSuccess": "Developer SBT Minted!",
+      "nonTransferable": "Soul-Bound Token (Non-transferable)",
+      "reputationScore": "Reputation Score"
+    },
+    "onChain": {
+      "verified": "On-Chain Verified",
+      "onChain": "On-Chain",
+      "loading": "Loading...",
+      "expired": "Expired",
+      "revoked": "Revoked",
+      "active": "Active",
+      "expires": "Expires",
+      "verifiedAt": "Verified at",
+      "tokenId": "Token ID",
+      "viewOnExplorer": "View on Explorer"
+    },
+    "mintButton": "Mint",
+    "mintBadge": "Mint Badge",
+    "mintNFT": "Mint NFT",
+    "mintSBT": "Mint SBT",
+    "minting": "Minting...",
+    "confirmInWallet": "Confirm in Wallet...",
+    "confirming": "Confirming...",
+    "mintSuccess": "Minted Successfully!",
+    "mintError": "Error minting",
+    "mintFailed": "Failed to mint",
+    "transactionFailed": "Transaction failed",
+    "transactionPending": "Transaction pending",
+    "transactionConfirmed": "Transaction confirmed",
+    "mintedTransactions": "Minted Transactions",
+    "viewOnExplorer": "View on Mantle Explorer",
+    "viewTransaction": "View Transaction",
+    "copyAddress": "Copy Address",
+    "addressCopied": "Address copied!",
+    "setupInstructions": "Setup Instructions:",
+    "instruction1": "Add Localhost network to MetaMask (Chain ID: 31337, RPC: http://127.0.0.1:8545)",
+    "instruction2": "Import test wallet:",
+    "instruction3": "Connect wallet and start minting!",
+    "testnetInstructions": "Testnet Instructions:",
+    "testnetInstruction1": "Get testnet MNT from Mantle Sepolia faucet",
+    "testnetInstruction2": "Add Mantle Sepolia network to MetaMask",
+    "testnetInstruction3": "Connect and mint on testnet",
+    "contractAddress": "Contract",
+    "contractInfo": "Contract Information",
+    "network": "Network",
+    "chainId": "Chain ID",
+    "blockExplorer": "Block Explorer",
+    "tier": "Tier",
+    "score": "Score",
+    "district": "District",
+    "pricePerSqm": "Price/m²",
+    "currency": "VND",
+    "walletNotConnected": "Wallet not connected or contract not configured",
+    "walletRequired": "Wallet connection required",
+    "unsupportedNetwork": "Unsupported network",
+    "pleaseSwitch": "Please switch to a supported network",
+    "gasEstimate": "Estimated gas",
+    "gasPrice": "Gas price",
+    "totalCost": "Total cost",
+    "free": "Free (testnet)",
+    "noTransactionHistory": "No transactions yet",
+    "recentTransactions": "Recent Transactions",
+    "allTransactions": "All Transactions",
+    "pendingTransactions": "Pending Transactions",
+    "completedTransactions": "Completed Transactions",
+    "failedTransactions": "Failed Transactions"
+  },
+  "agency": {
+    "title": "Agency Workspace",
+    "subtitle": "Manage clients, collections, and share proofs",
+    "dashboard": "Dashboard",
+    "clients": "Clients",
+    "collections": "Collections",
+    "transactions": "Transactions",
+    "createCollection": "Create Collection",
+    "shareProof": "Share Proof",
+    "recentCollections": "Recent Collections",
+    "activity": "Activity",
+    "subscription": "Subscription",
+    "upgradeNow": "Upgrade Now",
+    "viewAll": "View All",
+    "noCollections": "No collections yet",
+    "createFirst": "Create your first collection",
+    "copyLink": "Copy Link",
+    "linkCopied": "Link copied!",
+    "shareExpires": "Share expires",
+    "projectsInCollection": "projects",
+    "collectionShared": "Collection shared",
+    "clientAdded": "Client added",
+    "verificationUpdated": "Verification updated",
+    "expiresIn": "expires in",
+    "days": "days"
+  },
+  "developerPortal": {
+    "title": "Developer Console",
+    "subtitle": "Manage your projects and verification status",
+    "dashboard": "Dashboard",
+    "projects": "Projects",
+    "documents": "Documents",
+    "verification": "Verification",
+    "apiKeys": "API Keys",
+    "webhooks": "Webhooks",
+    "expiringDocuments": "Documents Expiring Soon",
+    "verificationRequests": "Verification Requests",
+    "projectDossier": "Project Dossier",
+    "uploadDocument": "Upload Document",
+    "requestVerification": "Request Verification",
+    "viewEvidence": "View Evidence Pack",
+    "documentStatus": {
+      "pending": "Pending Review",
+      "verified": "Verified",
+      "rejected": "Rejected",
+      "expired": "Expired"
+    },
+    "verificationTiers": {
+      "tier0": "Unverified",
+      "tier1": "Basic",
+      "tier2": "Standard",
+      "tier3": "Premium",
+      "tier4": "Monitored"
+    },
+    "subscription": "Subscription",
+    "upgradeNow": "Upgrade Now"
+  },
+  "apiPortal": {
+    "title": "API Management",
+    "subtitle": "Manage API keys and integrations",
+    "keys": "API Keys",
+    "webhooks": "Webhooks",
+    "docs": "Documentation",
+    "createKey": "Create New Key",
+    "keyName": "Key Name",
+    "permissions": "Permissions",
+    "rateLimit": "Rate Limit",
+    "requestsPerHour": "requests/hour",
+    "usage": "Usage",
+    "usageThisMonth": "This Month",
+    "copyKey": "Copy Key",
+    "keyCopied": "API key copied!",
+    "revokeKey": "Revoke Key",
+    "showKey": "Show Key",
+    "hideKey": "Hide Key",
+    "activeKeys": "Active Keys",
+    "revokedKeys": "Revoked Keys",
+    "webhookUrl": "Webhook URL",
+    "events": "Events",
+    "testWebhook": "Test Webhook",
+    "deliveryLogs": "Delivery Logs",
+    "quickStart": "Quick Start",
+    "endpoints": "Endpoints"
+  },
+  "evidence": {
+    "title": "Evidence Pack",
+    "subtitle": "Legal documents and verification proofs",
+    "totalDocuments": "Total Documents",
+    "verifiedDocuments": "Verified",
+    "completionRate": "Completion",
+    "verificationTier": "Verification Tier",
+    "categories": {
+      "legal": "Legal Documents",
+      "developer": "Developer Records",
+      "construction": "Construction Progress",
+      "financial": "Financial Documents"
+    },
+    "status": {
+      "verified": "Verified",
+      "pending": "Pending Review",
+      "rejected": "Rejected",
+      "expired": "Expired"
+    },
+    "noEvidence": "No evidence available",
+    "viewOnBlockchain": "View on Blockchain",
+    "documentNumber": "Document Number",
+    "issuingAuthority": "Issuing Authority",
+    "uploadedAt": "Uploaded",
+    "verifiedAt": "Verified",
+    "expiresAt": "Expires"
+  },
+  "onboarding": {
+    "title": "Welcome to RealTera",
+    "subtitle": "Set up your account to get started",
+    "secureOnboarding": "Secure Onboarding",
+    "selectType": "What best describes you?",
+    "selectTypeSubtitle": "Choose your account type to personalize your experience",
+    "types": {
+      "investor": {
+        "title": "Investor",
+        "description": "Track projects, build portfolio, get market insights",
+        "benefits": ["Portfolio tracking & analytics", "Watchlist with price alerts", "Market reports & insights", "Investment calculators"]
+      },
+      "agency": {
+        "title": "Real Estate Agency",
+        "description": "Share verified projects with clients, build trust",
+        "benefits": ["Client collection management", "Share verification proofs", "Agency dashboard & analytics", "Team collaboration tools"]
+      },
+      "developer": {
+        "title": "Property Developer",
+        "description": "Get verified, showcase projects, attract buyers",
+        "benefits": ["On-chain verification badge", "Project dossier management", "Document lifecycle tracking", "Verification tier upgrades"]
+      },
+      "api": {
+        "title": "API User",
+        "description": "Integrate RealTera data into your platform",
+        "benefits": ["RESTful API access", "Real-time webhooks", "Usage analytics", "Developer documentation"]
+      }
+    },
+    "steps": {
+      "type": "Account Type",
+      "profile": "Your Profile",
+      "organization": "Organization",
+      "verify": "Verification",
+      "complete": "Complete"
+    },
+    "back": "Back",
+    "continue": "Continue",
+    "skip": "Skip for now",
+    "completeSetup": "Complete Setup",
+    "completing": "Completing...",
+    "welcomeAboard": "Welcome aboard!",
+    "accountReady": "Your account has been set up successfully.",
+    "goToDashboard": "Go to Dashboard",
+    "updateInSettings": "You can always update your profile in Settings",
+    "investor": {
+      "profileTitle": "Investor Profile",
+      "profileSubtitle": "Tell us about your preferences",
+      "optional": "This helps us personalize your experience (optional)",
+      "budget": "Investment Budget",
+      "interests": "Property Interests",
+      "locations": "Preferred Locations",
+      "budgetRanges": {
+        "under_1b": "Under 1B VND",
+        "1b_3b": "1B - 3B VND",
+        "3b_5b": "3B - 5B VND",
+        "5b_10b": "5B - 10B VND",
+        "over_10b": "Over 10B VND"
+      },
+      "propertyTypes": {
+        "apartment": "Apartments",
+        "villa": "Villas",
+        "townhouse": "Townhouses",
+        "land": "Land",
+        "commercial": "Commercial"
+      },
+      "cities": {
+        "hcm": "Ho Chi Minh City",
+        "hanoi": "Hanoi",
+        "danang": "Da Nang",
+        "other": "Other"
+      }
+    },
+    "agency": {
+      "profileTitle": "Agency Profile",
+      "profileSubtitle": "Tell us about your agency",
+      "optional": "Help us personalize your workspace",
+      "companyName": "Company Name",
+      "companyNamePlaceholder": "Your agency name",
+      "companyNameRequired": "required",
+      "licenseNumber": "Business License Number",
+      "licenseNumberPlaceholder": "For verification purposes",
+      "licenseOptional": "optional",
+      "teamSize": "Team Size",
+      "specialization": "Specializations",
+      "teamSizes": {
+        "solo": "Just me",
+        "small": "2-5 people",
+        "medium": "6-20 people",
+        "large": "20+ people"
+      },
+      "specializations": {
+        "residential": "Residential",
+        "commercial": "Commercial",
+        "luxury": "Luxury",
+        "industrial": "Industrial",
+        "land": "Land"
+      }
+    },
+    "developer": {
+      "profileTitle": "Developer Profile",
+      "profileSubtitle": "Tell us about your company",
+      "optional": "Get verified and showcase your projects",
+      "companyName": "Company Name",
+      "companyNamePlaceholder": "Your company name",
+      "companyNameRequired": "required",
+      "stockCode": "Stock Code",
+      "stockCodePlaceholder": "e.g., VHM, NVL",
+      "stockCodeIfListed": "if listed",
+      "established": "Founded Year",
+      "establishedPlaceholder": "e.g., 2005",
+      "website": "Website",
+      "websitePlaceholder": "https://your-company.com",
+      "portfolio": "Total Projects Delivered",
+      "developmentTypes": "Development Types",
+      "projectCounts": {
+        "1_5": "1-5 projects",
+        "6_20": "6-20 projects",
+        "21_50": "21-50 projects",
+        "over_50": "50+ projects"
+      },
+      "types": {
+        "residential": "Residential",
+        "commercial": "Commercial",
+        "mixed": "Mixed-Use",
+        "hospitality": "Hospitality",
+        "industrial": "Industrial"
+      }
+    },
+    "api": {
+      "profileTitle": "API User Profile",
+      "profileSubtitle": "Tell us about your integration",
+      "optional": "Help us understand your use case for better support",
+      "companyName": "Company Name",
+      "companyNamePlaceholder": "Your company name",
+      "companyNameRequired": "required",
+      "website": "Website",
+      "websitePlaceholder": "https://your-company.com",
+      "useCase": "Primary Use Case",
+      "useCaseRequired": "required",
+      "useCaseDescription": "Describe your integration",
+      "useCaseDescriptionPlaceholder": "Tell us more about how you plan to use RealTera API...",
+      "useCaseOptional": "optional",
+      "expectedVolume": "Expected API Calls",
+      "useCases": {
+        "property_portal": {
+          "label": "Property Portal",
+          "description": "Real estate listing website"
+        },
+        "fintech": {
+          "label": "Fintech/Mortgage",
+          "description": "Financial services integration"
+        },
+        "market_research": {
+          "label": "Market Research",
+          "description": "Analytics and reporting"
+        },
+        "crm": {
+          "label": "CRM Integration",
+          "description": "Customer relationship management"
+        },
+        "mobile_app": {
+          "label": "Mobile App",
+          "description": "iOS/Android application"
+        },
+        "other": {
+          "label": "Other",
+          "description": "Custom integration"
+        }
+      },
+      "volumes": {
+        "low": {
+          "label": "< 1,000/month",
+          "description": "Development/Testing"
+        },
+        "medium": {
+          "label": "1K - 10K/month",
+          "description": "Small to Medium"
+        },
+        "high": {
+          "label": "10K - 100K/month",
+          "description": "Enterprise"
+        },
+        "very_high": {
+          "label": "> 100K/month",
+          "description": "High Volume"
+        }
+      }
+    },
+    "complete": {
+      "title": "Welcome aboard!",
+      "subtitle": "Hi {name}, your account is ready.",
+      "subtitleDefault": "Your account has been set up successfully.",
+      "goToDashboard": "Go to Dashboard",
+      "updateInSettings": "You can always update your profile in Settings",
+      "accountTypes": {
+        "investor": {
+          "title": "Investor Account",
+          "features": ["Track your portfolio performance", "Create watchlists with alerts", "Access market insights", "Use investment calculators"]
+        },
+        "agency": {
+          "title": "Agency Account",
+          "features": ["Create client collections", "Share verification proofs", "Manage your team", "Access agency analytics"]
+        },
+        "developer": {
+          "title": "Developer Account",
+          "features": ["Manage project portfolios", "Upload verification documents", "Get on-chain attestations", "Track verification status"]
+        },
+        "api_user": {
+          "title": "API Account",
+          "features": ["Generate API keys", "Access full documentation", "Configure webhooks", "Monitor API usage"]
+        }
+      }
+    },
+    "terms": "By continuing, you agree to our Terms of Service and Privacy Policy"
+  },
+  "roles": {
+    "investor": "Investor",
+    "investor_pro": "Investor Pro",
+    "agency": "Agency",
+    "developer": "Developer",
+    "api_user": "API User",
+    "admin": "Administrator"
+  },
+  "projectPage": {
+    "backToRankings": "Back to Rankings",
+    "updated": "Updated",
+    "sources": "Sources",
+    "score": "Score",
+    "potentialRoi": "Potential ROI",
+    "ranking": "Ranking",
+    "whyThisTier": "Why this tier",
+    "keyRisks": "Key risks",
+    "suitableFor": "Suitable for",
+    "qualityOfLife": "Quality of Life",
+    "actions": "Actions",
+    "compare": "Compare",
+    "quickInfo": "Quick info",
+    "district": "District",
+    "city": "City",
+    "price": "Price",
+    "legal": "Legal",
+    "liquidity": "Liquidity",
+    "dataQuality": "Data quality",
+    "reviewsAndComments": "Reviews & Comments",
+    "projectDetails": "Project Details",
+    "totalUnits": "Total Units",
+    "towers": "Towers",
+    "floors": "Floors",
+    "completionYear": "Completion Year",
+    "unitTypes": "Unit Types",
+    "area": "Area",
+    "bedrooms": "Bedrooms",
+    "amenities": "Amenities",
+    "highlights": "Highlights"
+  },
+  "governance": {
+    "title": "Rating Governance",
+    "subtitle": "Our commitment to transparent, auditable, and conflict-free real estate ratings",
+    "backToRankings": "Back to Rankings",
+    "methodologyVersion": "Methodology Version",
+    "corePrinciples": {
+      "title": "Core Principles",
+      "ratingsFirst": {
+        "title": "Ratings First. Transparency Always.",
+        "description": "Our ratings are derived from evidence and attestations, not commercial relationships. Every score is reproducible, auditable, and explainable."
+      },
+      "noInvestmentPromises": {
+        "title": "No Investment Promises",
+        "description": "We do not include ROI or investment value in our scoring. Investment analysis tools are provided separately with explicit disclaimers and user-input assumptions."
+      },
+      "commercialIsolation": {
+        "title": "Commercial Isolation",
+        "description": "Sponsored placements, awards, and lead services are technically and operationally isolated from our rating system. They cannot influence scores by design."
+      }
+    },
+    "scoringMethodology": {
+      "title": "Scoring Methodology",
+      "description": "Projects are evaluated on 4 objective criteria. Each criterion is weighted based on its importance to buyer safety and project quality.",
+      "roiRemoved": {
+        "title": "ROI/Investment Value Removed",
+        "description": "Investment value scoring has been removed to comply with Vietnam's Advertising Law (effective January 1, 2026) and avoid investment-promise liability. Investment analysis is available in our calculator tools with explicit disclaimers."
+      }
+    },
+    "conflictOfInterest": {
+      "title": "Conflict of Interest Policy",
+      "dataIsolation": {
+        "title": "Data Isolation",
+        "description": "Commercial data (sponsored placements, awards, leads) is stored in a separate database schema with no foreign key relationships to rating data. Our rating computation system has no database-level access to commercial tables."
+      },
+      "noRankingInfluence": {
+        "title": "No Ranking Influence",
+        "description": "Sponsored status does not affect sort order. Projects are ranked purely by tier and score. Sponsored badges are displayed for transparency, not priority."
+      },
+      "disclosureRequirements": {
+        "title": "Disclosure Requirements",
+        "description": "All sponsored content is clearly labeled with disclosure tooltips explaining the nature of the commercial relationship."
+      },
+      "awardsTransparency": {
+        "title": "Awards Transparency",
+        "description": "Award nominations involve fees and are clearly labeled as a paid marketing program. Awards do not influence project ratings."
+      }
+    },
+    "auditTrail": {
+      "title": "Audit Trail",
+      "description": "Every rating change is recorded with full traceability.",
+      "scoreRunRecords": {
+        "title": "Score Run Records",
+        "description": "Every score calculation creates an immutable record with inputs hash, evidence links, and methodology version."
+      },
+      "evidenceMapping": {
+        "title": "Evidence Mapping",
+        "description": "Each sub-score is linked to specific evidence items and attestations that support or refute the rating."
+      },
+      "scoreDiffs": {
+        "title": "Score Diffs",
+        "description": "When ratings change, a diff record explains what changed and why, with component-level deltas."
+      },
+      "onChainAnchoring": {
+        "title": "On-Chain Anchoring",
+        "description": "Score run hashes can be anchored to Mantle blockchain for tamper-evident proof of rating history."
+      }
+    },
+    "issuerVerification": {
+      "title": "Issuer Verification",
+      "description": "Attestations that contribute to ratings are issued by verified entities with scoped authority.",
+      "issuerRegistry": {
+        "title": "Issuer Registry",
+        "description": "All issuers must be registered with verified credentials before they can sign attestations. Credentials include business licenses, professional certifications, and regulatory approvals."
+      },
+      "scopedAuthority": {
+        "title": "Scoped Authority",
+        "description": "Each issuer is authorized for specific attestation types (e.g., legal status, construction progress). They cannot sign attestations outside their scope."
+      },
+      "dualControl": {
+        "title": "Dual Control",
+        "description": "High-impact attestations require dual control: one member signs, another reviews and publishes."
+      }
+    },
+    "disputeProcess": {
+      "title": "Dispute Process",
+      "description": "If you believe a rating is inaccurate, you can submit a dispute with supporting evidence.",
+      "steps": [
+        "Submit dispute via the project page or contact form",
+        "Provide supporting evidence (documents, photos, official records)",
+        "Our team reviews within 5 business days",
+        "If valid, the rating is updated with a public diff explanation",
+        "If rejected, you receive a detailed explanation"
+      ],
+      "submitLink": "Submit Data or Correction"
+    },
+    "updateCadence": {
+      "title": "Update Cadence",
+      "daily": {
+        "label": "Daily",
+        "description": "New evidence and attestations are processed and reflected in scores."
+      },
+      "weekly": {
+        "label": "Weekly",
+        "description": "Full re-scoring of all projects with stale evidence (older than 30 days)."
+      },
+      "quarterly": {
+        "label": "Quarterly",
+        "description": "Methodology review and potential weight adjustments (with public announcement)."
+      }
+    }
+  },
+  "verify": {
+    "title": "Verify Attestation",
+    "subtitle": "Check the verification status of real estate projects on Mantle blockchain",
+    "backToHome": "Back to Home",
+    "stats": {
+      "attestations": "attestations",
+      "active": "active"
+    },
+    "demoMode": "Demo mode",
+    "searchPlaceholder": "Enter project slug or asset ID (0x...)",
+    "verifyButton": "Verify",
+    "searching": "Searching...",
+    "notFound": "Not Found",
+    "notFoundError": "No verification found for this ID",
+    "assetIdLabel": "Asset ID",
+    "copyAssetId": "Copy full asset ID",
+    "viewOnExplorer": "View on Explorer",
+    "shareLink": "Verification link",
+    "tryWithSamples": "Try with sample projects:",
+    "tiers": {
+      "tier1_2": {
+        "title": "Tier 1-2: Basic",
+        "description": "Check basic legal documents and consistency of project files."
+      },
+      "tier3": {
+        "title": "Tier 3: Confirmed",
+        "description": "Cross-reference with land registry, with independent co-signatory verification."
+      },
+      "tier4": {
+        "title": "Tier 4: Monitored",
+        "description": "Continuous monitoring, periodic updates, and alerts on changes."
+      }
+    },
+    "sampleAttestations": "Sample Attestations (Demo)",
+    "checksPassed": "checks passed",
+    "disputed": "Disputed"
+  },
+  "errors": {
+    "forbidden": "You don't have permission to access this page",
+    "requiresOnboarding": "Please complete your profile setup first",
+    "requiresUpgrade": "This feature requires a Pro subscription",
+    "authRequired": "Please sign in to continue"
+  },
+  "comments": {
+    "title": "Comments",
+    "titleDeveloper": "Developer Reviews",
+    "writeComment": "Write a comment",
+    "placeholder": "Share your thoughts about {name}...",
+    "defaultPlaceholder": "Share your thoughts...",
+    "submit": "Post Comment",
+    "submitting": "Posting...",
+    "reply": "Reply",
+    "replies": "replies",
+    "edit": "Edit",
+    "delete": "Delete",
+    "report": "Report",
+    "upvote": "Helpful",
+    "downvote": "Not helpful",
+    "rating": "Rating",
+    "clear": "Clear",
+    "signIn": "Sign in",
+    "toComment": "to write a comment",
+    "loginToComment": "Sign in to leave a comment",
+    "noComments": "No comments yet",
+    "beFirst": "Be the first to share your thoughts!",
+    "loadMore": "Load more comments",
+    "loading": "Loading...",
+    "retry": "Try again",
+    "minChars": "Minimum 10 characters",
+    "anonymousUser": "User",
+    "confirmDelete": "Are you sure you want to delete this comment?",
+    "confirmDeleteReply": "Are you sure you want to delete this reply?",
+    "reportReason": "Report reason:",
+    "reportSent": "Report submitted",
+    "showMoreReplies": "Show {count} more replies...",
+    "replyPlaceholder": "Write a reply...",
+    "cancel": "Cancel",
+    "send": "Send",
+    "sort": {
+      "newest": "Newest",
+      "mostHelpful": "Most helpful",
+      "highestRated": "Highest rated"
+    },
+    "time": {
+      "justNow": "Just now",
+      "minutesAgo": "{count} minutes ago",
+      "hoursAgo": "{count} hours ago",
+      "daysAgo": "{count} days ago"
+    },
+    "form": {
+      "ratingLabel": "Rating (optional)",
+      "contentLabel": "Your comment",
+      "cancel": "Cancel",
+      "update": "Update",
+      "charCount": "{count}/2000"
+    },
+    "replyForm": {
+      "placeholder": "Write a reply...",
+      "submit": "Reply",
+      "cancel": "Cancel"
+    },
+    "vote": {
+      "helpful": "Helpful",
+      "notHelpful": "Not helpful"
+    },
+    "errors": {
+      "loadFailed": "Could not load comments",
+      "submitFailed": "Could not post comment",
+      "postFailed": "Could not post comment",
+      "deleteFailed": "Could not delete comment",
+      "voteFailed": "Could not register vote",
+      "minLength": "Comment must be at least 10 characters",
+      "replyMinLength": "Reply must be at least 5 characters",
+      "replyFailed": "Could not post reply",
+      "retry": "Try again"
+    }
+  }
+}
