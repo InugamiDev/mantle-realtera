@@ -5,44 +5,44 @@
 </p>
 
 <p align="center">
-  <strong>Nền tảng xếp hạng & xác minh bất động sản minh bạch trên Mantle Network</strong>
+  <strong>Transparent real estate rating & verification platform on Mantle Network</strong>
 </p>
 
 <p align="center">
-  <a href="#vấn-đề">Vấn đề</a> •
-  <a href="#giải-pháp">Giải pháp</a> •
-  <a href="#chức-năng">Chức năng</a> •
-  <a href="#tại-sao-mantle">Tại sao Mantle</a> •
-  <a href="#lộ-trình">Lộ trình</a> •
-  <a href="#cài-đặt">Cài đặt</a>
+  <a href="#problem">Problem</a> •
+  <a href="#solution">Solution</a> •
+  <a href="#features">Features</a> •
+  <a href="#why-mantle">Why Mantle</a> •
+  <a href="#roadmap">Roadmap</a> •
+  <a href="#installation">Installation</a>
 </p>
 
 ---
 
-## Vấn đề
+## Problem
 
-### Thị trường BĐS Việt Nam đang đối mặt với khủng hoảng niềm tin
+### Vietnam's Real Estate Market Faces a Trust Crisis
 
-| Vấn đề | Thực trạng |
-|--------|------------|
-| **Thiếu minh bạch** | 70% người mua không biết dự án có đầy đủ pháp lý hay không |
-| **Thông tin phân mảnh** | Dữ liệu nằm rải rác trên nhiều nguồn, khó tổng hợp |
-| **Gian lận pháp lý** | Hàng nghìn người mua bị "chôn vốn" vì dự án không có giấy phép |
-| **Đánh giá không đáng tin** | Reviews có thể bị mua, xếp hạng dựa trên quảng cáo |
-| **Không có audit trail** | Không có bằng chứng về lịch sử xác minh |
+| Problem | Reality |
+|---------|---------|
+| **Lack of transparency** | 70% of buyers don't know if a project has complete legal documentation |
+| **Fragmented information** | Data scattered across multiple sources, hard to aggregate |
+| **Legal fraud** | Thousands of buyers have lost capital due to unlicensed projects |
+| **Unreliable reviews** | Reviews can be bought, rankings based on advertising |
+| **No audit trail** | No evidence of verification history |
 
-### Các vụ việc điển hình
+### Notable Cases
 
-- **Alibaba Tây Bắc** - 700+ nạn nhân, thiệt hại 2,500 tỷ VNĐ
-- **Địa ốc Phú Hồng** - Dự án ma, người mua mất trắng
-- **King Bay** - Xây không phép, bị cưỡng chế
-- **Hàng trăm dự án** đang trong tình trạng pháp lý không rõ ràng
+- **Alibaba Tay Bac** - 700+ victims, 2,500 billion VND in losses
+- **Dia Oc Phu Hong** - Ghost project, buyers lost everything
+- **King Bay** - Built without permits, forced demolition
+- **Hundreds of projects** in unclear legal status
 
 ---
 
-## Giải pháp
+## Solution
 
-### RealTera: Nền tảng xếp hạng độc lập, minh bạch, on-chain
+### RealTera: Independent, Transparent, On-Chain Rating Platform
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -72,34 +72,34 @@
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-### Điểm khác biệt
+### Key Differentiators
 
-| Tiêu chí | Truyền thống | RealTera |
-|----------|--------------|----------|
-| **Nguồn đánh giá** | Quảng cáo trả tiền | Multi-source verification |
-| **Bằng chứng** | Không có / dễ giả mạo | On-chain, immutable |
-| **Audit trail** | Không tồn tại | Full history on Mantle |
-| **Dispute** | Khó khiếu nại | Quy trình minh bạch |
-| **B2B Integration** | Manual / API đóng | Events + REST API |
+| Criteria | Traditional | RealTera |
+|----------|-------------|----------|
+| **Rating source** | Paid advertising | Multi-source verification |
+| **Evidence** | None / easily faked | On-chain, immutable |
+| **Audit trail** | Non-existent | Full history on Mantle |
+| **Disputes** | Hard to file complaints | Transparent process |
+| **B2B Integration** | Manual / closed API | Events + REST API |
 
 ---
 
-## Chức năng
+## Features
 
-### 1. Hệ thống xếp hạng AI (Tier System)
+### 1. Tier Rating System
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
 │                    RealTera Tier System                       │
 ├──────────────────────────────────────────────────────────────┤
-│  SSS  │ 95-100 │ Exceptional    │ Dự án huyền thoại         │
-│  S+   │ 90-94  │ Outstanding    │ Xuất sắc toàn diện        │
-│  S    │ 85-89  │ Excellent      │ Chất lượng cao            │
-│  A    │ 75-84  │ Very Good      │ Đáng tin cậy              │
-│  B    │ 65-74  │ Good           │ Ổn định                   │
-│  C    │ 55-64  │ Average        │ Cần cân nhắc              │
-│  D    │ 45-54  │ Below Average  │ Rủi ro cao                │
-│  F    │ 0-44   │ Poor           │ Không khuyến nghị         │
+│  SSS  │ 95-100 │ Exceptional    │ Legendary project          │
+│  S+   │ 90-94  │ Outstanding    │ Excellent in all aspects   │
+│  S    │ 85-89  │ Excellent      │ High quality               │
+│  A    │ 75-84  │ Very Good      │ Reliable                   │
+│  B    │ 65-74  │ Good           │ Stable                     │
+│  C    │ 55-64  │ Average        │ Needs consideration        │
+│  D    │ 45-54  │ Below Average  │ High risk                  │
+│  F    │ 0-44   │ Poor           │ Not recommended            │
 └──────────────────────────────────────────────────────────────┘
 ```
 
@@ -107,7 +107,7 @@
 
 ```solidity
 // Smart Contract: RealTeraAttestationRegistry.sol
-// Deployed on Mantle Sepolia
+// Deployed on Mantle Sepolia: 0xF75bc5070702cC1fe5f56dB3d22e4F452D5a40a7
 
 struct Attestation {
     bytes32 assetId;           // Unique property identifier
@@ -124,41 +124,41 @@ struct Attestation {
 ```
 
 **Verification Checks (Bitmask):**
-- `CHECK_LEGAL_STATUS` - Giấy phép xây dựng
-- `CHECK_OWNERSHIP_TITLE` - Giấy chứng nhận quyền sử dụng đất
-- `CHECK_CONSTRUCTION_PERMIT` - Giấy phép thi công
-- `CHECK_DEVELOPER_BACKGROUND` - Lịch sử chủ đầu tư
-- `CHECK_FINANCIAL_HEALTH` - Sức khỏe tài chính
-- `CHECK_CONSTRUCTION_PROGRESS` - Tiến độ thực tế
-- `CHECK_REGISTRY_CORROBORATION` - Đối chiếu cơ quan đăng ký
-- `CHECK_PARTNER_COSIGN` - Đồng ký kết từ đối tác
+- `CHECK_LEGAL_STATUS` - Construction permit
+- `CHECK_OWNERSHIP_TITLE` - Land use rights certificate
+- `CHECK_CONSTRUCTION_PERMIT` - Construction license
+- `CHECK_DEVELOPER_BACKGROUND` - Developer history
+- `CHECK_FINANCIAL_HEALTH` - Financial health
+- `CHECK_CONSTRUCTION_PROGRESS` - Actual progress
+- `CHECK_REGISTRY_CORROBORATION` - Registry verification
+- `CHECK_PARTNER_COSIGN` - Partner co-signature
 
 ### 3. Consumer Features (B2C)
 
-| Feature | Mô tả |
-|---------|-------|
-| **Project Rankings** | Bảng xếp hạng dự án theo tier, điểm số |
-| **Project Detail** | Chi tiết pháp lý, rủi ro, ROI ước tính |
-| **Compare Tool** | So sánh song song 2-4 dự án |
-| **Watchlist** | Theo dõi dự án quan tâm |
-| **Portfolio Tracker** | Quản lý danh mục đầu tư |
+| Feature | Description |
+|---------|-------------|
+| **Project Rankings** | Project rankings by tier and score |
+| **Project Detail** | Legal details, risks, estimated ROI |
+| **Compare Tool** | Side-by-side comparison of 2-4 projects |
+| **Watchlist** | Track projects of interest |
+| **Portfolio Tracker** | Manage investment portfolio |
 | **Calculator Suite** | Rental yield, mortgage, investment |
-| **Advisor Bot** | Chatbot tư vấn dự án |
-| **Alerts** | Thông báo thay đổi pháp lý |
-| **Market Heatmaps** | Bản đồ nhiệt giá theo khu vực |
-| **Comments & Reviews** | Đánh giá từ cộng đồng |
+| **Advisor Bot** | Project consultation chatbot |
+| **Alerts** | Legal change notifications |
+| **Market Heatmaps** | Price heatmaps by area |
+| **Comments & Reviews** | Community reviews |
 
 ### 4. Business Features (B2B)
 
-| Feature | Mô tả | Pricing Model |
-|---------|-------|---------------|
-| **Verification API** | API xác minh pháp lý | Per-call |
-| **Developer Portal** | Dashboard cho chủ đầu tư | Subscription |
-| **Agency Workspace** | Công cụ cho đại lý | Subscription |
-| **Embeddable Widget** | Widget nhúng vào website | License |
-| **Lead Generation** | Dữ liệu khách hàng tiềm năng | Per-lead |
-| **Market Data API** | Dữ liệu thị trường | Tiered access |
-| **White-label** | Giải pháp OEM | Enterprise |
+| Feature | Description | Pricing Model |
+|---------|-------------|---------------|
+| **Verification API** | Legal verification API | Per-call |
+| **Developer Portal** | Dashboard for developers | Subscription |
+| **Agency Workspace** | Tools for agents | Subscription |
+| **Embeddable Widget** | Widget for embedding | License |
+| **Lead Generation** | Potential customer data | Per-lead |
+| **Market Data API** | Market data | Tiered access |
+| **White-label** | OEM solutions | Enterprise |
 
 ### 5. Revenue Streams (31 total)
 
@@ -166,11 +166,11 @@ struct Attestation {
 ┌─────────────────────────────────────────────────────────────┐
 │                   RealTera Revenue Model                     │
 ├─────────────────────────────────────────────────────────────┤
-│  B2C Subscriptions      │  Pro: 199k/mo │ Enterprise: 2M/mo │
-│  B2B API Calls          │  0.5$ - 5$ per verification       │
+│  B2C Subscriptions      │  Pro: $8/mo │ Enterprise: $80/mo  │
+│  B2B API Calls          │  $0.5 - $5 per verification       │
 │  Sponsored Placements   │  Auction-based, transparent       │
 │  Lead Generation        │  Per qualified lead               │
-│  Due Diligence Reports  │  500k - 5M per report             │
+│  Due Diligence Reports  │  $20 - $200 per report            │
 │  Market Data Licensing  │  Tiered enterprise licensing      │
 │  Consulting Services    │  Project-based                    │
 │  Annual Awards          │  Sponsorship + tickets            │
@@ -179,9 +179,9 @@ struct Attestation {
 
 ---
 
-## Tại sao Mantle?
+## Why Mantle?
 
-### 1. Chi phí giao dịch thấp
+### 1. Low Transaction Costs
 
 | Network | Avg Gas Cost | Suitable for |
 |---------|--------------|--------------|
@@ -190,7 +190,7 @@ struct Attestation {
 | **Mantle** | **$0.001-0.01** | ✅ Perfect for attestations |
 | Solana | $0.001 | ⚠️ Different ecosystem |
 
-**Why it matters:** Mỗi dự án cần nhiều attestation updates. Chi phí thấp = sustainable business model.
+**Why it matters:** Each project needs multiple attestation updates. Low cost = sustainable business model.
 
 ### 2. EVM Compatibility
 
@@ -205,19 +205,19 @@ const client = createPublicClient({
 });
 ```
 
-**Why it matters:** Team có kinh nghiệm Solidity/EVM. Không cần học ngôn ngữ mới.
+**Why it matters:** Team has Solidity/EVM experience. No need to learn new languages.
 
 ### 3. Data Availability (EigenDA)
 
-- **Modular architecture** - DA layer tách biệt
-- **High throughput** - Xử lý được volume lớn
-- **Future-proof** - Sẵn sàng cho scale
+- **Modular architecture** - Separate DA layer
+- **High throughput** - Can handle large volume
+- **Future-proof** - Ready to scale
 
 ### 4. Growing Ecosystem
 
-- **DeFi protocols** - Có thể tích hợp với lending (collateralized by verified property)
-- **Enterprise focus** - Mantle đang nhắm vào B2B use cases
-- **Grant programs** - Hỗ trợ tốt cho builders
+- **DeFi protocols** - Can integrate with lending (collateralized by verified property)
+- **Enterprise focus** - Mantle targets B2B use cases
+- **Grant programs** - Good support for builders
 
 ### 5. Technical Alignment
 
@@ -231,7 +231,7 @@ const client = createPublicClient({
 
 ---
 
-## Mantle được lợi gì?
+## What Does Mantle Gain?
 
 ### 1. Real World Asset (RWA) Use Case
 
@@ -277,7 +277,7 @@ Ongoing monitoring = recurring transactions
 Dispute resolution = more transactions
 ```
 
-**Network effect:** Mỗi dự án được xác minh → nhiều bên query → nhiều giao dịch hơn
+**Network effect:** Each verified project → multiple parties query → more transactions
 
 ### 4. Geographic Expansion Template
 
@@ -314,7 +314,7 @@ Vietnam (2025)
 
 ---
 
-## Lộ trình
+## Roadmap
 
 ### Phase 1: Foundation ✅ COMPLETE
 
@@ -379,7 +379,7 @@ Vietnam (2025)
 
 ---
 
-## Cài đặt
+## Installation
 
 ### Prerequisites
 
@@ -421,7 +421,7 @@ STACK_SECRET_SERVER_KEY=...
 
 # Mantle (optional - uses mock mode if not set)
 NEXT_PUBLIC_MANTLE_RPC_URL=https://rpc.sepolia.mantle.xyz
-NEXT_PUBLIC_REGISTRY_ADDRESS=0x...
+NEXT_PUBLIC_REGISTRY_ADDRESS=0xF75bc5070702cC1fe5f56dB3d22e4F452D5a40a7
 
 # Stripe (for payments)
 STRIPE_SECRET_KEY=...
@@ -444,14 +444,14 @@ npx hardhat run scripts/deploy.ts --network mantleSepolia
 ### Contract Address
 
 ```
-Mantle Sepolia: 0x... (pending deployment)
+Mantle Sepolia: 0xF75bc5070702cC1fe5f56dB3d22e4F452D5a40a7
 Mantle Mainnet: TBD
 ```
 
 ### Verification
 
 ```bash
-npx hardhat verify --network mantleSepolia <CONTRACT_ADDRESS>
+npx hardhat verify --network mantleSepolia 0xF75bc5070702cC1fe5f56dB3d22e4F452D5a40a7
 ```
 
 ---
@@ -494,7 +494,7 @@ GET  /api/v1/leads                 # Lead data (B2B)
 - **Website**: [realtera.vn](https://realtera.vn) (coming soon)
 - **Demo**: [demo.realtera.vn](https://demo.realtera.vn)
 - **Docs**: [docs.realtera.vn](https://docs.realtera.vn)
-- **Contract**: [Mantle Explorer](https://explorer.sepolia.mantle.xyz)
+- **Contract**: [View on MantleScan](https://sepolia.mantlescan.xyz/address/0xF75bc5070702cC1fe5f56dB3d22e4F452D5a40a7)
 
 ---
 
